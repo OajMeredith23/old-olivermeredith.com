@@ -8,10 +8,10 @@ import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 import { css } from "@emotion/core"
 import '../styles/styles.sass'
-import neatCover from '../../public/assets/NEAT/NEAT-cover.png'
-import povisionCover from '../../public/assets/POVision/POVision-cover.png'
-import childhavenCover from '../../public/assets/childhaven/childhaven-cover.jpg'
-import profile from '../../public/assets/profile.jpg'
+import neatCover from '../assets/NEAT/NEAT-cover.png'
+import povisionCover from '../assets/POVision/POVision-cover.png'
+import childhavenCover from '../assets/childhaven/childhaven-cover.jpg'
+import profile from '../assets/profile.jpg'
 
 export default () => {
   const data = useStaticQuery(
