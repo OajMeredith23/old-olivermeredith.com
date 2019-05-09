@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Pandas eating lots`,
-        description: 'Pandas are pandas'
+        title: `Oliver Meredith`,
+        description: 'A front-end developer that’s curious about user experiences. '
       },    
     plugins: [
       {

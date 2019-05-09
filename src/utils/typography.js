@@ -1,7 +1,25 @@
 import Typography from "typography"
-import kirkhamTheme from "typography-theme-kirkham"
 
-const typography = new Typography(kirkhamTheme)
+
+const options = {
+    googleFonts: [
+        {
+          name: "Playfair Display",
+          styles: ["400", "400i", "700"],
+        },
+        {
+          name: "Fira Sans",
+          styles: ["300", "400", "400i", "700", "700i"],
+        },
+      ],
+    headerFontFamily: ['Playfair Display', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+    bodyFontFamily: ['Fira Sans', 'serif'],
+    headerWeight: 400, 
+    bodyWeight: 300
+} 
+
+// console.log(kirkhamTheme)
+const typography = new Typography(options)
 
 export default typography
 export const rhythm = typography.rhythm
