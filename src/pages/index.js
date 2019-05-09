@@ -8,6 +8,10 @@ import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 import { css } from "@emotion/core"
 import '../styles/styles.sass'
+import neatCover from '../../public/assets/NEAT/NEAT-cover.png'
+import povisionCover from '../../public/assets/POVision/POVision-cover.png'
+import childhavenCover from '../../public/assets/childhaven/childhaven-cover.jpg'
+import profile from '../../public/assets/profile.jpg'
 
 export default () => {
   const data = useStaticQuery(
@@ -101,19 +105,19 @@ export default () => {
           <div id="work">
             <WorkSection
             title="NEAT"
-            image="/assets/NEAT/NEAT-cover.png"
+            image={neatCover}
             skills={["AdobeXD", "User Research", "User Testing"]}
             intro="Neat is a prototype app design, aimed at helping young, unemployed people find a future career path and connecting the with people who can help them on their journey."
             />
             <WorkSection
             title="POVision"
-            image="/assets/POVision/POVision-cover.png"
+            image={povisionCover}
             skills={["HTML - CSS - JS", "React.js", "Netlify"]}
             intro="A site I designed and developed. POVision, a single page web app that allows the user to view an Ice Hockey game from any players point of view without missing any of the action."
             />
             <WorkSection
             title="Child Haven"
-            image="/assets/childhaven/childhaven-cover.jpg"
+            image={childhavenCover}
             skills={["HTML - CSS - JS", "jQuery", "Jekyll"]}
             intro="Web design and development for a small day care center, focused on creating a dialogue between the business and their customers.."
             />
@@ -161,7 +165,16 @@ export default () => {
                 background: white; 
               `
             }>
-              <img src="" alt=""/>
+              <img 
+              css={
+                css`
+                  width: 100%;
+                  height: 100%; 
+                  object-fit: cover;
+                `
+              }
+              src={profile}
+              alt=""/>
             </div>
             <div css={
               css`
