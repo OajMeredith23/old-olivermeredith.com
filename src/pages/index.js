@@ -17,6 +17,7 @@ import childhavenCover from '../assets/childhaven/childhaven-cover.jpg'
 import profile from '../assets/profile.jpg'
 
 export default () => {
+
   const data = useStaticQuery(
     graphql`
         query{
@@ -28,6 +29,7 @@ export default () => {
             }
         }`
 )
+
     return (
         <Layout>
 
@@ -105,13 +107,13 @@ export default () => {
             </ul>
           </section>
 
-          <SectionBreak text="Work"/>
+          <SectionBreak id="work" text="Work"/>
 
             <WorkSection/>
 
-          <SectionBreak text="Contact"/>
+          <SectionBreak id="contact" text="Contact"/>
 
-          <section id="contact" css={
+          <section css={
             css`
             @media(min-width: 768px){
               display: grid;

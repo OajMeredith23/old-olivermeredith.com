@@ -5,7 +5,7 @@ import { color } from "../utils/colors"
 
 export default props => {
     return(
-        <div css={
+        <div id={props.id} css={
             css`
                 margin: ${rhythm(8)} 0
             `
