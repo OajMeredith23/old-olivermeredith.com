@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "eslint-config-react-app": "^4.0.0",
+    "gatsby-plugin-eslint": "^1.0.3",
     "prettier": "^1.17.0"
   },
   "repository": {

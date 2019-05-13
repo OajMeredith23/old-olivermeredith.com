@@ -3,11 +3,11 @@ import { css } from "@emotion/core"
 import { useInView } from 'react-intersection-observer'
 
 export default props => {
-    const [ref, inView] = useInView({
-        /* Optional options */
-        rootMargin: '100px',
-        threshold: 0,
-      })
+    // const [ref, inView] = useInView({
+    //     /* Optional options */
+    //     rootMargin: '100px',
+    //     threshold: 0,
+    //   })
 
 
     return(
@@ -20,8 +20,8 @@ export default props => {
                 object-fit: cover;
             `
         }
-        ref={ref}
-        src={inView ? props.img : ''}
+        // ref={ref}
+        src={props.img}
         alt={props.imgAlt}/>
     )
 }
