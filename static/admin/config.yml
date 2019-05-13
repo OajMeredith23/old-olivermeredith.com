@@ -8,7 +8,7 @@ public_folder: /img
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "src/blog-posts"
+    folder: "src/content/blog-posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
@@ -20,7 +20,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "work"
     label: "Work"
-    folder: "src/projects"
+    folder: "src/content/work"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
@@ -28,5 +28,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Skills", name: "skill", widget: "list" }
+      - { label: "Category", name: "category", widget: "list" }
       - { label: "Description", name: "description", widget: "string" }
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: "Image(s)", name: "Images", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
