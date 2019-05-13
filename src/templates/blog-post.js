@@ -29,7 +29,7 @@ const WorkTemplate = (props) => {
 }
 export default ({ data }) => {
     const post = data.markdownRemark
-
+    console.log(post)
   return (
     <Layout>
       {post.frontmatter.type === 'Blog' ? 
@@ -44,13 +44,13 @@ export default ({ data }) => {
 
     : 
     
-    <BlogTemplate
+    <WorkTemplate
       title={post.frontmatter.title}
       description={post.frontmatter.description}
       type={post.frontmatter.type}
     >
       <div dangerouslySetInnerHTML={{__html: post.html}}/>
-  </BlogTemplate>  
+  </WorkTemplate>  
     }
     </Layout>
   )

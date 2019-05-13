@@ -2,12 +2,16 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { color } from "../utils/colors"
 import { rhythm } from "../utils/typography"
+import { css } from "@emotion/core"
+
+import '../styles/styles.sass'
+//Components
 import Layout from "../components/layout"
 import WorkSection from "../components/work-section"
+import WorkSection2 from "../components/work-section-2"
 import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
-import { css } from "@emotion/core"
-import '../styles/styles.sass'
+//Images
 import neatCover from '../assets/NEAT/NEAT-cover.png'
 import povisionCover from '../assets/POVision/POVision-cover.png'
 import childhavenCover from '../assets/childhaven/childhaven-cover.jpg'
@@ -27,7 +31,7 @@ export default () => {
 )
     return (
         <Layout>
-          <BlogSection/>
+          <WorkSection2/>
 
           <section css={
             css`
