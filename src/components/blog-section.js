@@ -16,7 +16,7 @@ export default () => {
               id 
               frontmatter{
                 title
-                category
+                
                 date(formatString:"DD MMMM, YYYY")
               }
               fields{
