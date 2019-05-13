@@ -8,7 +8,6 @@ import '../styles/styles.sass'
 //Components
 import Layout from "../components/layout"
 import WorkSection from "../components/work-section"
-import WorkSection2 from "../components/work-section-2"
 import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 //Images
@@ -31,7 +30,6 @@ export default () => {
 )
     return (
         <Layout>
-          <WorkSection2/>
 
           <section css={
             css`
@@ -108,30 +106,8 @@ export default () => {
           </section>
 
           <SectionBreak text="Work"/>
-          <div id="work">
-            <WorkSection
-            title="NEAT"
-            outBoundLink={false} link="/about"
-            image={neatCover}
-            skills={["AdobeXD", "User Research", "User Testing"]}
-            intro="Neat is a prototype app design, aimed at helping young, unemployed people find a future career path and connecting the with people who can help them on their journey."
-            />
-            <WorkSection
-            title="POVision"
-            outBoundLink={true} link="https://pov-ision.com"
-            
-            image={povisionCover}
-            skills={["HTML - CSS - JS", "React.js", "Netlify"]}
-            intro="A site I designed and developed. POVision, a single page web app that allows the user to view an Ice Hockey game from any players point of view without missing any of the action."
-            />
-            <WorkSection
-            title="Child Haven"
-            outBoundLink={true} link="http://www.childhaven.vn"
-            image={childhavenCover}
-            skills={["HTML - CSS - JS", "jQuery", "Jekyll"]}
-            intro="Web design and development for a small day care center, focused on creating a dialogue between the business and their customers.."
-            />
-          </div>
+
+            <WorkSection/>
 
           <SectionBreak text="Contact"/>
 

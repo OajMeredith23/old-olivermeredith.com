@@ -1,18 +1,59 @@
-import React from 'react'
+import React from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
+import Layout from "./layout"
 import Button from "./button"
 import LazyImg from "./lazy-img"
-import { Link } from 'gatsby';
 
 
-export default props => {
-    const breakPoints = ['768px']
 
-    return (
-        <section 
-        key={props.title}
+export default () => {
+
+  const data = useStaticQuery(
+    graphql`
+    {
+        allMarkdownRemark(
+          sort: {fields: [frontmatter___date], order: DESC}
+          filter: {
+          frontmatter:{
+            type: {regex: "/Work/"}
+          }
+        }){
+          totalCount
+          edges{
+            node{
+              id 
+              frontmatter{
+                type
+                title
+                skill
+                description
+                date(formatString:"DD MMMM, YYYY")
+                thumbnail
+              }
+              fields{
+                slug
+              }
+              excerpt
+            }
+          }
+        }
+      }
+      
+    `
+  )
+
+  const breakPoints = ['768px']
+
+  return (
+      
+        <div>
+        
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+                <section 
+        key={node.id}
         css={
             css`
             @media(min-width: ${breakPoints[0]}){
@@ -39,7 +80,7 @@ export default props => {
                 }
                 `
             }>
-                <LazyImg img={props.image} imgAlt={props.imageAlt}/>
+                <LazyImg img={node.frontmatter.thumbnail}/>
             </div>
             <div css={
                     css`
@@ -57,7 +98,7 @@ export default props => {
                         margin: ${rhythm(1)} 0 0 0;
 
                     `
-                }>{props.title}</h1>
+                }>{node.frontmatter.title}</h1>
             </div>
             <ul css={ 
                 css`
@@ -68,8 +109,7 @@ export default props => {
                 }
                 `
             }>
-                
-                {props.skills.map((skill, i) => 
+                {node.frontmatter.skill.map((item, i) => 
                 <li 
                     key={i}
                     css={
@@ -86,7 +126,7 @@ export default props => {
                         `
                     }
                 >
-                    {skill}
+                    {item}
                 </li>)}
             </ul>
 
@@ -96,7 +136,7 @@ export default props => {
                 `
             }>
                 <p>
-                    {props.intro}
+                    {node.frontmatter.description}
                 </p>
             </div>
 
@@ -107,24 +147,20 @@ export default props => {
                 `
             }>
 
-            {props.outBoundLink ? 
-                <a href={props.link}
-                    target="_blank"
-                >
-                    <Button 
-                        text="View"
-                    />
-                </a> :
+            
                 <Link
-                    to={props.link}
+                    to={node.fields.slug}
                 >
                     <Button 
                         text="View"
                     />
                 </Link>  
-            }
+            
 
             </div>
         </section>
+          ))}
+        </div>
     )
 }
+
