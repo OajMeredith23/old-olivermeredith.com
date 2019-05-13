@@ -15,18 +15,43 @@ const BlogTemplate = (props) => {
   )
 }
 
+const WorkTemplate = (props) => {
+  return(
+    <div>
+          <h1>A Work Post</h1>
+          <h1>{props.title}</h1>
+          <h3>{props.description}</h3>
+
+          {props.children}
+          
+      </div>
+  )
+}
 export default ({ data }) => {
     const post = data.markdownRemark
 
   return (
     <Layout>
+      {post.frontmatter.type === 'Blog' ? 
+
       <BlogTemplate
         title={post.frontmatter.title}
         description={post.frontmatter.description}
+        type={post.frontmatter.type}
       >
-        <h1>trst</h1>
         <div dangerouslySetInnerHTML={{__html: post.html}}/>
       </BlogTemplate>
+
+    : 
+    
+    <BlogTemplate
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+      type={post.frontmatter.type}
+    >
+      <div dangerouslySetInnerHTML={{__html: post.html}}/>
+  </BlogTemplate>  
+    }
     </Layout>
   )
 }
@@ -38,6 +63,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        type
       }
     }
   }

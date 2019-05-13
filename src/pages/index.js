@@ -27,7 +27,7 @@ export default () => {
 )
     return (
         <Layout>
-          
+          <BlogSection/>
 
           <section css={
             css`
