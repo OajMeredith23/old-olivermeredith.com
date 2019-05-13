@@ -15,7 +15,6 @@ module.exports = {
       `gatsby-plugin-emotion`,
       `gatsby-plugin-netlify-cms`,
       `gatsby-plugin-sass`,
-      'gatsby-plugin-eslint',
       {
         resolve: `gatsby-plugin-typography`,
         options: {
