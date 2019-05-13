@@ -15,6 +15,7 @@ collections:
      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "title", widget: "select", options: ["Work", "Blog"], default: "Work"}
       - { label: "Type", name: "title", widget: "hidden", default: "blog"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
@@ -28,7 +29,7 @@ collections:
      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Type", name: "title", widget: "hidden", default: "work"}
+      - { label: "Type", name: "title", widget: "select", options: ["Work", "Blog"], default: "Work"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Skills", hint: "Seperate each point with a comma", name: "Skill", widget: "list" }
       - { label: "Category", hint: "Seperate each point with a comma", name: "category", widget: "list" }
