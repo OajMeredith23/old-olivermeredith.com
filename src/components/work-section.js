@@ -1,19 +1,14 @@
-import React from 'react'
+import React from "react"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import Button from "./button"
-import LazyImg from "./lazy-img"
-import { Link } from 'gatsby';
 
 
 export default props => {
     const breakPoints = ['768px']
-
     return (
-        <section 
-        key={props.title}
-        css={
+        <section css={
             css`
             @media(min-width: ${breakPoints[0]}){
                 display: grid;
@@ -24,9 +19,7 @@ export default props => {
             }
             margin-bottom: ${rhythm(8)}
             `
-        }
-        
-        >
+        }>
             <div css={
                 css`
                 background: grey;
@@ -39,7 +32,17 @@ export default props => {
                 }
                 `
             }>
-                <LazyImg img={props.image} imgAlt={props.imageAlt}/>
+                <img 
+                    css={
+                        css`
+                            height: 100%;
+                            width: 100%; 
+                            object-fit: cover;
+                        `
+                    }
+                    src={props.image} 
+                    alt={props.imageAlt}
+                />
             </div>
             <div css={
                     css`
@@ -68,7 +71,6 @@ export default props => {
                 }
                 `
             }>
-                
                 {props.skills.map((skill, i) => 
                 <li 
                     key={i}
@@ -100,31 +102,9 @@ export default props => {
                 </p>
             </div>
 
-            <div css={
-                css`
-                    grid-row: -2;
-                    grid-column: 3 / -1;
-                `
-            }>
-
-            {props.outBoundLink ? 
-                <a href={props.link}
-                    target="_blank"
-                >
-                    <Button 
-                        text="View"
-                    />
-                </a> :
-                <Link
-                    to={props.link}
-                >
-                    <Button 
-                        text="View"
-                    />
-                </Link>  
-            }
-
-            </div>
+            <Button 
+            position='grid-row: -2; grid-column: 3;'
+            text="View"/>
         </section>
     )
 }

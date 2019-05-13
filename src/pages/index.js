@@ -27,7 +27,7 @@ export default () => {
 )
     return (
         <Layout>
-          
+
 
           <section css={
             css`
@@ -94,11 +94,9 @@ export default () => {
                     the challenge or to be useful</p>
               </li>
               <li>
-                <a href="#contact">
-                  <h3>Contact</h3>
-                  <p>Professional or academic work,
-                      made to fulfil a brief</p>
-                </a>
+                <h3>Contact</h3>
+                <p>Professional or academic work,
+                    made to fulfil a brief</p>
               </li>
             </ul>
           </section>
@@ -107,22 +105,18 @@ export default () => {
           <div id="work">
             <WorkSection
             title="NEAT"
-            outBoundLink={false} link="/about"
             image={neatCover}
             skills={["AdobeXD", "User Research", "User Testing"]}
             intro="Neat is a prototype app design, aimed at helping young, unemployed people find a future career path and connecting the with people who can help them on their journey."
             />
             <WorkSection
             title="POVision"
-            outBoundLink={true} link="https://pov-ision.com"
-            
             image={povisionCover}
             skills={["HTML - CSS - JS", "React.js", "Netlify"]}
             intro="A site I designed and developed. POVision, a single page web app that allows the user to view an Ice Hockey game from any players point of view without missing any of the action."
             />
             <WorkSection
             title="Child Haven"
-            outBoundLink={true} link="http://www.childhaven.vn"
             image={childhavenCover}
             skills={["HTML - CSS - JS", "jQuery", "Jekyll"]}
             intro="Web design and development for a small day care center, focused on creating a dialogue between the business and their customers.."
@@ -130,8 +124,7 @@ export default () => {
           </div>
 
           <SectionBreak text="Contact"/>
-
-          <section id="contact" css={
+          <div id="contact" css={
             css`
             @media(min-width: 768px){
               display: grid;
@@ -192,7 +185,7 @@ export default () => {
               <h1>Say Hi</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maxime temporibus in quos sed quod modi explicabo suscipit voluptatum earum?</p>
             </div>
-          </section>
+          </div>
         </Layout>
       )
 }
