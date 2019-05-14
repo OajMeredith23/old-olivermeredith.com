@@ -39,7 +39,7 @@ export default () => {
               position: relative;
               // top: -85px;
               // background: ${color.bgColor};
-              z-index: 5;
+              z-index: 1;
               display: flex;
               flex-direction: column;
               justify-content: center;

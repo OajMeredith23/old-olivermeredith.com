@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
+import LazyImg from "../components/lazy-img";
 
 const BlogTemplate = (props) => {
   return(
@@ -49,15 +50,17 @@ const WorkTemplate = (props) => {
             >{props.title}</h1>
             <p>{props.description}</p>
         </div>
-        <img 
+        <div 
         css={
           css`
             grid-column: 4 / -1;
           `
         }
-          src={props.image} 
-          alt=""
-          />
+        >
+        <LazyImg
+          img={props.image}
+        />  
+        </div>
       </div>
           {props.children}
           

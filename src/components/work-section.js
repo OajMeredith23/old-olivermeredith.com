@@ -80,7 +80,11 @@ export default () => {
                 }
                 `
             }>
-                <LazyImg img={node.frontmatter.thumbnail}/>
+                <Link
+                    to={node.fields.slug}
+                >
+                    <LazyImg img={node.frontmatter.thumbnail}/>
+                </Link>
             </div>
             <div css={
                     css`
@@ -93,12 +97,16 @@ export default () => {
                     }
                     `
                 }>
-                <h1 css={
-                    css`
-                        margin: ${rhythm(1)} 0 0 0;
+                <Link 
+                    to={node.fields.slug}
+                >
+                    <h1 css={
+                        css`
+                            margin: ${rhythm(1)} 0 0 0;
 
-                    `
-                }>{node.frontmatter.title}</h1>
+                        `
+                    }>{node.frontmatter.title}</h1>
+                </Link>
             </div>
             <ul css={ 
                 css`
