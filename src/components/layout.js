@@ -15,11 +15,7 @@ function NavPage(props){
             allMarkdownRemark(
               sort: {fields: [frontmatter___date], order: DESC}
               limit: 4
-              filter: {
-              frontmatter:{
-                type: {regex: "/Work/"}
-              }
-            }){
+              ){
               totalCount
               edges{
                 node{
@@ -160,18 +156,20 @@ function NavPage(props){
                 
             `
         }>
-                {hoverImage ? 
-                    <LazyImg
-                        img={hoverImage}
-                    />
-                    : ""
-            }
+        {hoverImage && window.innerWidth > 767 ? 
+            <LazyImg
+                img={hoverImage}
+            />
+            : ""
+    }
         </div>
 
         </div>
         
     )
 }
+
+
 export default class Layout extends Component{
 
     constructor(props){
@@ -304,15 +302,15 @@ export default class Layout extends Component{
     }
 }
 
-export const query = graphql`
-        query{
-            site{
-                siteMetadata{
-                    title
-                }
-            }
-        }
-    `
+// export const query = graphql`
+//         query{
+//             site{
+//                 siteMetadata{
+//                     title
+//                 }
+//             }
+//         }
+    // `
 
 // export const query = graphql`
 //     query {
