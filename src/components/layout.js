@@ -198,8 +198,12 @@ export default (props) =>{
                         <meta charSet="utf-8" />
                         <title>{data.site.siteMetadata.title}</title>
                     </Helmet>
-                )}
-            /> */}
+                    )}
+                /> */}
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Oliver Meredith</title>
+            </Helmet>
     
 
             <section id="nav"
@@ -311,12 +315,12 @@ export default (props) =>{
     
 }
 
-export const query = graphql`
-    {
-        site{
-            siteMetadata{
-                title
-            }
-        }
-    }
-`
+// export const query = graphql`
+//     {
+//         site{
+//             siteMetadata{
+//                 title
+//             }
+//         }
+//     }
+// `
