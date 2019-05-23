@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-
+import { Helmet } from 'react-helmet'
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
@@ -62,36 +62,82 @@ const WorkTemplate = (props) => {
         />  
         </div>
       </div>
-          {props.children}
+
+      <section 
+        className="content"
+        css={css`
+          grid-column: 1 / -1;
+          
+        
+          & > div { 
+            grid-column: 1 / -1;
+            display: grid; 
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+
+            
+            & .text { 
+              grid-column: 1;
+              grid-row: 1 / -3;
+              padding-top: ${rhythm(4)};
+
+              & > h1, h2, h3, h4, p {
+                position: sticky;
+                top: ${rhythm(4)};
+                grid-column: 1;
+              } 
+
+            }
+            & img { 
+              justify-self: flex-end;
+              grid-column: 2;
+            }
+
+          }
+
+          
+        `}
+        >
+        
+       
+        {props.children}
+      </section>
           
       </section>
   )
 }
+
 export default ({ data }) => {
+  console.log(data)
     const post = data.markdownRemark
-    console.log(post)
   return (
     <Layout>
+      
+      <Helmet>
+          <title>{post.frontmatter.title}</title>
+          <meta name="description" content={post.frontmatter.description}></meta>
+      </Helmet>
+
       {post.frontmatter.type === 'Blog' ? 
 
-      <BlogTemplate
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        type={post.frontmatter.type}
-      >
-        <div dangerouslySetInnerHTML={{__html: post.html}}/>
-      </BlogTemplate>
+        <BlogTemplate
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          type={post.frontmatter.type}
+        >
+          <div dangerouslySetInnerHTML={{__html: post.html}}/>
+        </BlogTemplate>
 
     : 
     
-    <WorkTemplate
-      title={post.frontmatter.title}
-      description={post.frontmatter.description}
-      type={post.frontmatter.type}
-      image={post.frontmatter.thumbnail}
-    >
-      <div dangerouslySetInnerHTML={{__html: post.html}}/>
-  </WorkTemplate>  
+        <WorkTemplate
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          type={post.frontmatter.type}
+          image={post.frontmatter.thumbnail}
+        >
+          <div dangerouslySetInnerHTML={{__html: post.html}}/>
+      </WorkTemplate>  
     }
     </Layout>
   )

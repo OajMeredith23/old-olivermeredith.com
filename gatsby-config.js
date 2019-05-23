@@ -15,6 +15,7 @@ module.exports = {
       `gatsby-plugin-emotion`,
       `gatsby-plugin-netlify-cms`,
       `gatsby-plugin-sass`,
+      `gatsby-plugin-react-helmet`,
       {
         resolve: `gatsby-plugin-typography`,
         options: {

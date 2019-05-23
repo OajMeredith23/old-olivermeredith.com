@@ -32,13 +32,10 @@ export default () => {
 
     return (
         <Layout>
-
           <section css={
             css`
-              height: 100vh;
+              height: calc(100vh - ${rhythm(1.5)});
               position: relative;
-              // top: -85px;
-              // background: ${color.bgColor};
               z-index: 1;
               display: flex;
               flex-direction: column;
@@ -47,9 +44,10 @@ export default () => {
           }>
           <div css={
               css`
-                position: absolute;
-                top: ${rhythm(3)};
-                left: 0;
+                flex: 10;
+                display: flex; 
+                flex-direction: column;
+                justify-content: center;
               `
             }>
               <h1>
@@ -62,9 +60,7 @@ export default () => {
 
             <ul css={
               css`
-                position: absolute; 
-                bottom: 50px;
-                left: 0;
+                flex: 2;
                 li{
                   margin:  0 ${rhythm(1)} ${rhythm(1)} 0 ;
                   @media(min-width: 900px){
@@ -171,7 +167,9 @@ export default () => {
                 grid-row: 3;
               `
             }>
+            <Link to="/about">
               <h1>Say Hi</h1>
+            </Link>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maxime temporibus in quos sed quod modi explicabo suscipit voluptatum earum?</p>
             </div>
           </section>
