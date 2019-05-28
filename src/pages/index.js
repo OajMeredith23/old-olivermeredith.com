@@ -1,8 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
 import { color } from "../utils/colors"
 import { rhythm } from "../utils/typography"
 import { css } from "@emotion/core"
+import {useSpring, animated} from 'react-spring'
 
 import '../styles/styles.sass'
 //Components
@@ -30,8 +31,12 @@ export default () => {
         }`
 )
 
+    const fadeUp = useSpring({opacity: 1, marginTop: 10, from: {opacity: 0, marginTop: 200}})
+
+
     return (
         <Layout>
+
           <section css={
             css`
               height: calc(100vh - ${rhythm(1.5)});
@@ -42,13 +47,15 @@ export default () => {
               justify-content: center;
             `
           }>
-          <div css={
-              css`
-                flex: 10;
-                display: flex; 
-                flex-direction: column;
-                justify-content: center;
-              `
+          <animated.div 
+            style={fadeUp}
+            css={
+                css`
+                  flex: 10;
+                  display: flex; 
+                  flex-direction: column;
+                  justify-content: center;
+                `
             }>
               <h1>
                 {data.site.siteMetadata.title}
@@ -56,30 +63,32 @@ export default () => {
               <p>
                 {data.site.siteMetadata.description}
               </p>
-            </div>
+            </animated.div>
 
-            <ul css={
-              css`
-                flex: 2;
-                li{
-                  margin:  0 ${rhythm(1)} ${rhythm(1)} 0 ;
-                  @media(min-width: 900px){
-                    display: inline-block; 
-                  }
-                  h3 {
-                    font-style: italic;
-                    padding-left: ${rhythm(0.3)};
-                    border-left: 5px solid ${color.primary};
-                  }
-                  p{
-                    max-width: 250px;
-                    display: none;
-                    @media(min-width: 767px){
-                      display: block;
+            <animated.ul 
+              style={fadeUp}
+              css={
+                css`
+                  flex: 2;
+                  li{
+                    margin:  0 ${rhythm(1)} ${rhythm(1)} 0 ;
+                    @media(min-width: 900px){
+                      display: inline-block; 
+                    }
+                    h3 {
+                      font-style: italic;
+                      padding-left: ${rhythm(0.3)};
+                      border-left: 5px solid ${color.primary};
+                    }
+                    p{
+                      max-width: 250px;
+                      display: none;
+                      @media(min-width: 767px){
+                        display: block;
+                      }
                     }
                   }
-                }
-              `
+                `
             }>
               <li>
                 <a href="#work">
@@ -100,7 +109,7 @@ export default () => {
                       made to fulfil a brief</p>
                 </a>
               </li>
-            </ul>
+            </animated.ul>
           </section>
 
           <SectionBreak id="work" text="Work"/>

@@ -1,5 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
@@ -31,7 +32,7 @@ export default () => {
                 skill
                 description
                 date(formatString:"DD MMMM, YYYY")
-                thumbnail
+                thumbnail 
               }
               fields{
                 slug
@@ -45,7 +46,7 @@ export default () => {
     `
   )
 
-  const breakPoints = ['768px']
+  const breakPoints = ['767px']
 
   return (
       
@@ -82,9 +83,11 @@ export default () => {
                 }
                 `
             }>
+             
                 <Link
                     to={node.fields.slug}
                 >
+                    
                     <LazyImg img={node.frontmatter.thumbnail}/>
                 </Link>
             </div>

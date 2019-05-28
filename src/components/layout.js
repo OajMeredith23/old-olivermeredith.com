@@ -42,7 +42,7 @@ function NavPage(props){
         `
     )
 
-    const [hoverImage, sethoverImage] = useState(0);
+    const [hoverImage, sethoverImage] = useState(null);
     
     return(
         <div css={
@@ -158,6 +158,7 @@ function NavPage(props){
                     
                 `
             }>
+
             {hoverImage && window.innerWidth > 767 ? 
                 <LazyImg
                     img={hoverImage}
@@ -215,7 +216,7 @@ export default (props) =>{
                         right: 0;
                         bottom: 0;
                         z-index: 5;
-                        overflow: scroll;
+                        // overflow: scroll;
                         background: ${color.darkgrey};
                         color: ${color.bgColor};
                         transition: .2s .3s ease-out;
@@ -240,6 +241,8 @@ export default (props) =>{
                     `
                 }
             >
+                
+
                 <NavPage onClick={toggleNav}/>
             </section>
 
@@ -270,36 +273,109 @@ export default (props) =>{
             <div 
                 id="hamburger"
                 css={
+
                     css`
-                    width: 35px;
-                    height: 18px;
-                    display: flex; 
-                    flex-direction: column;
-                    justify-content: space-around; 
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    tranform-origin: center;
-                    & span {
-                        display: inline-block;
-                        height: 3px;
                         width: 35px;
-                        border-radius: 15px;
-                        padding: 0;
-                        background: ${color.grey};
-                        transition: .3s ease;
-                    }
-                    & :hover {
-                        & span {
-                            transition: .3s ease;
-                            transform: scaleX(1.1);
-                            background: ${color.primary};
+                        height: 25px;
+                        position: absolute;
+                        top: 0; 
+                        right: 0;
+                        transition: .5s ease-in-out;
+                        cursor: pointer;
+                        &:hover{
+                            & span {
+                                background: ${color.primary};
+                            }
                         }
-                    }
+                        & span { 
+
+                            display: block;
+                            position: absolute;
+                            height: 3px;
+                            width: 100%;
+                            background: ${color.grey};
+                            border-radius: 9px;
+                            opacity: 1;
+                            left: 0;
+                            transform: rotate(0deg);
+                            transition: .25s ease-in-out;
+                            &:nth-child(1){
+                                top: 0px;
+                            }
+                            &:nth-child(2){
+                                top: 9px;
+                                // transform: rotate(45deg);
+                            }
+                            &:nth-child(3){
+                                top: 9px;
+                            }
+                            &:nth-child(4){
+                                top: 18px;
+                            }
+                            ${navOpen ? `
+                                &:nth-child(1){
+                                    top: 18px;
+                                    width: 0%;
+                                    left: 50%;
+                                }
+                                &:nth-child(2){
+                                    transform: rotate(45deg);
+                                }
+                                &:nth-child(3){
+                                    transform: rotate(-45deg);
+                                }
+                                &:nth-child(4){
+                                    top: 18px;
+                                    width: 0%;
+                                    left: 50%;
+                                }
+                                `
+                            
+                            : null}
+                        }
                     `
+                    // css`
+                    // width: 35px;
+                    // height: 18px;
+                    // display: flex; 
+                    // flex-direction: column;
+                    // justify-content: space-around; 
+                    // position: absolute;
+                    // top: 0;
+                    // right: 0;
+                    // tranform-origin: center;
+                    // & span {
+                    //     display: inline-block;
+                    //     height: 3px;
+                    //     width: 35px;
+                    //     border-radius: 15px;
+                    //     padding: 0;
+                    //     background: ${color.grey};
+                    //     transition: .3s ease;
+                    // }
+                    // & :hover {
+                    //     & span {
+                    //         transition: .3s ease;
+                    //         transform: scaleX(1.1);
+                    //         background: ${color.primary};
+                    //     }
+                    // }
+
+                    // ${navOpen ? 
+                        
+                    //     ` 
+                    //         & span { 
+                    //             color: red;
+                    //             background: red;
+                    //         }
+                    //     `
+                        
+                    //     : null}
+                    // `
                 }
                 onClick={toggleNav}
                 >
+                <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
