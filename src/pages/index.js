@@ -12,9 +12,6 @@ import WorkSection from "../components/work-section"
 import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 //Images
-import neatCover from '../assets/NEAT/NEAT-cover.png'
-import povisionCover from '../assets/POVision/POVision-cover.png'
-import childhavenCover from '../assets/childhaven/childhaven-cover.jpg'
 import profile from '../assets/profile.jpg'
 
 export default () => {
