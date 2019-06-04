@@ -5,13 +5,12 @@ import { useInView } from 'react-intersection-observer'
 export default props => {
     const [ref, inView] = useInView({
         /* Optional options */
-        rootMargin: '100px',
+        rootMargin: '500px',
         threshold: 0,
       })
 
 
     return(
-        // <>
         <img 
         css={
             css`

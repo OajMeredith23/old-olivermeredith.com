@@ -7,70 +7,40 @@ import { color } from "../utils/colors"
 import Layout from "./layout"
 import Button from "./button"
 import LazyImg from "./lazy-img"
+import Intersection from "./intersection"
 
 
+const Work = (props) => {
 
-export default () => {
-
-  const data = useStaticQuery(
-    graphql`
-    {
-        allMarkdownRemark(
-          sort: {fields: [frontmatter___date], order: DESC}
-          filter: {
-          frontmatter:{
-            type: {regex: "/Work/"}
-          }
-        }){
-          totalCount
-          edges{
-            node{
-              id 
-              frontmatter{
-                type
-                title
-                skill
-                description
-                date(formatString:"DD MMMM, YYYY")
-                thumbnail 
-              }
-              fields{
-                slug
-              }
-              excerpt
-            }
-          }
-        }
-      }
-      
-    `
-  )
-
+  
   const breakPoints = ['767px']
 
   return (
       
-        <div>
-        
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-                <section 
-        key={node.id}
-        css={
-            css`
-            @media(min-width: ${breakPoints[0]}){
-                display: grid;
-                grid-template-columns: repeat(12, minmax(0, 1fr));
-                grid-template-rows: 50vh auto auto;
-                grid-gap: ${rhythm(2)} 0;
-                padding: 0;
+        <section 
+            css={
+                css`
+                @media(min-width: ${breakPoints[0]}){
+                    display: grid;
+                    grid-template-columns: repeat(12, minmax(0, 1fr));
+                    grid-template-rows: 50vh auto auto;
+                    grid-gap: ${rhythm(2)} 0;
+                    padding: 0;
+                }
+                margin-bottom: ${rhythm(8)};
+                ${props.onScreen ? `
+                transform: translate(0, 0);
+                opacity: 1;` 
+                : 
+                `transform: translate(0, 100px);
+                opacity: 0; 
+                `}
+                transition: .5s ease-out;
+                `
             }
-            margin-bottom: ${rhythm(8)}
-            `
-        }
-        
+    
         >
 
-        
             <div css={
                 css`
                 background: grey;
@@ -83,12 +53,14 @@ export default () => {
                 }
                 `
             }>
-             
+            
                 <Link
-                    to={node.fields.slug}
+                    to={props.slug}
                 >
                     
-                    <LazyImg img={node.frontmatter.thumbnail}/>
+                    <LazyImg 
+                        img={props.thumbnail}
+                    />
                 </Link>
             </div>
             <div css={
@@ -103,14 +75,14 @@ export default () => {
                     `
                 }>
                 <Link 
-                    to={node.fields.slug}
+                    to={props.slug}
                 >
                     <h1 css={
                         css`
                             margin: ${rhythm(1)} 0 0 0;
 
                         `
-                    }>{node.frontmatter.title}</h1>
+                    }>{props.title}</h1>
                 </Link>
             </div>
             <ul css={ 
@@ -122,7 +94,7 @@ export default () => {
                 }
                 `
             }>
-                {node.frontmatter.skill.map((item, i) => 
+                {props.skills.map((item, i) => 
                 <li 
                     key={i}
                     css={
@@ -149,7 +121,7 @@ export default () => {
                 `
             }>
                 <p>
-                    {node.frontmatter.description}
+                    {props.description}
                 </p>
             </div>
 
@@ -159,21 +131,84 @@ export default () => {
                     grid-column: 3 / -1;
                 `
             }>
-
-            
-                <Link
-                    to={node.fields.slug}
+                <Intersection
+                    bottomRoot = '-50px'
                 >
-                    <Button 
-                        text="View"
-                    />
-                </Link>  
-            
-
+                    <Link
+                        to={props.slug}
+                    >
+                        <Button 
+                            text="View"
+                        />
+                    </Link>  
+                </Intersection>
             </div>
+
         </section>
-          ))}
-        </div>
+        
     )
 }
 
+export default (props) => {
+
+    const data = useStaticQuery(
+        graphql`
+        {
+            allMarkdownRemark(
+              sort: {fields: [frontmatter___date], order: DESC}
+              filter: {
+              frontmatter:{
+                type: {regex: "/Work/"}
+              }
+            }){
+              totalCount
+              edges{
+                node{
+                  id 
+                  frontmatter{
+                    type
+                    title
+                    skill
+                    description
+                    date(formatString:"DD MMMM, YYYY")
+                    thumbnail 
+                  }
+                  fields{
+                    slug
+                  }
+                  excerpt
+                }
+              }
+            }
+          }
+          
+        `
+      )
+
+      
+    return ( 
+
+
+        <section>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+                <Intersection
+                    bottomRoot = '-200px'
+                    key={node.id}
+                >
+                    <Work
+                        id={node.id}
+                        slug={node.fields.slug}
+                        thumbnail={node.frontmatter.thumbnail}
+                        title={node.frontmatter.title}
+                        description={node.frontmatter.description}
+                        skills={node.frontmatter.skill}
+
+                    />
+                </Intersection>
+
+            ))}
+        </section>
+    
+
+    )
+}
