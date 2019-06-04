@@ -14,9 +14,11 @@ export default props => {
         <img 
         css={
             css`
+                background: #f9f9f9;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                border-radius: 10px;
             `
         }
         ref={ref}

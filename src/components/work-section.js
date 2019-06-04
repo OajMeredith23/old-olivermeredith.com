@@ -43,7 +43,7 @@ const Work = (props) => {
 
             <div css={
                 css`
-                background: grey;
+                // background: grey;
                 height: 300px;
                 padding: 0;
                 @media(min-width: ${breakPoints[0]}){

@@ -1,3 +1,6 @@
+$bgColor: #F1F1EF
+$darkgrey: #333333
+    
 body, html
     box-sizing: border-box
     background: url('../assets/perlinDots.png'), #F1F1EF    
@@ -37,14 +40,23 @@ a
         grid-column: 1 / -1
         
     .brief 
-        background: #333333
-        color: #F1F1EF
+        // background: url('/img/perlinDots.png'), $darkgrey
+        background: $darkgrey
+        background-size: cover  
+        background-repeat: no-repeat
+        color: $bgColor
         min-height: 70vh 
         display: flex 
         justify-content: center
         flex-direction: column
-        margin: 0 -40px 
-        padding-left: 40px
+        @media(min-width: 1280px)
+            margin: 0 -10px 
+            padding-left: 10px
+    .brief, .work-text-container  
+        border-radius: 10px
+        @media(min-width: 1340px)
+            margin: 0 -30px 
+            padding-left: 30px
         p 
             max-width: 500px
 
@@ -57,11 +69,13 @@ a
         @media(min-width: 959px)
             display: flex 
         &.brief 
-            // min-height: 70vh 
 
 
     .work-text-container
         flex: 1
+        padding-top: 2em
+        padding-bottom: 2em
+        background: darken($bgColor, 4%)
         margin-right: 2rem
 
     .work-text
@@ -78,6 +92,7 @@ a
             grid-template-columns: repeat(8, 1fr)
         img 
             margin: 1rem 0 0 0
+            border-radius: 10px
         p 
             margin: 0
             font-size: 12px
