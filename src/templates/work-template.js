@@ -6,7 +6,6 @@ import {useSpring, animated} from 'react-spring'
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import LazyImg from "../components/lazy-img";
-import templateAnimations from "../globaljs/template-animations";
 
 export default function WorkContainer(props) {
 
