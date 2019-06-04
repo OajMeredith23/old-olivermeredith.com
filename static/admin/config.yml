@@ -27,7 +27,6 @@ collections:
     editor:
      preview: true
     fields:
-      - { label: "Order", name: "order", widget: "number", default: "1", min: "1", max: "50"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog"], default: "Work"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -35,3 +34,4 @@ collections:
       - { label: "Category", hint: "Seperate each point with a comma", name: "category", widget: "list", required: false}
       - { label: "Description", name: "description", widget: "string" }
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
