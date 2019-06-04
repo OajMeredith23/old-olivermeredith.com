@@ -21,3 +21,80 @@ a
     &:hover 
         color: #35E5A1
         transition: .2s ease
+
+* 
+    margin: 0 
+    padding: 0 
+
+//Work page styles
+.content 
+    max-width: 759px
+    margin: 0 auto
+@supports(display: grid)
+    .content 
+        max-width: 10000px 
+        // margin: auto
+        grid-column: 1 / -1
+        
+    .brief 
+        background: #333333
+        color: #F1F1EF
+        min-height: 70vh 
+        display: flex 
+        justify-content: center
+        flex-direction: column
+        margin: 0 -40px 
+        padding-left: 40px
+        p 
+            max-width: 500px
+
+    .content
+        @media(min-width: 959px)
+            grid-column: 1 / -1 
+
+    .work-section 
+        margin-bottom: 10em
+        @media(min-width: 959px)
+            display: flex 
+        &.brief 
+            // min-height: 70vh 
+
+
+    .work-text-container
+        flex: 1
+        margin-right: 2rem
+
+    .work-text
+        @media(min-width: 959px)
+            position: sticky 
+            top: 100px
+            max-width: 300px
+
+    .work-images 
+        flex: 2
+        @media(min-width: 600px)
+            display: grid 
+            grid-gap: 0 1rem
+            grid-template-columns: repeat(8, 1fr)
+        img 
+            margin: 1rem 0 0 0
+        p 
+            margin: 0
+            font-size: 12px
+
+    .work-image-stack 
+        grid-column: span 4
+
+    .work-image-grid 
+        grid-column: 1 / -1
+        justify-content: space-between
+        flex-wrap: wrap
+        display: grid 
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 0 1em
+        &.large-tiles
+            grid-template-columns: repeat(2, 1fr)
+
+
+    .work-image-fullwidth 
+        grid-column: 1 / -1

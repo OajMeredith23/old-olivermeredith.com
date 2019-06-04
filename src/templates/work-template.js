@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
@@ -6,11 +6,18 @@ import {useSpring, animated} from 'react-spring'
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import LazyImg from "../components/lazy-img";
+import templateAnimations from "../globaljs/template-animations";
 
-export default (props) => {
+export default function WorkContainer(props) {
 
     const fadeDown = useSpring({opacity: 1, marginLeft: 0, from: {opacity: 0, marginLeft: -200}})
     const breakpoints = ['959px'];
+
+    const childWithProp = React.Children.map(props.children, (child) => {
+      return React.cloneElement(child, {test: "click"});
+  });
+
+  
     return(
       <section css={
         css`
@@ -24,7 +31,6 @@ export default (props) => {
             }
           }
   
-          display: 
         `
       }>  
         <div css={
@@ -44,11 +50,11 @@ export default (props) => {
             flex-flow: column wrap;
             justify-content: space-around;
             height: calc(100vh - ${rhythm(1)}); 
-          `
-        }>
+            `
+          }>
           <div css={
             css`
-  
+            
               max-width: 400px;
               @supports (display: grid){
   
@@ -80,7 +86,7 @@ export default (props) => {
               @supports (display: grid){
   
                 @media(min-width: ${breakpoints[0]}){
-                  grid-column: 1 / -1;
+                  // grid-column: 1 / -1;
                   position: absolute; 
                   height: auto;
                   top: 0; 
@@ -100,60 +106,10 @@ export default (props) => {
   
         </div>
   
-        <section 
-          className="content"
-          css={css`
-  
-            @media(max-width: ${breakpoints[0]}){
-              & img { 
-                display: block; 
-                margin: ${rhythm(1)} auto;
-              }
-            }
-  
-            @supports (display: grid){
-  
-              @media(min-width: ${breakpoints[0]}){
-  
-                grid-column: 1 / -1;
-                
-                & > div { 
-                    & > div { 
-                      grid-column: 1 / -1;
-                      display: grid; 
-                      grid-template-columns: 1fr 2fr;
-                      grid-gap: 20px;
-          
-                      
-                    & .text { 
-                      grid-column: 1;
-                      grid-row: 1 / -1;
-                      padding-top: ${rhythm(4)};
-                      position: sticky;
-                      top: ${rhythm(4)};
-                      border: 1px solid;
-        
-      
-                    }
-                    & img { 
-                      justify-self: flex-end;
-                      grid-column: 2;
-                    }
-          
-                    
-                }
-  
-              }
-          }
-  
-            
-          `}
-          >
+         <section className="content">
+            {childWithProp}
+         </section>
          
-         
-          {props.children}
-        </section>
-            
         </section>
     )
   }
