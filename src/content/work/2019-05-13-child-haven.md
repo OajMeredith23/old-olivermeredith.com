@@ -10,9 +10,9 @@ skill:
 category:
   - UI Design
   - Front-end Development
-Site: 'http://www.childhaven.vn/'
-Github: None
-Behance: None
+site: 'http://www.childhaven.vn/'
+github: None
+behance: None
 description: >-
   Web design and development for a small day care center, focused on creating a
   dialogue between the business and their customers.
