@@ -160,7 +160,7 @@ const Work = (props) => {
                         `
                     }>
 
-                        {props.site && 
+                        {props.site != 'None' && 
                             <IconButton
                                 to="site"
                                 link={props.site}
@@ -168,7 +168,7 @@ const Work = (props) => {
                             />
                         }
 
-                        {props.github && 
+                        {props.github != 'None' && 
                             <IconButton
                                 to="github"
                                 link={props.github}
@@ -176,7 +176,7 @@ const Work = (props) => {
                             />
                         }
 
-                        {props.behance && 
+                        {props.behance != 'None' && 
                             <IconButton
                                 to="behance"
                                 link={props.behance}
@@ -217,6 +217,7 @@ export default (props) => {
                     date(formatString:"DD MMMM, YYYY")
                     thumbnail 
                     github 
+                    behance
                     site
                   }
                   fields{
@@ -249,6 +250,7 @@ export default (props) => {
                         description={node.frontmatter.description}
                         skills={node.frontmatter.skill}
                         github={node.frontmatter.github}
+                        behance={node.frontmatter.behance}
                         site={node.frontmatter.site}
 
                     />
