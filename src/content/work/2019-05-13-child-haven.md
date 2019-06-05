@@ -1,5 +1,4 @@
 ---
-order: 3
 title: Child Haven
 type: Work
 date: 2019-05-13T20:15:25.069Z
