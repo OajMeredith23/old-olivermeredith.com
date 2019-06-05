@@ -16,11 +16,18 @@ export default function Intersect(props){
         return React.cloneElement(child, {onScreen: inView});
     });
 
+    console.log(childWithProp)
     
 
     return(
         
-        <div ref={ref}>
+        <div ref={ref}
+            css={
+                css`
+                    ${props.position}
+                `
+            }
+        >
             <div>
                 {childWithProp}
             </div>

@@ -11,24 +11,22 @@ export default props => {
         
         <button css={
                 css`
-                ${props.position}
                 height: 50px;
-                padding: 0 30px;
-                // display: inline-block;
+                padding: 0 20px;
                 font-family: 'Playfair Display';
                 font-style: italic;
                 background: transparent;
                 color: ${color.darkgrey};
                 position: relative;
+                top: -10px;
                 border: none;
                 cursor: pointer;
+                ${props.position}
                 & :hover {
                     div{
-                        // transform: translateY(-3px);
                         transition: .3s ease-out;
                     }
                     &::before{
-                        // transform: scale(1.1);
                         box-shadow: 0px 3px 6px rgba(0,0,0,.1);
                         transition: .3s ease-out;
                     }
@@ -48,7 +46,9 @@ export default props => {
                     box-shadow: 0px 3px 6px rgba(0,0,0,.0)
                 }
             `
-        }>
+        }
+        type="button"
+        >
         <div css={
             css`
                 position: relative;

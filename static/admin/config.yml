@@ -27,6 +27,7 @@ collections:
     editor:
      preview: true
     fields:
+      - { label: "Order", name: "order", widget: "number", min: "0", max: "50"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog"], default: "Work"}
       - { label: "Publish Date", name: "date", widget: "datetime" }

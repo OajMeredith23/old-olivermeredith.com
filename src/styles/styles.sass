@@ -131,3 +131,31 @@ a
         margin: 0 0 1em 0
         img 
             width: 100%
+
+//LIGHTBOX
+.lightbox
+    position: fixed 
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(20,20,20,0.9)
+    z-index: 10
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
+    pointer-events: none
+    transition: .2s ease-out
+    img 
+        transform: translate(0, 20px)
+        transition: .4s ease-out
+    &.open 
+        transition: .2s ease-out
+        opacity: 1
+        pointer-events: auto
+
+        img 
+            transition: .3s ease-out
+            transform: translate(0, 0)
+                

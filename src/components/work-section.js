@@ -6,8 +6,10 @@ import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import Layout from "./layout"
 import Button from "./button"
+import IconButton from "./icon-button"
 import LazyImg from "./lazy-img"
 import Intersection from "./intersection"
+
 
 
 const Work = (props) => {
@@ -43,7 +45,6 @@ const Work = (props) => {
 
             <div css={
                 css`
-                // background: grey;
                 height: 300px;
                 padding: 0;
                 @media(min-width: ${breakPoints[0]}){
@@ -125,23 +126,66 @@ const Work = (props) => {
                 </p>
             </div>
 
+            
             <div css={
                 css`
-                    grid-row: -2;
-                    grid-column: 3 / -1;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    grid-row: -2; 
+                    grid-column: 3 / span 1;
+                    @media(max-width: 960px){
+                        margin-top: ${rhythm(2)};
+                        }
+                    }
                 `
             }>
-                <Intersection
-                    bottomRoot = '-50px'
-                >
                     <Link
                         to={props.slug}
                     >
                         <Button 
+                            position="grid-column: span 3; 
+                            width: 100px; 
+                            margin-bottom: 2em;"
                             text="View"
                         />
                     </Link>  
-                </Intersection>
+                    
+                    <div css={
+                        css`
+                        display: flex;
+                        align-items: center;
+                        // justify-content: space-around;
+                        position: relative; 
+                        `
+                    }>
+
+                        {props.site && 
+                            <IconButton
+                                to="site"
+                                link={props.site}
+                                alt="Visit Site"
+                            />
+                        }
+
+                        {props.github && 
+                            <IconButton
+                                to="github"
+                                link={props.github}
+                                alt="View source code on Github"
+                            />
+                        }
+
+                        {props.behance && 
+                            <IconButton
+                                to="behance"
+                                link={props.behance}
+                                alt="View project on Behance"
+                            />
+                        }
+                
+
+                    </div>
             </div>
 
         </section>
@@ -172,6 +216,8 @@ export default (props) => {
                     description
                     date(formatString:"DD MMMM, YYYY")
                     thumbnail 
+                    github 
+                    site
                   }
                   fields{
                     slug
@@ -202,6 +248,8 @@ export default (props) => {
                         title={node.frontmatter.title}
                         description={node.frontmatter.description}
                         skills={node.frontmatter.skill}
+                        github={node.frontmatter.github}
+                        site={node.frontmatter.site}
 
                     />
                 </Intersection>
