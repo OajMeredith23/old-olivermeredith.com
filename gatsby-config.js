@@ -1,7 +1,8 @@
 module.exports = {
     siteMetadata: {
         title: `Oliver Meredith`,
-        description: 'A front-end developer that’s curious about user experiences. '
+        description: 'A front-end developer that’s curious about user experiences. ',
+        github: `https://github.com/OajMeredith23`
       },    
     plugins: [
       {

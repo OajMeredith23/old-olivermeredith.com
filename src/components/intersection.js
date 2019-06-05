@@ -15,8 +15,6 @@ export default function Intersect(props){
     const childWithProp = React.Children.map(props.children, (child) => {
         return React.cloneElement(child, {onScreen: inView});
     });
-
-    console.log(childWithProp)
     
 
     return(

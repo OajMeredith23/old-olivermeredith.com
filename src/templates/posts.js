@@ -32,10 +32,11 @@ export default ({ data }) => {
     : 
     
         <WorkTemplate
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          type={post.frontmatter.type}
-          image={post.frontmatter.thumbnail}
+          // title={post.frontmatter.title}
+          // description={post.frontmatter.description}
+          // type={post.frontmatter.type}
+          // image={post.frontmatter.thumbnail}
+          frontmatter={post.frontmatter}
         >
           <div dangerouslySetInnerHTML={{__html: post.html}}/>
       </WorkTemplate>  
@@ -53,6 +54,9 @@ export const query = graphql`
         description
         type
         thumbnail
+        github 
+        behance 
+        site
       }
     }
   }

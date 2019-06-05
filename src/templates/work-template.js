@@ -7,6 +7,8 @@ import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import LazyImg from "../components/lazy-img";
 import Lightbox from "../components/lightbox";
+import IconButton from "../components/icon-button"
+
 
 export default function WorkContainer(props) {
 
@@ -16,7 +18,8 @@ export default function WorkContainer(props) {
     const childWithProp = React.Children.map(props.children, (child) => {
       return React.cloneElement(child, {test: "click"});
     });
-    
+
+    // const {props} = props.frontmatter;
     
   
     return(
@@ -76,8 +79,46 @@ export default function WorkContainer(props) {
                 
               `
             }>
-                <h1>{props.title}</h1>
-                <p>{props.description}</p>
+                <h1>{props.frontmatter.title}</h1>
+                <p>{props.frontmatter.description}</p>
+                {console.log(props.frontmatter)}
+
+                <div css={
+                      css`
+                      display: flex;
+                      display: inline-block;
+                      align-items: center;
+                      position: relative; 
+                      `
+                  }>
+
+                      {props.frontmatter.site != 'None' && 
+                          <IconButton
+                              to="site"
+                              link={props.frontmatter.site}
+                              alt="Visit Site"
+                          />
+                      }
+
+                      {props.frontmatter.github != 'None' && 
+                          <IconButton
+                              to="github"
+                              link={props.frontmatter.github}
+                              alt="View source code on Github"
+                          />
+                      }
+
+                      {props.frontmatter.behance != 'None' && 
+                          <IconButton
+                              to="behance"
+                              link={props.frontmatter.behance}
+                              alt="View project on Behance"
+                          />
+                      }
+              
+
+                  </div>
+
             </div>
     
             <animated.div 
@@ -103,7 +144,7 @@ export default function WorkContainer(props) {
               }
             >
               <LazyImg
-                img={props.image}
+                img={props.frontmatter.thumbnail}
               />  
             </animated.div>
     

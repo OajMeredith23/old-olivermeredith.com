@@ -1,50 +1,62 @@
 import React, { Component, useState } from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { useStaticQuery, StaticQuery, Link, graphql} from "gatsby"
+import { useStaticQuery, StaticQuery, Link, graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import LazyImg from "./lazy-img"
+import IconButton from "../components/icon-button"
 
 
 
 
-function NavPage(props){
+function NavPage(props) {
     const data = useStaticQuery(
         graphql`
         {
-            allMarkdownRemark(
-              sort: {fields: [frontmatter___date], order: DESC}
-              limit: 4
-              ){
-              totalCount
-              edges{
-                node{
-                  id 
-                  frontmatter{
-                    type
-                    title
-                    skill
-                    description
-                    date(formatString:"DD MMMM, YYYY")
-                    thumbnail
-                  }
-                  fields{
-                    slug
-                  }
-                  excerpt
+            site{
+                siteMetadata{
+                  title
+                  github
                 }
-              }
             }
-          }
+            allMarkdownRemark(
+                sort: {fields: [frontmatter___date], order: DESC}
+                    limit: 4
+                ){
+                totalCount
+                    edges{
+                        node{
+                            id 
+                            frontmatter{
+                                type
+                                title
+                                skill
+                                description
+                                date(formatString:"DD MMMM, YYYY")
+                                thumbnail
+                                github
+                                behance 
+                                site
+                                }
+                            fields{
+                                slug
+                            }
+                            excerpt
+                          }
+                        }
+                      }
+                    }
+                
+          
           
         `
     )
 
     const [hoverImage, sethoverImage] = useState(null);
-    
-    return(
+
+    return (
         <div css={
             css`
             max-width: 1280px;
@@ -59,7 +71,7 @@ function NavPage(props){
             
             `
         }>
-            
+
 
             <div css={
                 css`
@@ -111,10 +123,10 @@ function NavPage(props){
                                 }
                             }
                         `
-                    }> 
+                    }>
 
-                        {data.allMarkdownRemark.edges.map(({node}) => 
-                            <li 
+                        {data.allMarkdownRemark.edges.map(({ node }) =>
+                            <li
                                 key={node.id}
                                 onClick={props.onClick}
                             >
@@ -122,21 +134,21 @@ function NavPage(props){
                                     to={node.fields.slug}
                                     onClick={props.handleClick}
                                     onMouseEnter={() => sethoverImage(node.frontmatter.thumbnail)}
-                                >   
+                                >
                                     <p>{node.frontmatter.title}</p>
                                 </Link>
                             </li>
-                            
+
                         )}
-                        {data.allMarkdownRemark.totalCount > 4 ? 
-                        <li>
-                            <Link
+                        {data.allMarkdownRemark.totalCount > 4 ?
+                            <li>
+                                <Link
                                     to="/#work"
                                 >
-                                & {data.allMarkdownRemark.totalCount - 4} more
+                                    & {data.allMarkdownRemark.totalCount - 4} more
                             </Link>
-                        </li>
-                        : ""}
+                            </li>
+                            : ""}
                     </ul>
                 </div>
 
@@ -146,6 +158,20 @@ function NavPage(props){
                 >
                     <h1>Contact</h1>
                 </Link>
+
+
+                <div css={
+                    css`
+                      display: flex;
+                      display: inline-block;
+                      align-items: center;
+                      position: relative; 
+                      `
+                }>
+
+
+
+                </div>
 
             </div>
 
@@ -159,29 +185,29 @@ function NavPage(props){
                 `
             }>
 
-            {hoverImage && window.innerWidth > 767 ? 
-                <LazyImg
-                    img={hoverImage}
-                />
-                : ""
-        }
+                {hoverImage && window.innerWidth > 767 ?
+                    <LazyImg
+                        img={hoverImage}
+                    />
+                    : ""
+                }
             </div>
 
         </div>
-        
+
     )
 }
 
 
 
-export default (props) =>{
-    
-    const[navOpen, setNavOpen] = useState(false);
+export default (props) => {
+
+    const [navOpen, setNavOpen] = useState(false);
     const toggleNav = () => setNavOpen(!navOpen);
 
-        
-    return(
-    
+
+    return (
+
         <div
             css={css`
             margin: 0 auto;
@@ -191,21 +217,11 @@ export default (props) =>{
             `}
         >
 
-        {/* <StaticQuery
-            query={graphql ` { site { siteMetadata { title } } } ` }
-        
-            render={data => (
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>{data.site.siteMetadata.title}</title>
-                    </Helmet>
-                    )}
-                /> */}
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Oliver Meredith</title>
             </Helmet>
-    
+
 
             <section id="nav"
                 css={
@@ -223,14 +239,14 @@ export default (props) =>{
                         & > * {
                             transition: .5s ease-out;
                         }
-                        ${navOpen ? 
-                                `pointer-event: auto;
+                        ${navOpen ?
+                            `pointer-event: auto;
                                 
                                 opacity: 1; 
                                 & > * {
                                     transform: translateY(0);
                                 }`
-                            :   `pointer-events: none;
+                            : `pointer-events: none;
                                 opacity: 0;
                                 & > * {
                                     transform: translateY(-50px);
@@ -241,9 +257,9 @@ export default (props) =>{
                     `
                 }
             >
-                
 
-                <NavPage onClick={toggleNav}/>
+
+                <NavPage onClick={toggleNav} />
             </section>
 
             <div id="navbar"
@@ -260,21 +276,21 @@ export default (props) =>{
                     `
                 }
             >
-            
-            <Link
-                to="/"
-                onClick={navOpen ? () => toggleNav : null}
+
+                <Link
+                    to="/"
+                    onClick={navOpen ? () => toggleNav : null}
                 >
-                <h3>
-                    Oliver Meredith
+                    <h3>
+                        Oliver Meredith
                 </h3>
-            </Link>
+                </Link>
 
-            <div 
-                id="hamburger"
-                css={
+                <div
+                    id="hamburger"
+                    css={
 
-                    css`
+                        css`
                         width: 35px;
                         height: 25px;
                         position: absolute;
@@ -330,73 +346,25 @@ export default (props) =>{
                                     left: 50%;
                                 }
                                 `
-                            
-                            : null}
+
+                                : null}
                         }
                     `
-                    // css`
-                    // width: 35px;
-                    // height: 18px;
-                    // display: flex; 
-                    // flex-direction: column;
-                    // justify-content: space-around; 
-                    // position: absolute;
-                    // top: 0;
-                    // right: 0;
-                    // tranform-origin: center;
-                    // & span {
-                    //     display: inline-block;
-                    //     height: 3px;
-                    //     width: 35px;
-                    //     border-radius: 15px;
-                    //     padding: 0;
-                    //     background: ${color.grey};
-                    //     transition: .3s ease;
-                    // }
-                    // & :hover {
-                    //     & span {
-                    //         transition: .3s ease;
-                    //         transform: scaleX(1.1);
-                    //         background: ${color.primary};
-                    //     }
-                    // }
-
-                    // ${navOpen ? 
-                        
-                    //     ` 
-                    //         & span { 
-                    //             color: red;
-                    //             background: red;
-                    //         }
-                    //     `
-                        
-                    //     : null}
-                    // `
-                }
-                onClick={toggleNav}
+                    }
+                    onClick={toggleNav}
                 >
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            </div>
-    
-    
-    
-        
+
+
+
+
             {props.children}
         </div>
     )
-    
-}
 
-// export const query = graphql`
-//     {
-//         site{
-//             siteMetadata{
-//                 title
-//             }
-//         }
-//     }
-// `
+}

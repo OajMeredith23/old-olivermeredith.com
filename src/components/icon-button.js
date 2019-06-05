@@ -4,25 +4,31 @@ import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import github from "../assets/gh-black.svg"
 import behance from "../assets/behance-black.svg"
+import githubWhite from "../assets/gh-white.svg"
+import behanceWhite from "../assets/behance-white.svg"
 import site from "../assets/link.svg"
+import siteWhite from "../assets/link-white.svg"
 
 
 export default function IconButton (props){
 
-    console.log(props.to)
-
     function icon(){
         if(props.to === "github"){
+            if(window.innerWidth > 960){
+                return githubWhite
+            }
             return github
         } else if (props.to === 'behance'){
+            if(window.innerWidth > 960){
+                return behanceWhite
+            }
             return behance
         } else if (props.to === 'site'){
+            if(window.innerWidth > 960){
+                return siteWhite
+            }
             return site
         }
-    }
-
-    function hover(){
-        console.log("Hello")
     }
 
     
@@ -34,7 +40,7 @@ export default function IconButton (props){
                     display: inline-block;
                     height: 25px;
                     width: 25px;
-                    margin: 0 ${rhythm(0.5)};
+                    margin: 0 ${rhythm(1)} 0 0;
                     img { 
                         height: 100%; 
                         width: 100%;

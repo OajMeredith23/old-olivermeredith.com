@@ -33,9 +33,9 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Skills", hint: "Seperate each point with a comma", name: "skill", widget: "list", required: false}
       - { label: "Category", hint: "Seperate each point with a comma", name: "category", widget: "list", required: false}
-      - { label: "Link", hint: "link to outside source", name: "Site", widget: "string", required: false}
-      - { label: "Github - Link", hint: "link to github", name: "Github", widget: "string", required: false}
-      - { label: "Behance - Link", hint: "link to behance", name: "Behance", widget: "string", required: false}
+      - { label: "Link", hint: "link to outside source", name: "Site", widget: "string", default: "None", required: false}
+      - { label: "Github - Link", hint: "link to github", name: "Github", widget: "string", default: "None", required: false}
+      - { label: "Behance - Link", hint: "link to behance", name: "Behance", widget: "string", default: "None", required: false}
       - { label: "Description", name: "description", widget: "string" }
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
