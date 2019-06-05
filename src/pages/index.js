@@ -54,7 +54,13 @@ export default () => {
                   justify-content: center;
                 `
             }>
-              <h1>
+              <h1 css={
+                css`
+                @media(min-width: 960px){
+                  font-size: ${rhythm(4)}
+                }
+                `
+              }>
                 {data.site.siteMetadata.title}
               </h1>
               <p>
@@ -94,11 +100,11 @@ export default () => {
                       made to fulfil a brief</p>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <h3>Projects</h3>
                 <p>Personal project, made for fun,
                     the challenge or to be useful</p>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact">
                   <h3>Contact</h3>

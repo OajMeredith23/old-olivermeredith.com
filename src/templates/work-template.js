@@ -97,6 +97,7 @@ export default function WorkContainer(props) {
                               to="site"
                               link={props.frontmatter.site}
                               alt="Visit Site"
+                              white={true}
                           />
                       }
 
@@ -105,6 +106,7 @@ export default function WorkContainer(props) {
                               to="github"
                               link={props.frontmatter.github}
                               alt="View source code on Github"
+                              whiteAtLargeScreen={true}
                           />
                       }
 
@@ -113,6 +115,7 @@ export default function WorkContainer(props) {
                               to="behance"
                               link={props.frontmatter.behance}
                               alt="View project on Behance"
+                              whiteAtLargeScreen={true}
                           />
                       }
               
