@@ -26,13 +26,13 @@ export default class IconButton extends Component{
             } else {
                 this.setState({icon: github}) 
             }
-            } else if (this.props.to === 'behance' && this.props.whiteAtLargeScreen){
-                if(window.innerWidth > 959){
+            } else if (this.props.to === 'behance'){
+                if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
                     this.setState({icon: behanceWhite}) 
                 } else { 
                     this.setState({icon: behance}) 
                 }
-            } else if (this.props.to === 'site'){
+            } else if (this.props.to === 'site' ){
                 if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
                     this.setState({icon: siteWhite}) 
                 } else { 

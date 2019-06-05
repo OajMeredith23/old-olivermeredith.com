@@ -97,7 +97,7 @@ export default function WorkContainer(props) {
                               to="site"
                               link={props.frontmatter.site}
                               alt="Visit Site"
-                              white={true}
+                              whiteAtLargeScreen={true}
                           />
                       }
 
@@ -110,7 +110,7 @@ export default function WorkContainer(props) {
                           />
                       }
 
-                      {props.frontmatter.behance != 'None' && 
+                      {props.frontmatter.behance != 'None'  && 
                           <IconButton
                               to="behance"
                               link={props.frontmatter.behance}
