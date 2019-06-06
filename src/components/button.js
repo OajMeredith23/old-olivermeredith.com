@@ -22,29 +22,6 @@ export default props => {
                 border: none;
                 cursor: pointer;
                 ${props.position}
-                & :hover {
-                    div{
-                        transition: .3s ease-out;
-                    }
-                    &::before{
-                        box-shadow: 0px 3px 6px rgba(0,0,0,.1);
-                        transition: .3s ease-out;
-                    }
-                }
-                &::before{
-                    transform-origin: top left;
-                    transition: .3s ease-out;
-                    content: "";
-                    position: absolute;
-                    top: -7.5px;
-                    left: -7.5px;
-                    width: calc(100% + 15px);
-                    height: calc(100% + 15px);
-                    background: #ededed;
-                    // z-index: 2;
-                    pointer-events: none;
-                    box-shadow: 0px 3px 6px rgba(0,0,0,.0)
-                }
             `
         }
         type="button"

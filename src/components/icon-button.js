@@ -67,12 +67,12 @@ export default class IconButton extends Component{
                 css={
                     css`
                         display: inline-block;
-                        height: 25px;
-                        width: 25px;
+                        height: 45px;
+                        width: 45px;
                         margin: 0 ${rhythm(1)} 0 0;
                         img { 
-                            height: 100%; 
-                            width: 100%;
+                            height: 70%; 
+                            width: 70%;
                             object-fit: contain;
                             &:hover {
                                 transform: scale(1.1);
@@ -109,12 +109,6 @@ export default class IconButton extends Component{
                         src={this.state.icon} 
                         alt={this.props.alt}
                         target="_blank"
-                        css={
-                            css`
-                                width: 100%;
-                                height: 100%;
-                            `
-                        }
                     />
                     <div>
                         <p>{this.props.alt}</p>
