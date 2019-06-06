@@ -63,6 +63,7 @@ export default class IconButton extends Component{
                 <a 
                 href={this.props.link} 
                 target="_blank"
+                rel="noopener"
                 css={
                     css`
                         display: inline-block;

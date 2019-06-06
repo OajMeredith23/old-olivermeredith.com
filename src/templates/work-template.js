@@ -20,14 +20,12 @@ export default function WorkContainer(props) {
       return React.cloneElement(child, {test: "click"});
     });
 
-    // const {props} = props.frontmatter;
-    
-  console.log(props)
     return(
       <>
       <Lightbox>
         <section css={
           css`
+            margin-top: ${rhythm(1)};
             @supports (display: grid){
     
               @media(min-width: ${breakpoints[0]}){

@@ -74,9 +74,10 @@ export default function WorkFooter(props){
                     }>More Work</h1>
                 {/* {data.allMarkdownRemark.edges.map(({ node }) => ()}) */}
                 {data.allMarkdownRemark.edges.map(({ node }) => {
-                    console.log(props.currentPage + " " + node.frontmatter.title)
                     return props.currentPage != node.frontmatter.title && (
-                        <article css={
+                        <article 
+                        key={node.id}
+                        css={
                             css`
                                 @media(min-width: 550px){
                                     flex: 1; 
