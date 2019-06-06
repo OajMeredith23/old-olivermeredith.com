@@ -11,19 +11,23 @@ export default function Lightbox(props) {
 
     useEffect(() => {
 
-        const target = document.querySelector('#lightbox-target');
-        const targetContainer = target.parentElement;
+        const target = document.querySelector('#lightbox-target'),
+        targetContainer = target.parentElement,
+        items = document.querySelectorAll('img');
+        
+        items.forEach(img => {
 
-        document.querySelectorAll('img').forEach(img => {
+            if (img.parentNode.tagName === 'A') {
+                return
+            } else {
+                img.style.cursor = "zoom-in";
+            }
 
-            img.style.cursor = "zoom-in";
 
             img.addEventListener('click', () => {
 
                 //If the image acts as a link (Like an Icon), don't lightbox it
-                if (img.parentNode.tagName === 'A') {
-                    return
-                }
+                
 
                 let src = img.getAttribute('src')
                 target.setAttribute('src', src)

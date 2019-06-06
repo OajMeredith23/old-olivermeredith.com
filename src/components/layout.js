@@ -126,7 +126,7 @@ function NavPage(props) {
                     }>
 
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
-                            let numPosts = 2;
+                            let numPosts = 3;
                             if(node.frontmatter.type === "Work"){
                                 if(i < numPosts){
                                     return (

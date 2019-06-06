@@ -8,6 +8,7 @@ import { color } from "../utils/colors"
 import LazyImg from "../components/lazy-img";
 import Lightbox from "../components/lightbox";
 import IconButton from "../components/icon-button"
+import WorkFooter from "../components/work-footer"
 
 
 export default function WorkContainer(props) {
@@ -23,7 +24,7 @@ export default function WorkContainer(props) {
     
   console.log(props)
     return(
-      
+      <>
       <Lightbox>
         <section css={
           css`
@@ -159,6 +160,10 @@ export default function WorkContainer(props) {
           
         </section>
       </Lightbox>
+      <WorkFooter
+        currentPage = {props.frontmatter.title}
+      />
+      </>
       
     )
   }

@@ -42,10 +42,10 @@ a
         
     .brief 
         // background: url('/img/perlinDots.png'), $darkgrey
-        background: $darkgrey
+        // background: $darkgrey
         background-size: cover  
         background-repeat: no-repeat
-        color: $bgColor
+        // color: $bgColor
         min-height: 70vh 
         display: flex 
         justify-content: center
@@ -77,14 +77,13 @@ a
         flex: 1
         padding-top: 2em
         padding-bottom: 2em
-        background: darken($bgColor, 4%)
         margin-right: 2rem
         margin-bottom: 1em
 
     .work-text
         @media(min-width: 959px)
             position: sticky 
-            top: 100px
+            top: 4em
             max-width: 300px
 
     .work-images 
@@ -92,7 +91,7 @@ a
         padding: 0
         @media(min-width: 600px)
             display: grid 
-            grid-gap: 0 1rem
+            grid-gap: 1rem
             grid-template-columns: repeat(8, 1fr)
         img 
             margin: 0
@@ -102,6 +101,13 @@ a
             position: relative
             top: -1em
             font-size: 12px
+    .work-image-video 
+        grid-column: 1 / -1
+        video 
+            border-radius: 10px
+            width: 100% 
+            height: 100% 
+            object-fit: cover
 
     .work-image-stack 
         grid-column: span 4
@@ -115,8 +121,8 @@ a
         flex-wrap: wrap
         display: grid 
         grid-template-columns: repeat(3, 1fr)
-        grid-gap: 1em
-        margin: 0 0 1em 0
+        grid-gap: 1rem
+        // margin: 0 0 1em 0
         
         &.small-tiles
             grid-template-columns: repeat(4, 1fr)

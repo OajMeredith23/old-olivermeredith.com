@@ -60,7 +60,9 @@ export default class IconButton extends Component{
         console.log(() => icon())
         return(
                 
-                <a href={this.props.link} 
+                <a 
+                href={this.props.link} 
+                target="_blank"
                 css={
                     css`
                         display: inline-block;

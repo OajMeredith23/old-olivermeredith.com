@@ -9,6 +9,7 @@ import Button from "./button"
 import IconButton from "./icon-button"
 import LazyImg from "./lazy-img"
 import Intersection from "./intersection"
+import WorkFooter from "./work-footer"
 
 
 
