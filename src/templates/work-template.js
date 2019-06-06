@@ -21,7 +21,7 @@ export default function WorkContainer(props) {
 
     // const {props} = props.frontmatter;
     
-  
+  console.log(props)
     return(
       
       <Lightbox>
