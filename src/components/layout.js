@@ -22,7 +22,7 @@ function NavPage(props) {
                 }
             }
             allMarkdownRemark(
-                sort: {fields: [frontmatter___date], order: DESC}
+                sort: {fields: [frontmatter___order], order: ASC}
                     limit: 4
                 ){
                 totalCount
@@ -125,32 +125,45 @@ function NavPage(props) {
                         `
                     }>
 
-                        {data.allMarkdownRemark.edges.map(({ node }) =>
-                            <li
-                                key={node.id}
-                                onClick={props.onClick}
-                            >
-                                <Link
-                                    to={node.fields.slug}
-                                    onClick={props.handleClick}
-                                    onMouseEnter={() => sethoverImage(node.frontmatter.thumbnail)}
-                                >
-                                    <p>{node.frontmatter.title}</p>
-                                </Link>
-                            </li>
+                        {data.allMarkdownRemark.edges.map(({ node }, i) => {
+                            let numPosts = 2;
+                            if(node.frontmatter.type === "Work"){
+                                if(i < numPosts){
+                                    return (
+                                        <li
+                                            key={node.id}
+                                            onClick={props.onClick}
+                                        >
+                                            <Link
+                                                to={node.fields.slug}
+                                                onClick={props.handleClick}
+                                                onMouseEnter={() => sethoverImage(node.frontmatter.thumbnail)}
+                                            >
+                                                <p>{node.frontmatter.title}</p>
+                                            </Link>
+                                        </li>
+                                    )
+                                } else { 
+                                    return(
+                                        <li>
+                                            <Link
+                                                to="/#work"
+                                            >
+                                                & {data.allMarkdownRemark.totalCount - numPosts } more
+                                            </Link>
+                                        </li>
+                                    )
+                                }
+                            } 
+                            }
+                        
 
                         )}
-                        {data.allMarkdownRemark.totalCount > 4 ?
-                            <li>
-                                <Link
-                                    to="/#work"
-                                >
-                                    & {data.allMarkdownRemark.totalCount - 4} more
-                            </Link>
-                            </li>
-                            : ""}
+
+                        
                     </ul>
                 </div>
+
 
                 <Link
                     to="/#contact"
@@ -168,9 +181,11 @@ function NavPage(props) {
                       position: relative; 
                       `
                 }>
-
-
-
+                    <IconButton
+                        to="github"
+                        link={data.site.siteMetadata.github}
+                        white={true}
+                    />
                 </div>
 
             </div>
@@ -185,7 +200,7 @@ function NavPage(props) {
                 `
             }>
 
-                {hoverImage && window.innerWidth > 767 ?
+                {hoverImage && window.innerWidth > 959 ?
                     <LazyImg
                         img={hoverImage}
                     />

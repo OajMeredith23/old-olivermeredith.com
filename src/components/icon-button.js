@@ -21,23 +21,37 @@ export default class IconButton extends Component{
 
     componentDidMount(){
         if(this.props.to === "github"){
+
             if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
+                this.setState({icon: githubWhite}) 
+            } else if(this.props.white){
                 this.setState({icon: githubWhite}) 
             } else {
                 this.setState({icon: github}) 
             }
-            } else if (this.props.to === 'behance'){
-                if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
-                    this.setState({icon: behanceWhite}) 
-                } else { 
-                    this.setState({icon: behance}) 
-                }
-            } else if (this.props.to === 'site' ){
-                if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
-                    this.setState({icon: siteWhite}) 
-                } else { 
-                    this.setState({icon: site}) 
-                }
+
+        } else if (this.props.to === 'behance'){
+
+            if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
+                this.setState({icon: behanceWhite}) 
+            } else if(this.props.white){
+                this.setState({icon: behanceWhite}) 
+            }
+            
+            else { 
+                this.setState({icon: behance}) 
+            }
+
+        } else if (this.props.to === 'site' ){
+
+            if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
+                this.setState({icon: siteWhite}) 
+            } else if(this.props.white){
+                this.setState({icon: siteWhite}) 
+            }  else { 
+                this.setState({icon: site}) 
+            }
+
         }
     }
     
