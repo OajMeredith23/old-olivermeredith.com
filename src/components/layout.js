@@ -36,6 +36,7 @@ function NavPage(props) {
                                 description
                                 date(formatString:"DD MMMM, YYYY")
                                 thumbnail
+                                poster
                                 github
                                 behance 
                                 site
@@ -137,7 +138,7 @@ function NavPage(props) {
                                             <Link
                                                 to={node.fields.slug}
                                                 onClick={props.handleClick}
-                                                onMouseEnter={() => sethoverImage(node.frontmatter.thumbnail)}
+                                                onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
                                             >
                                                 <p>{node.frontmatter.title}</p>
                                             </Link>

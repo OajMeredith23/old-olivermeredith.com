@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer'
 export default function LazyVid(props){
     const [ref, inView] = useInView({
         /* Optional options */
-        rootMargin: '50px 0px 300px 0px',
+        rootMargin: '200px 0px 300px 0px',
         threshold: 0,
       })
 
