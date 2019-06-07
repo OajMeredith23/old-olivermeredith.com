@@ -16,7 +16,8 @@ behance: None
 description: >-
   Web design and development for a small day care center, focused on creating a
   dialogue between the business and their customers.
-thumbnail: /img/childhaven-cover.jpg
+thumbnail: /img/childhaven/menu.mov
+poster: /img/childhaven-cover.jpg
 ---
 
 <div class="work-section brief">

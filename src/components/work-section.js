@@ -8,6 +8,7 @@ import Layout from "./layout"
 import Button from "./button"
 import IconButton from "./icon-button"
 import LazyImg from "./lazy-img"
+import LazyVid from "./lazy-vid"
 import Intersection from "./intersection"
 import WorkFooter from "./work-footer"
 
@@ -52,6 +53,10 @@ const Work = (props) => {
                     height: auto;
                     grid-row: 1;
                     grid-column: 3 / -1; 
+                    div {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
                 `
             }>
@@ -60,9 +65,21 @@ const Work = (props) => {
                     to={props.slug}
                 >
                     
-                    <LazyImg 
+                    {
+                    props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
+                        <LazyVid
+                            vid={props.thumbnail}
+                            poster={props.poster}
+                        >
+                        </LazyVid>    
+                        )
+                        : (
+                        <LazyImg 
                         img={props.thumbnail}
-                    />
+                        />
+                    )
+                            
+                        }
                 </Link>
             </div>
             <div css={
@@ -217,6 +234,7 @@ export default (props) => {
                     description
                     date(formatString:"DD MMMM, YYYY")
                     thumbnail 
+                    poster
                     github 
                     behance
                     site
@@ -247,6 +265,7 @@ export default (props) => {
                         id={node.id}
                         slug={node.fields.slug}
                         thumbnail={node.frontmatter.thumbnail}
+                        poster={node.frontmatter.poster}
                         title={node.frontmatter.title}
                         description={node.frontmatter.description}
                         skills={node.frontmatter.skill}

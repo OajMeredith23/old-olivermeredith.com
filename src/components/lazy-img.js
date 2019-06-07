@@ -2,13 +2,14 @@ import React, { useRef } from 'react'
 import { css } from "@emotion/core"
 import { useInView } from 'react-intersection-observer'
 
-export default props => {
+export default function LazyImg (props){
     const [ref, inView] = useInView({
         /* Optional options */
         rootMargin: '500px',
         threshold: 0,
       })
 
+      console.log("INVIEW" + " " + inView)
 
     return(
         <img 

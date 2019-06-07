@@ -8,7 +8,7 @@ export default function Intersect(props){
 
     const [ref, inView, entry] = useInView({
         threshold: 0,
-        rootMargin: `50px 0px ${props.bottomRoot} 0px`
+        rootMargin: `200px 0px ${props.bottomRoot} 0px`
     })
 
 

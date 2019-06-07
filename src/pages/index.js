@@ -13,6 +13,7 @@ import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 //Images
 import profile from '../assets/profile.jpg'
+import LazyImg from "../components/lazy-img";
 
 export default () => {
 
@@ -162,17 +163,10 @@ export default () => {
                 background: white; 
               `
             }>
-              <img 
-              css={
-                css`
-                  width: 100%;
-                  height: 100%; 
-                  object-fit: cover;
-                  border-radius: 10px;
-                `
-              }
-              src={profile}
-              alt=""/>
+              <LazyImg 
+                img={profile}
+                imgAlt="Photograph of Oliver Meredith"
+              />
             </div>
             <div css={
               css`

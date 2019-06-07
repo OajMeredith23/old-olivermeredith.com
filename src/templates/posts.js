@@ -50,6 +50,7 @@ export const query = graphql`
         description
         type
         thumbnail
+        poster
         github 
         behance 
         site

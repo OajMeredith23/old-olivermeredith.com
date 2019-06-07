@@ -38,5 +38,6 @@ collections:
       - { label: "github - Link", hint: "link to github - set to 'None' if none available", name: "github", widget: "string", default: "None", required: true}
       - { label: "behance - Link", hint: "link to behance - set to 'None' if none available", name: "behance", widget: "string", default: "None", required: true}
       - { label: "Description", name: "description", widget: "string" }
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Featured Image", hint: "Can be image or video - If video it must hardcoded", name: "thumbnail", widget: "image"}
+      - {label: "Video Poster", hint: "Will be used as the cover image on the work page", name: "poster", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}

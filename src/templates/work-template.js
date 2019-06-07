@@ -132,7 +132,6 @@ export default function WorkContainer(props) {
                 @supports (display: grid){
     
                   @media(min-width: ${breakpoints[0]}){
-                    // grid-column: 1 / -1;
                     position: absolute; 
                     height: auto;
                     top: 0; 
@@ -146,7 +145,7 @@ export default function WorkContainer(props) {
               }
             >
               <LazyImg
-                img={props.frontmatter.thumbnail}
+                img={props.frontmatter.poster}
               />  
             </animated.div>
     

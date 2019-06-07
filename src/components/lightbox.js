@@ -20,7 +20,6 @@ export default function Lightbox(props) {
         
         items.forEach(img => {
 
-
             if (img.parentNode.tagName === 'A') {
                 return
             } else {
@@ -43,7 +42,6 @@ export default function Lightbox(props) {
             targetContainer.classList.remove('open')
         })
 
-        // setImgs(imgs);
     })
 
     return (

@@ -72,7 +72,7 @@ export default class IconButton extends Component{
                         margin: 0 ${rhythm(1)} 0 0;
                         img { 
                             height: 70%; 
-                            width: 70%;
+                            transition: .1s;
                             object-fit: contain;
                             &:hover {
                                 transform: scale(1.1);
