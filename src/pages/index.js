@@ -5,12 +5,12 @@ import { rhythm } from "../utils/typography"
 import { css } from "@emotion/core"
 import {useSpring, animated} from 'react-spring'
 
-import '../styles/styles.sass'
 //Components
 import Layout from "../components/layout"
 import WorkSection from "../components/work-section"
 import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
+// import Dots from "../components/dots-scrollnav"
 //Images
 import profile from '../assets/profile.jpg'
 import LazyImg from "../components/lazy-img";
@@ -34,7 +34,6 @@ export default () => {
 
     return (
         <Layout>
-
           <section css={
             css`
               height: calc(100vh - ${rhythm(1.5)});

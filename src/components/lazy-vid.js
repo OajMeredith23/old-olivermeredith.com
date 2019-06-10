@@ -4,13 +4,13 @@ import { useInView } from 'react-intersection-observer'
 
 
 export default function LazyVid(props){
+    
     const [ref, inView] = useInView({
         /* Optional options */
         rootMargin: '200px 0px 300px 0px',
         threshold: 0,
       })
 
-    console.log("INVIEWVID" + " " + inView)
     return(
         <video 
             ref={ref}

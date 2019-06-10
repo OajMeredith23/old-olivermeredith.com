@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
@@ -32,14 +31,6 @@ const Work = (props) => {
                     padding: 0;
                 }
                 margin-bottom: ${rhythm(8)};
-                ${props.onScreen ? `
-                transform: translate(0, 0);
-                opacity: 1;` 
-                : 
-                `transform: translate(0, 100px);
-                opacity: 0; 
-                `}
-                transition: .5s ease-out;
                 `
             }
     
@@ -49,6 +40,7 @@ const Work = (props) => {
                 css`
                 height: 300px;
                 padding: 0;
+                overflow: hidden;
                 @media(min-width: ${breakPoints[0]}){
                     height: auto;
                     grid-row: 1;
@@ -99,8 +91,7 @@ const Work = (props) => {
                     <h1 css={
                         css`
                             margin: ${rhythm(1)} 0 0 0;
-
-                        `
+                            `
                     }>{props.title}</h1>
                 </Link>
             </div>
@@ -148,13 +139,26 @@ const Work = (props) => {
             <div css={
                 css`
                     display: flex;
-                    flex-direction: column;
-                    flex-wrap: wrap;
                     grid-row: -2; 
-                    grid-column: 3 / span 1;
+                    grid-column: 3 / -1;
+                    max-height: 45px;
                     @media(max-width: 960px){
                         margin-top: ${rhythm(2)};
-                        }
+                        opacity: 0;
+                    }
+                    ${props.onScreen ? `
+                    transform: translateX(0);
+                    opacity: 1;
+                    ` 
+                    : ` 
+                    transform: translateX(30px);
+                    opacity: 0;
+                    `
+                    }
+                    transition: 1s ease-out;
+
+                    a{
+                        margin-right: ${rhythm(1)}
                     }
                 `
             }>
@@ -169,14 +173,7 @@ const Work = (props) => {
                         />
                     </Link>  
                     
-                    <div css={
-                        css`
-                        display: flex;
-                        align-items: center;
-                        // justify-content: space-around;
-                        position: relative; 
-                        `
-                    }>
+                    
 
                         {props.site != 'None' && 
                             <IconButton
@@ -203,7 +200,7 @@ const Work = (props) => {
                         }
                 
 
-                    </div>
+                    
             </div>
 
         </section>
@@ -258,7 +255,7 @@ export default (props) => {
         <section>
             {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Intersection
-                    bottomRoot = '-200px'
+                    bottomRoot = '-90%'
                     key={node.id}
                 >
                     <Work

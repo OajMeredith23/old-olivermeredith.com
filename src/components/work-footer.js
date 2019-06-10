@@ -107,23 +107,23 @@ export default function WorkFooter(props){
                                     to={node.fields.slug}
                                 >
                                     <video 
-                                autoPlay 
-                                loop 
-                                muted 
-                                playsInline 
-                                poster={props.poster}
-                                css={
-                                    css`
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    border-radius: 10px;
-                                    `
-                                } 
-                                >
-                                
-                                <source src={node.frontmatter.thumbnail}/>
-                            </video>
+                                        autoPlay 
+                                        loop 
+                                        muted 
+                                        playsInline 
+                                        poster={props.poster}
+                                        css={
+                                            css`
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            border-radius: 10px;
+                                            `
+                                        } 
+                                        >
+                                        
+                                        <source src={node.frontmatter.thumbnail}/>
+                                    </video>
                                 </Link>
                             </div>
 
@@ -133,7 +133,16 @@ export default function WorkFooter(props){
                             <div css={
                                 css`
                                     display: flex;
-                                    flex-direction: column;
+                                    grid-row: -2; 
+                                    grid-column: 1 / -1;
+                                    max-height: 45px;
+                                    @media(max-width: 960px){
+                                        margin-top: ${rhythm(2)};
+                                        }
+                                    }
+                                    > * {
+                                        margin-right: ${rhythm(1)}
+                                    }
                                 `
                             }>
                                     <Link
@@ -147,29 +156,21 @@ export default function WorkFooter(props){
                                         />
                                     </Link>  
                                     
-                                    <div css={
-                                        css`
-                                        display: flex;
-                                        align-items: center;
-                                        position: relative; 
-                                        a { 
-                                            margin-top: -20px;
-                                            margin-bottom: 20px;
-                                        }
-                                        `
-                                    }>
+                                    
 
                                         {node.frontmatter.site != 'None' && 
                                             <IconButton
                                                 to="site"
                                                 link={node.frontmatter.site}
+                                                alt="Visit Site"
                                             />
                                         }
 
                                         {node.frontmatter.github != 'None' && 
                                             <IconButton
                                                 to="github"
-                                                link={node.frontmatter.github}
+                                                link={props.github}
+                                                alt="View source code on Github"
                                             />
                                         }
 
@@ -177,11 +178,12 @@ export default function WorkFooter(props){
                                             <IconButton
                                                 to="behance"
                                                 link={node.frontmatter.behance}
+                                                alt="View project on Behance"
                                             />
                                         }
                                 
 
-                                    </div>
+                                    
                             </div>
                         </article>
                     )

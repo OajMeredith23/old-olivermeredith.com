@@ -7,6 +7,7 @@ import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 import LazyImg from "./lazy-img"
 import IconButton from "../components/icon-button"
+// import Dots from "./dots-scrollnav";
 
 
 
@@ -230,6 +231,10 @@ export default (props) => {
             max-width: 1280px;
             padding: ${rhythm(1)};
             padding-top: ${rhythm(0.5)};
+            @media(min-width: 1280px){
+                display: grid; 
+                grid-template-columns: 20px 1fr;
+            }
             `}
         >
 
@@ -289,17 +294,20 @@ export default (props) => {
                         z-index: 6;
                         color: ${color.grey};
                         transition: .1s ease-out;
+                        @media(min-width: 1280px){
+                            grid-column: 2;
+                        }
                     `
                 }
             >
 
                 <Link
                     to="/"
-                    onClick={navOpen ? () => toggleNav : null}
+                    onClick={navOpen ? toggleNav : null}
                 >
                     <h3>
                         Oliver Meredith
-                </h3>
+                    </h3>
                 </Link>
 
                 <div
@@ -331,32 +339,32 @@ export default (props) => {
                             left: 0;
                             transform: rotate(0deg);
                             transition: .25s ease-in-out;
-                            &:nth-child(1){
+                            &:nth-of-type(1){
                                 top: 0px;
                             }
-                            &:nth-child(2){
+                            &:nth-of-type(2){
                                 top: 9px;
                                 // transform: rotate(45deg);
                             }
-                            &:nth-child(3){
+                            &:nth-of-type(3){
                                 top: 9px;
                             }
-                            &:nth-child(4){
+                            &:nth-of-type(4){
                                 top: 18px;
                             }
                             ${navOpen ? `
-                                &:nth-child(1){
+                                &:nth-of-type(1){
                                     top: 18px;
                                     width: 0%;
                                     left: 50%;
                                 }
-                                &:nth-child(2){
+                                &:nth-of-type(2){
                                     transform: rotate(45deg);
                                 }
-                                &:nth-child(3){
+                                &:nth-of-type(3){
                                     transform: rotate(-45deg);
                                 }
-                                &:nth-child(4){
+                                &:nth-of-type(4){
                                     top: 18px;
                                     width: 0%;
                                     left: 50%;
@@ -376,10 +384,27 @@ export default (props) => {
                 </div>
             </div>
 
+            {/* <Dots
+                styles={`
+                    display: none;
+                    @media(min-width: 1280px){
+                        display: block;
+                        grid-column: 1;
+                    }
+                    `
+                }
+            /> */}
 
+            <div css={
+                css`
+                    @media(min-width: 1280px){
+                        grid-column: 2;
+                    }
+                `
+            }>
 
-
-            {props.children}
+                {props.children}
+            </div>
         </div>
     )
 

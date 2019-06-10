@@ -12,35 +12,36 @@ import { useInView } from 'react-intersection-observer'
 
 export default function Lightbox(props) {
     
-    useEffect(() => {
+    const [imgs, setImgs] = useState('');
 
+    useEffect(() => {
         const target = document.querySelector('#lightbox-target'),
         targetContainer = target.parentElement,
-        items = document.querySelectorAll('img');
+        items = document.querySelectorAll('img'),
+        images = [];
         
-        items.forEach(img => {
+        items.forEach((img, i) => {
 
+            //If the image acts as a link (Like an Icon), don't lightbox it
             if (img.parentNode.tagName === 'A') {
                 return
             } else {
                 img.style.cursor = "zoom-in";
             }
-
+            //Add the ability to lazy load (Uses CDN that is inside Helmet tag in JSX)
             img.classList.add('lazyload')
 
             img.addEventListener('click', () => {
-
-                //If the image acts as a link (Like an Icon), don't lightbox it
-                
                 let src = img.getAttribute('src')
                 target.setAttribute('src', src)
                 targetContainer.classList.add('open')
             })
-
         })
+
         targetContainer.addEventListener('click', () => {
             targetContainer.classList.remove('open')
         })
+
 
     })
 

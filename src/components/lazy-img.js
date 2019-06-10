@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { css } from "@emotion/core"
 import { useInView } from 'react-intersection-observer'
+// import Img from "gatsby-image/withIEPolyfill"
 
 export default function LazyImg (props){
     const [ref, inView] = useInView({
@@ -9,7 +10,6 @@ export default function LazyImg (props){
         threshold: 0,
       })
 
-      console.log("INVIEW" + " " + inView)
 
     return(
         <img 

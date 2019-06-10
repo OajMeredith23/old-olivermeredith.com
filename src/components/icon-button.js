@@ -57,19 +57,19 @@ export default class IconButton extends Component{
     
 
     render(){
-        console.log(() => icon())
         return(
                 
                 <a 
                 href={this.props.link} 
                 target="_blank"
                 rel="noopener"
+                onMouseEnter={(e) => console.log(e)}
                 css={
                     css`
-                        display: inline-block;
                         height: 45px;
-                        width: 45px;
-                        margin: 0 ${rhythm(1)} 0 0;
+                        display: inline-block;
+                        position: relative;
+                        padding: 0 0.5em;
                         img { 
                             height: 70%; 
                             transition: .1s;
@@ -78,29 +78,30 @@ export default class IconButton extends Component{
                                 transform: scale(1.1);
                             }
                         }
-                        div{
-                            display: none;
-                            @media(min-width: 767px){
-                                display: block;
-                                position: absolute; 
-                                left: calc(100% + 20px);
-                                top: 0;
-                                white-space: nowrap;
-                                opacity: 0;
-                                transition: .2s ease-out;
-                                transform: translate(5px, 0px)
-                            }
-                        }
                         @media(min-width: 767px){
-                            &:hover{
-                                div{
-                                    color: ${color.grey};
-                                    opacity: 1;
-                                    transition: .1s ease-in;
-                                    transform: translate(0px, 0px)
+                            ${this.props.alt && 
+                                `&::after{
+                                    content: "${this.props.alt}";
+                                    position: absolute;
+                                    padding: 0.5em;
+                                    top: -50%;
+                                    left: 100%;
+                                    white-space: nowrap;
+                                    color: ${color.bgColor};
+                                    background-color: ${color.grey};
+                                    border-radius: 5px;
+                                    opacity: 0;
+                                    z-index: 5;
+                                    pointer-events: none;
                                 }
+                                &:hover{
+                                    &::after{
+                                        opacity: 1;
+                                        transition: .1s ease-out;
+                                    }
+                                }
+                            }`
                             }
-                        }
                         
                     `
                 }
@@ -110,9 +111,6 @@ export default class IconButton extends Component{
                         alt={this.props.alt}
                         target="_blank"
                     />
-                    <div>
-                        <p>{this.props.alt}</p>
-                    </div>
                     
                 </a>
                 
