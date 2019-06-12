@@ -18,7 +18,7 @@ export default function WorkFooter(props){
               sort: {fields: [frontmatter___order], order: ASC}
               filter: {
               frontmatter:{
-                type: {regex: "/Work/"}
+                 type: {regex: "/Work/"}
               }
             }){
               totalCount
