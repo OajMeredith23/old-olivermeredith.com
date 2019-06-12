@@ -1,0 +1,53 @@
+ 
+.container
+    margin: 4em 0
+    @media(min-width: 900px)
+        display: grid
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+        grid-template-rows: 50vh auto auto
+        grid-gap: 2rem 0
+        padding: 0
+        margin-bottom: 8rem
+    
+.poster
+    @media(min-width: 900px)
+        grid-row: 1 
+        grid-column: 3 / -1
+
+.titleSkills 
+    margin: 1em 0
+    @media(min-width: 900px)
+        display: contents
+.title
+    @media(min-width: 900px)
+        margin: 0
+        display: flex 
+        justify-content: flex-end 
+        flex-direction: column 
+        grid-column: span 2
+        h1 
+            margin: 0
+
+.skills 
+    font-family: 'Playfair Display'
+    font-style: italic
+    color: rgba(grey, 0.5)
+    grid-column: span 2
+    li 
+        margin-bottom: 1rem
+        @media(max-width: 900px)
+            display: inline-block 
+            margin-right: 1em
+
+
+.description 
+    grid-column: 3 / span 4
+    @media(max-width: 900px)
+        margin-bottom: 2em
+.buttons
+    display: flex 
+    justify-content: flex-start
+    align-items: center 
+    grid-column: 3 / -1
+    li 
+        margin-right: 1em

@@ -5,9 +5,9 @@ import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import Button from "../Buttons/Button"
-import IconButton from "../icon-button"
-import Intersection from "../intersection"
-import LazyImg from "../LazyLoad/lazy-img"
+import IconButton from "../Buttons/icon-button"
+import Intersection from "../Wrappers/intersection"
+import LazyImg from "../Wrappers/lazy-img"
 
 export default function WorkFooter(props){
 

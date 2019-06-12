@@ -6,14 +6,14 @@ import { css } from "@emotion/core"
 import {useSpring, animated} from 'react-spring'
 
 //Components
-import Layout from "../components/layout"
-import WorkSection from "../components/work-section"
+import Layout from "../components/Layout/layout"
+import WorkSection from "../components/WorkDisplays/Work-module"
 import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
 // import Dots from "../components/dots-scrollnav"
 //Images
 import profile from '../assets/profile.jpg'
-import LazyImg from "../components/lazy-img";
+import LazyImg from "../components/Wrappers/lazy-img";
 
 export default () => {
 

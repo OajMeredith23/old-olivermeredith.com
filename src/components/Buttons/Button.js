@@ -18,10 +18,8 @@ export default props => {
                 background: transparent;
                 color: ${color.darkgrey};
                 position: relative;
-                top: -10px;
                 border: none;
                 cursor: pointer;
-                ${props.position}
             `
         }
         type="button"
