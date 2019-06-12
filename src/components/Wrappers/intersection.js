@@ -12,6 +12,7 @@ export default function Intersect(props){
     })
 
 
+    //Passes a prop of onScreen to child element, is true if on the screen
     const childWithProp = React.Children.map(props.children, (child) => {
         return React.cloneElement(child, {onScreen: inView});
     });

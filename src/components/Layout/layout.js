@@ -3,11 +3,10 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { useStaticQuery, StaticQuery, Link, graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
-import { rhythm } from "../utils/typography"
-import { color } from "../utils/colors"
-import LazyImg from "./LazyLoad/lazy-img"
-import IconButton from "../components/icon-button"
-// import Dots from "./dots-scrollnav";
+import { rhythm } from "../../utils/typography"
+import { color } from "../../utils/colors"
+import LazyImg from "../Wrappers/lazy-img"
+import IconButton from "../Buttons/icon-button"
 
 
 

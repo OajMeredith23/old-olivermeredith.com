@@ -1,13 +1,13 @@
 import React, {useEffect, Component} from 'react'
 import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
-import { color } from "../utils/colors"
-import github from "../assets/gh-black.svg"
-import behance from "../assets/behance-black.svg"
-import githubWhite from "../assets/gh-white.svg"
-import behanceWhite from "../assets/behance-white.svg"
-import site from "../assets/link.svg"
-import siteWhite from "../assets/link-white.svg"
+import { rhythm } from "../../utils/typography"
+import { color } from "../../utils/colors"
+import github from "../../assets/gh-black.svg"
+import behance from "../../assets/behance-black.svg"
+import githubWhite from "../../assets/gh-white.svg"
+import behanceWhite from "../../assets/behance-white.svg"
+import site from "../../assets/link.svg"
+import siteWhite from "../../assets/link-white.svg"
 
 
 export default class IconButton extends Component{
@@ -70,6 +70,9 @@ export default class IconButton extends Component{
                         display: inline-block;
                         position: relative;
                         padding: 0 0.5em;
+                        display: flex; 
+                        justify-content: center; 
+                        align-items: center;
                         img { 
                             height: 70%; 
                             transition: .1s;

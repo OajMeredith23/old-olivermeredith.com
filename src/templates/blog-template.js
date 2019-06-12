@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import {useSpring, animated} from 'react-spring'
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
-import LazyImg from "../components/lazy-img";
+import LazyImg from "../components/Wrappers/lazy-img";
 
 
 export default (props) => {
