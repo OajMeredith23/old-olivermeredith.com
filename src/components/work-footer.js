@@ -79,25 +79,17 @@ export default function WorkFooter(props){
                         key={node.id}
                         css={
                             css`
+                            margin-bottom: ${rhythm(1)};
                                 @media(min-width: 550px){
                                     flex: 1; 
                                     margin-right: 1rem;
                                     max-width: calc(50% - 1rem);
-                                    display: grid;
-                                    grid-template-columns: 1fr;
-                                    grid-template-rows: 300px 75px 1fr;
                                     &:last-child{
                                         margin-right: 0;
                                     }
-                                    h2{
-                                        margin-top: 1rem;
-                                    }
-                                    > * {
-                                        grid-column: 1;
-                                    }
                                 }
                                 h2 {
-                                    margin-bottom: 2rem;
+                                    margin: ${rhythm(1)} 0;
                                 }
                             `
                         }>
@@ -137,7 +129,7 @@ export default function WorkFooter(props){
                                     grid-column: 1 / -1;
                                     max-height: 45px;
                                     @media(max-width: 960px){
-                                        margin-top: ${rhythm(2)};
+                                        margin-top: ${rhythm(1)};
                                         }
                                     }
                                     > * {

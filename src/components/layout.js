@@ -104,63 +104,69 @@ function NavPage(props) {
                 {/* //Work Links */}
 
                 <div>
-                    <li>
-                        <Link
-                            to="/#work"
-                            onClick={props.onClick}
-                        >
-                            <h1>Work</h1>
-                        </Link>
-                    </li>
-                    <ul css={
-                        css`
-                            & > li {
-                                margin: ${rhythm(1)} 0;
-                            }
-                            @media(min-width: 960px){
-                                & > li{
-                                    margin: 0 0;
-                                    display: inline-block;
-                                    padding: ${rhythm(0.5)} ${rhythm(1)} 0 0;
-                                }
-                            }
-                        `
-                    }>
+                    <ul>
+                        <li>
+                            <Link
+                                to="/#work"
+                                onClick={props.onClick}
+                            >
+                                <h1>Work</h1>
+                            </Link>
+                        </li>
+                    
+                        <li>
+                            <ul css={
+                                    css`
+                                        & > li {
+                                            margin: ${rhythm(1)} 0;
+                                        }
+                                        margin: 0;
+                                        padding: 0;
+                                        @media(min-width: 960px){
+                                            & > li{
+                                                margin: 0 0;
+                                                display: inline-block;
+                                                padding: ${rhythm(1)} ${rhythm(1)} 0 0;
+                                            }
+                                        }
+                                    `
+                                }>
+                                {data.allMarkdownRemark.edges.map(({ node }, i) => {
+                                    let numPosts = 3;
+                                    if(node.frontmatter.type === "Work"){
+                                        if(i < numPosts){
+                                            return (
+                                                <li
+                                                    key={node.id}
+                                                    onClick={props.onClick}
+                                                >
+                                                    <Link
+                                                        to={node.fields.slug}
+                                                        onClick={props.handleClick}
+                                                        onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
+                                                    >
+                                                        <p>{node.frontmatter.title}</p>
+                                                    </Link>
+                                                </li>
+                                            )
+                                        } else { 
+                                            return(
+                                                <li>
+                                                    <Link
+                                                        to="/#work"
+                                                    >
+                                                        & {data.allMarkdownRemark.totalCount - numPosts } more
+                                                    </Link>
+                                                </li>
+                                            )
+                                        }
+                                    } 
+                                    }
+                                
 
-                        {data.allMarkdownRemark.edges.map(({ node }, i) => {
-                            let numPosts = 3;
-                            if(node.frontmatter.type === "Work"){
-                                if(i < numPosts){
-                                    return (
-                                        <li
-                                            key={node.id}
-                                            onClick={props.onClick}
-                                        >
-                                            <Link
-                                                to={node.fields.slug}
-                                                onClick={props.handleClick}
-                                                onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
-                                            >
-                                                <p>{node.frontmatter.title}</p>
-                                            </Link>
-                                        </li>
-                                    )
-                                } else { 
-                                    return(
-                                        <li>
-                                            <Link
-                                                to="/#work"
-                                            >
-                                                & {data.allMarkdownRemark.totalCount - numPosts } more
-                                            </Link>
-                                        </li>
-                                    )
-                                }
-                            } 
-                            }
-                        
-
-                        )}
+                                )}
+                            </ul>
+                        </li>
 
                         
                     </ul>
@@ -278,8 +284,6 @@ export default (props) => {
                     `
                 }
             >
-
-
                 <NavPage onClick={toggleNav} />
             </section>
 
