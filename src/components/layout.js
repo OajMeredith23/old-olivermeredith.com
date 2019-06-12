@@ -246,6 +246,7 @@ export default (props) => {
 
             <Helmet>
                 <meta charSet="utf-8" />
+                {/* <meta/> */}
                 <title>Oliver Meredith</title>
             </Helmet>
 
