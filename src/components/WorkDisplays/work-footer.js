@@ -2,12 +2,12 @@ import React from "react"
 import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
-import { color } from "../utils/colors"
-import Button from "./button"
-import IconButton from "./icon-button"
-import Intersection from "./intersection"
-import LazyImg from "./lazy-img"
+import { rhythm } from "../../utils/typography"
+import { color } from "../../utils/colors"
+import Button from "../Buttons/Button"
+import IconButton from "../icon-button"
+import Intersection from "../intersection"
+import LazyImg from "../LazyLoad/lazy-img"
 
 export default function WorkFooter(props){
 

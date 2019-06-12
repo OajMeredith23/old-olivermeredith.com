@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from "@emotion/core"
-import { rhythm } from "../utils/typography"
-import { color } from "../utils/colors"
+import { rhythm } from "../../utils/typography"
+import { color } from "../../utils/colors"
 
 
 export default props => {

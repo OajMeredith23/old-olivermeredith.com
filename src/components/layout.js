@@ -5,7 +5,7 @@ import { useStaticQuery, StaticQuery, Link, graphql } from "gatsby"
 import { Helmet } from 'react-helmet'
 import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
-import LazyImg from "./lazy-img"
+import LazyImg from "./LazyLoad/lazy-img"
 import IconButton from "../components/icon-button"
 // import Dots from "./dots-scrollnav";
 

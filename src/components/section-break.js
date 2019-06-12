@@ -17,7 +17,6 @@ export default props => {
                     @media(min-width: 560px){
                         font-size: ${rhythm(4)};
                     }
-                    // opacity: .5;
                 `
             }>{props.text}</h1>
         </div>
