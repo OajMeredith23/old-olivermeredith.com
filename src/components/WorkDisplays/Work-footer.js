@@ -94,7 +94,11 @@ export default function WorkFooter(props){
                             `
                         }>
 
-                            <div>
+                            <div css={
+                                css`
+                                    height: 300px;
+                                `
+                            }>
                                 <Link
                                     to={node.fields.slug}
                                 >

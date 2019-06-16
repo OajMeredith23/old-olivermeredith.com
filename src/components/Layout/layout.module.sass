@@ -1,0 +1,145 @@
+
+.navScreen
+    max-width: 1280px
+    padding: 1em 
+    // margin-top: 3em
+    margin: 0 auto 
+    @media(min-width: 960px)
+        min-height: calc(100vh - 12em)
+        display: flex
+        align-items: center
+    
+.list 
+    flex: 2
+    ul, li
+        margin: 0
+        padding: 0
+    li 
+        margin: 2em 0
+        transform: translateY(-20px)
+        opacity: 0
+        transition: .4s ease-out
+    &.show
+        li 
+            transform: translateY(0)
+            opacity: 1
+            // transition: all .4s ease-out 
+            transition-duration: .4s 
+            transition-timing-function: ease-out
+            @for $i from 1 through 5
+                &:nth-of-type(#{$i})
+                    transition-delay: $i * 0.1s
+
+    @media(min-width: 960px)
+        height: 100%
+        display: flex 
+        flex-direction: column
+
+.sublist 
+    li 
+        display: inline-block
+        margin: 1em 1em 0 0
+
+.icon 
+    a
+        display: inline-block
+
+.imageTile 
+    display: none
+    @media(min-width: 900px)
+        flex: 3
+        display: block
+        height: 400px
+        opacity: 0.5
+        transform: translate(20px, 0)
+        transition: .4s ease-out
+        &.in 
+            transform: translate(0, 0)
+            opacity: 1
+            transition: .4s ease-out
+.navContainer
+    position: fixed
+    top: 0 
+    left: 0 
+    right: 0 
+    bottom: 0 
+    z-index: 5 
+    // background: #333 
+    // color: #F1F1EF
+    pointer-events: none
+    opacity: 0
+    transform: translate(0, -40px)
+    transition: .4s ease-out
+    &.open 
+        pointer-events: auto
+        opacity: 1
+        transform: translate(0, 0)
+        transition: .4s ease-out .1s
+            
+
+.container
+    margin: 0 auto 
+    max-width: 1280px
+    padding: 1em
+
+.navBar 
+    position: sticky 
+    top: 1em 
+    width: 100% 
+    height: 25px
+    color: darken(#f1f1ef, 33%)
+    z-index: 6
+
+.content
+    opacity: 1 
+    transition: .3s ease-out .2s
+.hide
+    transform: translate(0, 50px) 
+    transition: .2s ease-out
+    opacity: 0 
+    
+.hamburger 
+    width: 35px 
+    height: 25px
+    position: absolute
+    top: 0 
+    right: 0 
+    transition: .4s ease-out 
+    cursor: pointer 
+    & span 
+        display: block 
+        position: absolute
+        height: 3px
+        width: 100%
+        background: darken(#f1f1ef, 33%)
+        border-radius: 9px 
+        opacity: 1 
+        left: 0 
+        transform: rotate(0deg)
+        transition: .25s ease-out
+        &:nth-of-type(1)
+            top: 0 
+        &:nth-of-type(2)
+            top: 9px
+        &:nth-of-type(3)
+            top: 9px
+        &:nth-of-type(4)
+            top: 18px
+    &.clicked 
+        span
+            &:nth-of-type(1)
+                top: 18px
+                width: 0%
+                left: 50%
+            &:nth-of-type(2)
+                transform: rotate(45deg)
+            &:nth-of-type(3)
+                transform: rotate(-45deg)
+            &:nth-of-type(4)
+                width: 0
+                left: 50% 
+
+
+    &:hover 
+        & span
+            background: #35E5A1

@@ -10,6 +10,7 @@ import Lightbox from "../components/Wrappers/lightbox";
 import IconButton from "../components/Buttons/icon-button"
 import WorkFooter from "../components/WorkDisplays/Work-footer"
 
+import styles from "./md-styles.sass"
 
 export default function WorkContainer(props) {
 
@@ -23,7 +24,8 @@ export default function WorkContainer(props) {
     return(
       <>
       <Lightbox>
-        <section css={
+        <section 
+        css={
           css`
             margin-top: ${rhythm(1)};
             @supports (display: grid){

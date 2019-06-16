@@ -138,7 +138,7 @@ export default () => {
                 @media(min-width: 768px){
                   height: auto;
                   display: block;
-                  grid-column: 1 / span 8; 
+                  grid-column: 1 / span 7; 
                   grid-row: 1 / span 2;
                   background: ${color.primary};
                   position: relative;
@@ -153,7 +153,7 @@ export default () => {
               height: 300px;
                 @media(min-width: 768px){
                   height: auto;
-                  grid-column: 1 / span 7;
+                  grid-column: 1 / span 6;
                   grid-row: 2 / span 2;
                   margin-bottom: ${rhythm(0)};
                 }
@@ -169,14 +169,12 @@ export default () => {
             </div>
             <div css={
               css`
-                grid-column: 9 / -2;
+                grid-column: 9 / -1;
                 grid-row: 3;
               `
             }>
-            <Link to="/about">
               <h1>Say Hi</h1>
-            </Link>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maxime temporibus in quos sed quod modi explicabo suscipit voluptatum earum?</p>
+              <h2><a href="mailto:mail@olivermeredith.com">mail@olivermeredith.com</a></h2>
             </div>
           </section>
         </Layout>

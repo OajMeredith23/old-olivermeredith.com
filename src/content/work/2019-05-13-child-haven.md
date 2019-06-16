@@ -17,7 +17,7 @@ description: >-
   Web design and development for a small day care center, focused on creating a
   dialogue between the business and their customers.
 thumbnail: /img/childhaven/menu.mov
-poster: /img/childhaven-cover.jpg
+poster: /img/childhaven/childhaven-mockup.png
 ---
 
 <div class="work-section brief">
