@@ -7,6 +7,8 @@ import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import LazyImg from "../Wrappers/lazy-img"
 import IconButton from "../Buttons/icon-button"
+
+import favicon from '../../assets/favicon.png'
 import styles from "./layout.module.sass"
 
 
@@ -177,10 +179,23 @@ export default (props) => {
 
         <div className={styles.container}>
 
-            <Helmet>
+            <Helmet
+            title="Oliver Meredith"
+            meta={[
+                {
+                  name: "description",
+                  content: "Oliver Meredith — Front end developer that's curious about user experiences",
+                },
+                {
+                  name: "keywords",
+                  content: "frontend, developer",
+                },
+              ]}
+              link={[
+                { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
+              ]}
+              >
                 <meta charSet="utf-8" />
-                {/* <meta/> */}
-                <title>Oliver Meredith</title>
             </Helmet>
 
 
