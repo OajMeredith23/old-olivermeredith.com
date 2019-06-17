@@ -34,11 +34,21 @@ poster: /img/childhaven/childhaven-mockup.png
       </div>
     </div>
     <div class="work-images">
-      <div class="work-image-video">
-        <video autoplay loop muted playsinline src="/img/childhaven/menu.mov"></video>      
+      <div class="work-image-fullwidth">
+        <img src="/img/childhaven/childhaven-cover.jpg" alt="">
+      </div>
+      <div class="work-image-fullwidth">
+        <img src="/img/childhaven/phone.jpg" alt="">
       </div>
       <div class="work-image-video">
         <video autoplay loop muted playsinline src="/img/childhaven/booking.mov"></video>      
+      </div>
+      <div class="work-image-grid large-tiles">
+          <video autoplay loop muted playsinline src="/img/childhaven/kidscafe.mov"></video>      
+          <video autoplay loop muted playsinline src="/img/childhaven/homepage.mov"></video>      
+      </div>
+      <div class="work-image-video">
+        <video autoplay loop muted playsinline src="/img/childhaven/menu.mov"></video>  
       </div>
     </div>
 </div>

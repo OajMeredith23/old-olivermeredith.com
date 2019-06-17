@@ -9,6 +9,7 @@ import IconButton from "../Buttons/icon-button"
 import Intersection from "../Wrappers/intersection"
 import LazyImg from "../Wrappers/lazy-img"
 
+import styles from "./Work-footer.module.sass"
 export default function WorkFooter(props){
 
     const data = useStaticQuery(
@@ -48,76 +49,25 @@ export default function WorkFooter(props){
         `
       )
         return(
-            <section css={
-                css`
-                    margin-top: 30vh;
-                    @media(min-width: 550px){
-                        // display: grid; 
-                        // grid-template-columns: repeat(3, 1fr);
-                        // grid-gap: 1rem;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        // margin: 0 -1em;
-                        background: rgba(20,20,20, 0.03);
-                        padding: ${rhythm(1)};
-                        // margin: 0 -${rhythm(1)};
-                        border-radius: 10px;
-                    }
-                    
-                    `
-                }>
-                <h1 css={
-                    css`
-                        width: 100%;
-                        `
-                    }>More Work</h1>
+            <section className={styles.container}>
+                <h1>More Work</h1>
                 {/* {data.allMarkdownRemark.edges.map(({ node }) => ()}) */}
                 {data.allMarkdownRemark.edges.map(({ node }) => {
                     return props.currentPage != node.frontmatter.title && (
-                        <article 
-                        key={node.id}
-                        css={
-                            css`
-                            margin-bottom: ${rhythm(1)};
-                                @media(min-width: 550px){
-                                    flex: 1; 
-                                    margin-right: 1rem;
-                                    max-width: calc(50% - 1rem);
-                                    &:last-child{
-                                        margin-right: 0;
-                                    }
-                                }
-                                h2 {
-                                    margin: ${rhythm(1)} 0;
-                                }
-                            `
-                        }>
+                        <article key={node.id} className={styles.module}>
 
-                            <div css={
-                                css`
-                                    height: 300px;
-                                `
-                            }>
+                            <div className={styles.videoContainer}>
                                 <Link
                                     to={node.fields.slug}
                                 >
                                     <video 
+                                        className={styles.vid}
                                         autoPlay 
                                         loop 
                                         muted 
                                         playsInline 
                                         poster={props.poster}
-                                        css={
-                                            css`
-                                            width: 100%;
-                                            height: 100%;
-                                            object-fit: cover;
-                                            border-radius: 10px;
-                                            `
-                                        } 
                                         >
-                                        
                                         <source src={node.frontmatter.thumbnail}/>
                                     </video>
                                 </Link>
@@ -126,34 +76,16 @@ export default function WorkFooter(props){
                             <h2>{node.frontmatter.title}</h2>
 
 
-                            <div css={
-                                css`
-                                    display: flex;
-                                    grid-row: -2; 
-                                    grid-column: 1 / -1;
-                                    max-height: 45px;
-                                    @media(max-width: 960px){
-                                        margin-top: ${rhythm(1)};
-                                        }
-                                    }
-                                    > * {
-                                        margin-right: ${rhythm(1)}
-                                    }
-                                `
-                            }>
+                            <div className={styles.buttons}>
                                     <Link
                                         to={node.fields.slug}
                                     >
                                         <Button 
-                                            position="grid-column: span 3; 
-                                            width: 100px; 
-                                            margin-bottom: 2em;"
                                             text="View"
                                         />
                                     </Link>  
                                     
                                     
-
                                         {node.frontmatter.site != 'None' && 
                                             <IconButton
                                                 to="site"

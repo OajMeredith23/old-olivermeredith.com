@@ -72,14 +72,14 @@ function NavPage(props) {
                     </Link>
                 </li>
 
-                <li>
+                {/* <li>
                     <Link
                         to="/about"
                         onClick={props.onClick}
                     >
                         <h1>About</h1>
                     </Link>
-                </li>
+                </li> */}
 
                 {/* //Work Links */}
 
@@ -220,6 +220,10 @@ export default (props) => {
             <main className={`${navOpen ? styles.hide : styles.content}`}>
                 {props.children}
             </main>
+            <footer className={styles.footer}>
+                <Link to="/"><p>Home</p></Link>
+                <p>copyright Oliver Meredith 2019</p>
+            </footer>
         </div>
     )
 

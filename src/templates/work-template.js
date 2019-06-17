@@ -10,95 +10,33 @@ import Lightbox from "../components/Wrappers/lightbox";
 import IconButton from "../components/Buttons/icon-button"
 import WorkFooter from "../components/WorkDisplays/Work-footer"
 
-import styles from "./md-styles.sass"
+import mdStyles from "./md-styles.sass"
+import styles from "./work-template.module.sass"
 
 export default function WorkContainer(props) {
 
     const fadeDown = useSpring({opacity: 1, marginLeft: 0, from: {opacity: 0, marginLeft: -200}})
     const breakpoints = ['959px'];
 
-    const childWithProp = React.Children.map(props.children, (child) => {
-      return React.cloneElement(child, {test: "click"});
-    });
 
     return(
       <>
       <Lightbox>
-        <section 
-        css={
-          css`
-            margin-top: ${rhythm(1)};
-            @supports (display: grid){
-    
-              @media(min-width: ${breakpoints[0]}){
-                display: grid;
-                grid-gap: 30px 10px;
-                grid-template-columns: repeat(12, 1fr);
-                grid-template-rows: 100vh auto;
-              }
-            }
-    
-          `
-        }>  
-          <div css={
-            css`
-              @supports (display: grid){
-    
-                @media(min-width: ${breakpoints[0]}){
-                  display: grid;
-                  grid-gap: 30px 10px;
-                  grid-template-columns: repeat(12, 1fr);
-                  grid-template-rows: 50vh 200px;
-                  grid-column: 1 / -1;
-                  align-self: center;
-                }
-              }
-              display: flex;  
-              flex-flow: column wrap;
-              justify-content: space-around;
-              height: calc(100vh - ${rhythm(1)}); 
-              `
-            }>
-            <div css={
-              css`
-              
-                max-width: 400px;
-                @supports (display: grid){
-    
-                  @media(min-width: ${breakpoints[0]}){
-                    color: ${color.bgColor};
-                    grid-column: 8 / span 4;
-                    grid-row: 2;
-                    display: inline-block;
-                    align-self: flex-end;
-                    position: relative;
-                    z-index: 1;
-                    max-width: auto;
-                  }
-    
-                }
-                
-              `
-            }>
+        <section className={styles.container}>  
+          <div className={styles.landing}>
+
+            <div className={styles.landingText}>
                 <h1>{props.frontmatter.title}</h1>
                 <p>{props.frontmatter.description}</p>
-                {console.log(props.frontmatter)}
 
-                <div css={
-                      css`
-                      display: flex;
-                      display: inline-block;
-                      align-items: center;
-                      position: relative; 
-                      `
-                  }>
+                <div className={styles.landingButtons}>
 
                       {props.frontmatter.site != 'None' && 
                           <IconButton
                               to="site"
                               link={props.frontmatter.site}
                               alt="Visit Site"
-                              whiteAtLargeScreen={true}
+                              // whiteAtLargeScreen={true}
                           />
                       }
 
@@ -107,7 +45,7 @@ export default function WorkContainer(props) {
                               to="github"
                               link={props.frontmatter.github}
                               alt="View source code on Github"
-                              whiteAtLargeScreen={true}
+                              // whiteAtLargeScreen={true}
                           />
                       }
 
@@ -116,39 +54,17 @@ export default function WorkContainer(props) {
                               to="behance"
                               link={props.frontmatter.behance}
                               alt="View project on Behance"
-                              whiteAtLargeScreen={true}
+                              // whiteAtLargeScreen={true}
                           />
                       }
               
 
                   </div>
-
             </div>
     
             <animated.div 
-            style={fadeDown}
-              css={
-                css`
-                height: 50vh;
-    
-                @supports (display: grid){
-    
-                  @media(min-width: ${breakpoints[0]}){
-                    position: absolute; 
-                    height: auto;
-                    top: 0; 
-                    left: 0; 
-                    right: 0; 
-                    bottom: 0;
-                    img {
-                      border-radius: 0;
-                    }
-                  }
-    
-                }
-                `
-              }
-            >
+            className={styles.landingImage}
+            style={fadeDown}>
               <LazyImg
                 img={props.frontmatter.poster}
               />  
@@ -157,9 +73,13 @@ export default function WorkContainer(props) {
           </div>
     
           <section className="content">
-              {childWithProp}
+              {props.children}
           </section>
-          
+            {props.frontmatter.site != 'None' && 
+              <div className={styles.finalLink}>
+                  <a href={props.frontmatter.site} target="_blank" rel="noopener norefferer"><h2>View the {props.frontmatter.title} website</h2></a>
+              </div>
+            }
         </section>
       </Lightbox>
       <WorkFooter

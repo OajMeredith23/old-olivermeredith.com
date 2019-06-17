@@ -66,13 +66,9 @@ export default class IconButton extends Component{
                 onMouseEnter={(e) => console.log(e)}
                 css={
                     css`
-                        height: 45px;
-                        display: inline-block;
+                        display: block;
                         position: relative;
-                        padding: 0 0.5em;
-                        display: flex; 
-                        justify-content: center; 
-                        align-items: center;
+                        padding: 0.5em;
                         img { 
                             height: 70%; 
                             transition: .1s;
@@ -110,6 +106,13 @@ export default class IconButton extends Component{
                 }
                 >
                     <img 
+                        css={
+                            css`
+                                height: 35px;
+                                width: 35px;
+                                margin: 0;
+                            `
+                        }
                         src={this.state.icon} 
                         alt={this.props.alt}
                         target="_blank"
