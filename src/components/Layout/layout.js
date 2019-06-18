@@ -196,6 +196,7 @@ export default (props) => {
               ]}
               >
                 <meta charSet="utf-8" />
+                <meta name="description" content="Oliver Meredith — Front end developer that's curious about user experiences"/>
             </Helmet>
 
 

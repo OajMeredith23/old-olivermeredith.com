@@ -8,6 +8,7 @@ import { color } from "../utils/colors"
 import LazyImg from "../components/Wrappers/lazy-img";
 import Lightbox from "../components/Wrappers/lightbox";
 import IconButton from "../components/Buttons/icon-button"
+import Button from "../components/Buttons/Button"
 import WorkFooter from "../components/WorkDisplays/Work-footer"
 
 import mdStyles from "./md-styles.sass"
@@ -77,7 +78,9 @@ export default function WorkContainer(props) {
           </section>
             {props.frontmatter.site != 'None' && 
               <div className={styles.finalLink}>
-                  <a href={props.frontmatter.site} target="_blank" rel="noopener norefferer"><h2>View the {props.frontmatter.title} website</h2></a>
+                <a href={props.frontmatter.site} target="_blank" rel="noopener noreferrer">
+                  <Button text={`View the ${props.frontmatter.title} website`}></Button>
+                </a>
               </div>
             }
         </section>
