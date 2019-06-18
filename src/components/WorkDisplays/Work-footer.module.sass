@@ -14,9 +14,10 @@
 
 .module 
     display: inline-block
-    max-width: calc(50% - 1rem)
     margin: 2em 0
     flex: 1
+    @media(min-width: 600px)
+        max-width: calc(50% - 1rem)
     h2 
         margin-top: 1em
 .videoContainer 
