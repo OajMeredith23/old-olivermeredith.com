@@ -8,7 +8,7 @@ import githubWhite from "../../assets/gh-white.svg"
 import behanceWhite from "../../assets/behance-white.svg"
 import site from "../../assets/link.svg"
 import siteWhite from "../../assets/link-white.svg"
-
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 export default class IconButton extends Component{
     
@@ -59,7 +59,7 @@ export default class IconButton extends Component{
     render(){
         return(
                 
-                <a 
+                <OutboundLink 
                 href={this.props.link} 
                 target="_blank"
                 rel="noopener"
@@ -118,7 +118,7 @@ export default class IconButton extends Component{
                         target="_blank"
                     />
                     
-                </a>
+                </OutboundLink>
                 
         )
     }
