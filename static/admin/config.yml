@@ -14,7 +14,7 @@ collections:
     editor:
      preview: true
     fields:
-      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog"], default: "Blog"}
+      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog", "Project"], default: "Blog"}
       - { label: "Title", name: "title", widget: "string" }
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -28,7 +28,7 @@ collections:
     editor:
      preview: true
     fields:
-      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog"], default: "Work"}
+      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog", "Project"], default: "Work"}
       - { label: "Order", name: "order", widget: "number", min: "0", max: "50"}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -41,3 +41,24 @@ collections:
       - {label: "Featured Image", hint: "Can be image or video - If video it must hardcoded", name: "thumbnail", widget: "image"}
       - {label: "Video Poster", hint: "Will be used as the cover image on the work page", name: "poster", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "projects"
+    label: "Project"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+     preview: true
+    fields:
+      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog", "Project"], default: "Project"}
+      - { label: "Order", name: "order", widget: "number", min: "0", max: "50"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Skills", hint: "Seperate each point with a comma", name: "skill", widget: "list", required: false}
+      - { label: "Category", hint: "Seperate each point with a comma", name: "category", widget: "list", required: false}
+      - { label: "link", hint: "link to outside source - set to 'None' if none available", name: "site", widget: "string", default: "None", required: true}
+      - { label: "github - Link", hint: "link to github - set to 'None' if none available", name: "github", widget: "string", default: "None", required: true}
+      - { label: "behance - Link", hint: "link to behance - set to 'None' if none available", name: "behance", widget: "string", default: "None", required: true}
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Featured Image", hint: "Can be image or video - If video it must hardcoded", name: "thumbnail", widget: "image"}
+      - { label: "Video Poster", hint: "Will be used as the cover image on the work page", name: "poster", widget: "image"}
+      - { label: "Body", name: "body", widget: "markdown"}
