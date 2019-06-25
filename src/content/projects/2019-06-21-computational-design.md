@@ -10,12 +10,11 @@ category:
 site: None
 github: None
 behance: None
-description: Generative posters created using p5.js
+description: Generative posters created using p5.js. Utilizing Perlin Noise to create random forms that feel organic and natural.
 thumbnail: /img/computational-design/perlin-dots-11.png
 poster: /img/computational-design/perlin-dots-14.png
 ---
-<div class="work-images">
-  <div class="work-image-grid">
+  <div class="work-grid">
     <img src="/img/computational-design/perlin-dots-1.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-2.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-3.png" alt="Generative design created using Perlin Noise in P5.js">
@@ -27,7 +26,7 @@ poster: /img/computational-design/perlin-dots-14.png
     <img src="/img/computational-design/perlin-dots-9.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-10.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-11.png" alt="Generative design created using Perlin Noise in P5.js">
-    <img src="/img/computational-design/perlin-dots-12.png" alt="Generative design created using Perlin Noise in P5.js">
+    <img src="/img/computational-design/perlin-dots-12.png" class="large" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-13.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-14.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-15.png" alt="Generative design created using Perlin Noise in P5.js">
@@ -41,4 +40,3 @@ poster: /img/computational-design/perlin-dots-14.png
     <img src="/img/computational-design/perlin-dots-23.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-24.png" alt="Generative design created using Perlin Noise in P5.js">
   </div>
-</div>

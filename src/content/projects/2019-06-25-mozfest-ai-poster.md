@@ -12,14 +12,11 @@ category:
 site: None
 github: None
 behance: None
-description: Mozfest Ai Brief
+description: A poster, created in colloboration with Nathanael Sherwood for a MozFest competition on the subject of Ai. Pattern created using p5.js and the layout in inDesign
 thumbnail: /img/mozfest.png
 poster: /img/mozfest-cover.png
 ---
-![]()
 
-# Mozfest Body Content
-
-![Finished poster](/img/mozfest.png "Finished poster for MozFest 2019")
-
-#
+<div class="work-image-fullwidth">
+  <img src="/img/mozfest.png">
+</div>

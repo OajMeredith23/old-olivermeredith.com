@@ -24,9 +24,7 @@ function NavPage(props) {
                 }
             }
             allMarkdownRemark(
-                sort: {fields: [frontmatter___order], order: ASC}
-                    limit: 4
-                ){
+                sort: {fields: [frontmatter___order], order: ASC}){
                 totalCount
                     edges{
                         node{
@@ -51,11 +49,9 @@ function NavPage(props) {
                         }
                       }
                     }
-                
-          
-          
         `
     )
+
 
     const [hoverImage, sethoverImage] = useState(null);
 
@@ -94,9 +90,7 @@ function NavPage(props) {
 
                     <ul className={styles.sublist}>
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
-                            let numPosts = 3 ; //Limit length of list
                             if(node.frontmatter.type === "Work"){
-                                if(i <= numPosts){
                                     return (
                                         <li
                                             key={node.id}
@@ -112,7 +106,7 @@ function NavPage(props) {
                                             </Link>
                                         </li>
                                     )
-                                } 
+                            }else { return }
                                 // else { 
                                 //     return(
                                 //         <li>
@@ -125,7 +119,6 @@ function NavPage(props) {
                                 //     )
                                 // }
                             } 
-                            }
                         )}
                     </ul>
                 </li>
@@ -142,7 +135,6 @@ function NavPage(props) {
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
                             let numPosts = 3; //Limit length of list
                             if(node.frontmatter.type === "Project"){
-                                if(i <= numPosts){
                                     return (
                                         <li
                                             key={node.id}
@@ -171,7 +163,6 @@ function NavPage(props) {
                                 //     )
                                 // }
                             } 
-                            }
                         )}
                     </ul>
                 </li>

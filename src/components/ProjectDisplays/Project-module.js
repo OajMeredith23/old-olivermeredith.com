@@ -20,7 +20,6 @@ const Project = (props) => {
         <article className={styles.item} key={props.key}>
 
           <div className={styles.poster}>
-
             <Link
                 to={props.slug}
             >
@@ -121,31 +120,27 @@ export default(props) => {
           
         `
       )
-      if(data.allMarkdownRemark.totalCount >= 2 ){
+      if(data.allMarkdownRemark.totalCount >= 1 ){
         return(
           <>
             <SectionBreak id="projects" text="Projects"/>
             <section className={styles.container}>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
-                    <Intersection
-                        bottomRoot = '-90%'
-                        key={node.id}
-                    >
-                        <Project
-                            id={node.id}
-                            slug={node.fields.slug}
-                            thumbnail={node.frontmatter.thumbnail}
-                            poster={node.frontmatter.poster}
-                            title={node.frontmatter.title}
-                            description={node.frontmatter.description}
-                            skills={node.frontmatter.skill}
-                            github={node.frontmatter.github}
-                            behance={node.frontmatter.behance}
-                            site={node.frontmatter.site}
-    
-                        />
-                    </Intersection>
-    
+                    
+                    <Project
+                        id={node.id}
+                        slug={node.fields.slug}
+                        thumbnail={node.frontmatter.thumbnail}
+                        poster={node.frontmatter.poster}
+                        title={node.frontmatter.title}
+                        description={node.frontmatter.description}
+                        skills={node.frontmatter.skill}
+                        github={node.frontmatter.github}
+                        behance={node.frontmatter.behance}
+                        site={node.frontmatter.site}
+
+                    />
+
                 ))}
             </section> 
           </>
