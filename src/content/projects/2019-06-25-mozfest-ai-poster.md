@@ -14,8 +14,10 @@ github: None
 behance: None
 description: Mozfest Ai Brief
 thumbnail: /img/mozfest.png
-poster: /img/mozfest.png
+poster: /img/mozfest-cover.png
 ---
+![]()
+
 # Mozfest Body Content
 
 ![Finished poster](/img/mozfest.png "Finished poster for MozFest 2019")
