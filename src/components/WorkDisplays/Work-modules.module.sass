@@ -8,16 +8,13 @@
         grid-gap: 2rem 0
         padding: 0
         margin-bottom: 8rem
-        // &:hover 
-        //     h1 
-        //         transition: .2s ease
-        //         color: #35E5A1
-        //         transition: .2s ease
-    
+        
 .poster
+    height: 300px 
     @media(min-width: 900px)
-        overflow: hidden
+        height: auto
         max-height: 60vh
+        overflow: hidden
         grid-row: 1 
         grid-column: 4 / -1
 
@@ -32,7 +29,7 @@
         justify-content: flex-end 
         flex-direction: column 
         grid-column: span 2
-        h1 
+        h2
             transition: .2s ease
             white-space: nowrap 
             margin: 0
@@ -59,4 +56,5 @@
     align-items: center 
     grid-column: 4 / -1
     li 
+        height: 50px
         margin-right: 1em

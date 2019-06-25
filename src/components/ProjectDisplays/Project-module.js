@@ -6,67 +6,44 @@ import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import Layout from "../Layout/layout"
-import SectionBreak from "../section-break"
 import Button from "../Buttons/Button"
 import IconButton from "../Buttons/icon-button"
 import LazyImg from "../Wrappers/lazy-img"
 import LazyVid from "../Wrappers/lazy-vid"
+import SectionBreak from "../section-break"
+
 import Intersection from "../Wrappers/intersection"
-import WorkFooter from "./Work-footer"
-import styles from "./Work-modules.module.sass"
-console.log({ styles })
+import styles from "./Project-module.module.sass"
 
+const Project = (props) => {
+    return(
+        <article className={styles.item} key={props.key}>
 
-const Work = (props) => {
+          <div className={styles.poster}>
 
+            <Link
+                to={props.slug}
+            >
+                {
+                    props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
+                        <LazyVid
+                            vid={props.thumbnail}
+                            poster={props.poster}
+                        />
+                    )
+                      : (
+                          <LazyImg
+                              img={props.thumbnail}
+                          />
+                      )
 
-    return (
+                }
+            </Link>
+          </div>
 
-        <article className={styles.container}>
-            <div className={styles.poster}>
-
-                <Link
-                    to={props.slug}
-                >
-
-                    {
-                        props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
-                            <LazyVid
-                                vid={props.thumbnail}
-                                poster={props.poster}
-                            />
-                        )
-                            : (
-                                <LazyImg
-                                    img={props.thumbnail}
-                                />
-                            )
-
-                    }
-                </Link>
-            </div>
-
-            <div className={styles.titleSkills}>
-                <div className={styles.title}>
-                    <Link to={props.slug}>
-                        <h2>{props.title}</h2>
-                    </Link>
-                </div>
-                <ul className={styles.skills}>
-                    {props.skills.map((item, i) =>
-                        <li key={i}>
-                            {item}
-                        </li>)}
-                </ul>
-            </div>
-
-            <div className={styles.description}>
-                <p>
-                    {props.description}
-                </p>
-            </div>
-
-
+            <h2>{props.title}</h2>
+            <p>{props.description}</p>
+            
             <ul className={styles.buttons}>
                 <li>
                     <Link
@@ -103,14 +80,11 @@ const Work = (props) => {
                     }
                 </li>
             </ul>
-
         </article>
-
     )
 }
 
-export default (props) => {
-
+export default(props) => {
     const data = useStaticQuery(
         graphql`
         {
@@ -118,7 +92,7 @@ export default (props) => {
               sort: {fields: [frontmatter___order], order: ASC}
               filter: {
               frontmatter:{
-                type: {regex: "/Work/"}
+                type: {regex: "/Project/"}
               }
             }){
               totalCount
@@ -130,7 +104,6 @@ export default (props) => {
                     title
                     skill
                     description
-                    date(formatString:"DD MMMM, YYYY")
                     thumbnail 
                     poster
                     github 
@@ -147,19 +120,18 @@ export default (props) => {
           }
           
         `
-    )
-
-
-    return (
-        <>
-            <SectionBreak id="work" text="Work"/>
-            <section>
+      )
+      if(data.allMarkdownRemark.totalCount >= 2 ){
+        return(
+          <>
+            <SectionBreak id="projects" text="Projects"/>
+            <section className={styles.container}>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     <Intersection
-                        bottomRoot='-90%'
+                        bottomRoot = '-90%'
                         key={node.id}
                     >
-                        <Work
+                        <Project
                             id={node.id}
                             slug={node.fields.slug}
                             thumbnail={node.frontmatter.thumbnail}
@@ -170,14 +142,13 @@ export default (props) => {
                             github={node.frontmatter.github}
                             behance={node.frontmatter.behance}
                             site={node.frontmatter.site}
-
+    
                         />
                     </Intersection>
-
+    
                 ))}
-            </section>
-        </>
-
-
-    )
+            </section> 
+          </>
+        )
+      } else { return null }
 }

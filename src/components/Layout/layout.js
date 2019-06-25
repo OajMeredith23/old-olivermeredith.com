@@ -84,7 +84,6 @@ function NavPage(props) {
                 </li> */}
 
                 {/* //Work Links */}
-
                 <li>
                     <Link
                         to="/#work"
@@ -95,9 +94,55 @@ function NavPage(props) {
 
                     <ul className={styles.sublist}>
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
-                            let numPosts = 3; //Limit length of list
+                            let numPosts = 3 ; //Limit length of list
                             if(node.frontmatter.type === "Work"){
-                                if(i < numPosts){
+                                if(i <= numPosts){
+                                    return (
+                                        <li
+                                            key={node.id}
+                                            onClick={props.onClick}
+                                        >
+                                            <Link
+                                                to={node.fields.slug}
+                                                onClick={props.handleClick}
+                                                onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
+                                                // onMouseLeave={() => sethoverImage('')}
+                                            >
+                                                <p>{node.frontmatter.title}</p>
+                                            </Link>
+                                        </li>
+                                    )
+                                } 
+                                // else { 
+                                //     return(
+                                //         <li>
+                                //             <Link
+                                //                 to="/#work"
+                                //             >
+                                //                 & {data.allMarkdownRemark.totalCount - numPosts } more
+                                //             </Link>
+                                //         </li>
+                                //     )
+                                // }
+                            } 
+                            }
+                        )}
+                    </ul>
+                </li>
+                {/* //Project Links */}
+                <li>
+                    <Link
+                        to="/#work"
+                        onClick={props.onClick}
+                    >
+                        <h1>Projects</h1>
+                    </Link>
+
+                    <ul className={styles.sublist}>
+                        {data.allMarkdownRemark.edges.map(({ node }, i) => {
+                            let numPosts = 3; //Limit length of list
+                            if(node.frontmatter.type === "Project"){
+                                if(i <= numPosts){
                                     return (
                                         <li
                                             key={node.id}

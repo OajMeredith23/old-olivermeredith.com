@@ -8,9 +8,9 @@ import {useSpring, animated} from 'react-spring'
 //Components
 import Layout from "../components/Layout/layout"
 import WorkSection from "../components/WorkDisplays/Work-module"
-import BlogSection from "../components/blog-section"
+import ProjectSection from "../components/ProjectDisplays/Project-module"
+// import BlogSection from "../components/blog-section"
 import SectionBreak from "../components/section-break"
-// import Dots from "../components/dots-scrollnav"
 //Images
 import profile from '../assets/profile.jpg'
 import LazyImg from "../components/Wrappers/lazy-img";
@@ -115,10 +115,10 @@ export default () => {
             </animated.ul>
           </section>
 
-          <SectionBreak id="work" text="Work"/>
 
             <WorkSection/>
 
+            <ProjectSection/>
           <SectionBreak id="contact" text="Contact"/>
 
           <section css={

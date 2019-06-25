@@ -4,15 +4,22 @@
     margin: 2em 0 2em 0
     @media(min-width: 768px)
         display: flex 
+        @supports(display: grid)
+            display: grid
+            grid-gap: 1em
+            grid-template-columns: repeat(3, 1fr)
 
 .landingText
     order: 2
-    flex: 1
     align-self: flex-end
     margin: 2em 0
     @media(min-width: 768px)
+        flex: 1
         margin: 0 2em
+        @supports(display: grid)
+            margin: 0
 
+            grid-column: 3
 
 
 .landingButtons 
@@ -21,7 +28,10 @@
         margin: 0 0.5em 0 0 
 
 .landingImage 
-    flex: 3
+    max-height: (calc(100vh - 6em))
+    flex: 2 
+    @supports(display: grid)
+        grid-column: 1 / span 2
 
             
 .finalLink 
