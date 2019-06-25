@@ -14,10 +14,6 @@ description: Generative posters created using p5.js
 thumbnail: /img/computational-design/perlin-dots-11.png
 poster: /img/computational-design/perlin-dots-14.png
 ---
-
-<!-- ![alt text](/img/computational-design/perlin-dots-1.png "Generative design created using Perlin Noise in P5.js")
-![alt text](/img/computational-design/perlin-dots-2.png "Generative design created using Perlin Noise in P5.js") -->
-
 <div class="work-images">
   <div class="work-image-grid">
     <img src="/img/computational-design/perlin-dots-1.png" alt="Generative design created using Perlin Noise in P5.js">
