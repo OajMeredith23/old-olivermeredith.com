@@ -12,8 +12,7 @@ export default function LazyImg (props){
 
 
     return(
-        <img 
-        css={
+        <img css={
             css`
                 background: #f9f9f9;
                 width: 100%;

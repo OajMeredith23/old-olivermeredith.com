@@ -115,11 +115,9 @@ export default () => {
             </animated.ul>
           </section>
 
-          <SectionBreak id="work" text="Work"/>
 
             <WorkSection/>
 
-          <SectionBreak id="projects" text="Projects"/>
             <ProjectSection/>
           <SectionBreak id="contact" text="Contact"/>
 

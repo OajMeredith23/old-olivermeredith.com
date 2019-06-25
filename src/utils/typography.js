@@ -14,8 +14,8 @@ const options = {
       ],
     headerFontFamily: ['Playfair Display', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
     bodyFontFamily: ['Fira Sans', 'serif'],
-    headerWeight: 400, 
-    bodyWeight: 300
+    headerWeight: 700, 
+    bodyWeight: 400
 } 
 
 // console.log(kirkhamTheme)

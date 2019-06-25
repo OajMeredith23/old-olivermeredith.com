@@ -50,8 +50,7 @@ export default function WorkFooter(props){
       )
         return(
             <section className={styles.container}>
-                <h1>More Work</h1>
-                {/* {data.allMarkdownRemark.edges.map(({ node }) => ()}) */}
+                <h1>Work</h1>
                 {data.allMarkdownRemark.edges.map(({ node }) => {
                     return props.currentPage != node.frontmatter.title && (
                         <article key={node.id} className={styles.module}>

@@ -6,6 +6,7 @@ import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import Layout from "../Layout/layout"
+import SectionBreak from "../section-break"
 import Button from "../Buttons/Button"
 import IconButton from "../Buttons/icon-button"
 import LazyImg from "../Wrappers/lazy-img"
@@ -13,52 +14,49 @@ import LazyVid from "../Wrappers/lazy-vid"
 import Intersection from "../Wrappers/intersection"
 import WorkFooter from "./Work-footer"
 import styles from "./Work-modules.module.sass"
-console.log({styles})
+console.log({ styles })
 
 
 const Work = (props) => {
 
-  
-  const breakPoints = ['767px']
 
-  return (
-      
-        <section className={styles.container}>
+    return (
 
+        <article className={styles.container}>
             <div className={styles.poster}>
-            
+
                 <Link
                     to={props.slug}
                 >
-                    
+
                     {
-                    props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
-                        <LazyVid
-                            vid={props.thumbnail}
-                            poster={props.poster}
-                        />   
+                        props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
+                            <LazyVid
+                                vid={props.thumbnail}
+                                poster={props.poster}
+                            />
                         )
-                        : (
-                        <LazyImg 
-                        img={props.thumbnail}
-                        />
-                    )
-                            
-                        }
+                            : (
+                                <LazyImg
+                                    img={props.thumbnail}
+                                />
+                            )
+
+                    }
                 </Link>
             </div>
 
             <div className={styles.titleSkills}>
                 <div className={styles.title}>
                     <Link to={props.slug}>
-                        <h1>{props.title}</h1>
+                        <h2>{props.title}</h2>
                     </Link>
                 </div>
                 <ul className={styles.skills}>
-                    {props.skills.map((item, i) => 
-                    <li key={i}>
-                        {item}
-                    </li>)}
+                    {props.skills.map((item, i) =>
+                        <li key={i}>
+                            {item}
+                        </li>)}
                 </ul>
             </div>
 
@@ -68,17 +66,17 @@ const Work = (props) => {
                 </p>
             </div>
 
-            
+
             <ul className={styles.buttons}>
                 <li>
                     <Link
                         to={props.slug}
                     >
-                        <Button text="View"/>
-                    </Link>  
+                        <Button text="View" />
+                    </Link>
                 </li>
                 <li>
-                    {props.site != 'None' && 
+                    {props.site != 'None' &&
                         <IconButton
                             to="site"
                             link={props.site}
@@ -87,7 +85,7 @@ const Work = (props) => {
                     }
                 </li>
                 <li>
-                    {props.github != 'None' && 
+                    {props.github != 'None' &&
                         <IconButton
                             to="github"
                             link={props.github}
@@ -96,7 +94,7 @@ const Work = (props) => {
                     }
                 </li>
                 <li>
-                    {props.behance != 'None' && 
+                    {props.behance != 'None' &&
                         <IconButton
                             to="behance"
                             link={props.behance}
@@ -104,14 +102,10 @@ const Work = (props) => {
                         />
                     }
                 </li>
-
-                
-
-                    
             </ul>
 
-        </section>
-        
+        </article>
+
     )
 }
 
@@ -153,36 +147,37 @@ export default (props) => {
           }
           
         `
-      )
-
-      
-    return ( 
+    )
 
 
-        <section>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-                <Intersection
-                    bottomRoot = '-90%'
-                    key={node.id}
-                >
-                    <Work
-                        id={node.id}
-                        slug={node.fields.slug}
-                        thumbnail={node.frontmatter.thumbnail}
-                        poster={node.frontmatter.poster}
-                        title={node.frontmatter.title}
-                        description={node.frontmatter.description}
-                        skills={node.frontmatter.skill}
-                        github={node.frontmatter.github}
-                        behance={node.frontmatter.behance}
-                        site={node.frontmatter.site}
+    return (
+        <>
+            <SectionBreak id="work" text="Work"/>
+            <section>
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                    <Intersection
+                        bottomRoot='-90%'
+                        key={node.id}
+                    >
+                        <Work
+                            id={node.id}
+                            slug={node.fields.slug}
+                            thumbnail={node.frontmatter.thumbnail}
+                            poster={node.frontmatter.poster}
+                            title={node.frontmatter.title}
+                            description={node.frontmatter.description}
+                            skills={node.frontmatter.skill}
+                            github={node.frontmatter.github}
+                            behance={node.frontmatter.behance}
+                            site={node.frontmatter.site}
 
-                    />
-                </Intersection>
+                        />
+                    </Intersection>
 
-            ))}
-        </section>
-    
+                ))}
+            </section>
+        </>
+
 
     )
 }
