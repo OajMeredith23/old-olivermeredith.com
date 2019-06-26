@@ -5,6 +5,7 @@
     margin: 0 auto
 .brief 
     display: none
+
 @supports(display: grid)
     .content 
         width: 100%
@@ -87,7 +88,7 @@
         img
             margin-bottom: 1em
         
-
+    
     .work-image-grid 
         grid-column: 1 / -1
         justify-content: space-between
@@ -103,8 +104,6 @@
             grid-template-columns: repeat(2, 1fr)
         img 
             width: 100% 
-            // max-height: 50vh 
-            align-self: center
             object-fit: cover
 
         video 
@@ -130,18 +129,26 @@
         display: grid  
         grid-gap: 1em
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
-        grid-auto-rows: 40vh
+        grid-auto-rows: 320px
         grid-auto-flow: dense
         img 
             margin: 0
             width: 100% 
             height: 100%
             object-fit: cover
+            &.contain 
+                object-fit: contain
         p
             grid-column: span 2 
             max-width: 60ch
         h1, p
             align-self: flex-end
+        img[title="large"]
+            grid-column: span 2 
+            grid-row: span 2
+        img[title="super-large"]
+            grid-column: span 3
+            grid-row: span 2
         .large 
             grid-column: span 2 
             grid-row: span 2

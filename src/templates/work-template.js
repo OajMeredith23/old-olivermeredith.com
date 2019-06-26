@@ -75,13 +75,12 @@ export default function WorkContainer(props) {
     
           <section 
           className={`content 
-            ${props.frontmatter.layout === `grid` ? `content-grid` : ''}
-            ${props.frontmatter.layout === `stack` ? `content-stack` : ''}
+            ${props.frontmatter.layout === `Grid` ? `content-grid` : ''}
+            ${props.frontmatter.layout === `Stack` ? `content-stack` : ''}
           `}
           >
               {props.children}
           </section>
-
             {props.frontmatter.site != 'None' && 
               <div className={styles.finalLink}>
                 <a href={props.frontmatter.site} target="_blank" rel="noopener noreferrer">

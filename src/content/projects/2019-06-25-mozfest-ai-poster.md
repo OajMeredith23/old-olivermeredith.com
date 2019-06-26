@@ -1,6 +1,7 @@
 ---
 type: Project
 order: 2
+layout: Grid
 title: 'MozFest Ai Poster '
 date: 2019-06-25T11:53:54.917Z
 skill:
@@ -13,10 +14,9 @@ site: None
 github: None
 behance: None
 description: A poster, created in colloboration with Nathanael Sherwood for a MozFest competition on the subject of Ai. Pattern created using p5.js and the layout in inDesign
-thumbnail: /img/mozfest.png
-poster: /img/mozfest-cover.png
+thumbnail: /img/mozFest-ai/mozfest.png
+poster: /img/mozFest-ai/mozfest-cover.png
 ---
 
-<div class="work-image-fullwidth">
-  <img src="/img/mozfest.png">
-</div>
+<img src="/img/mozFest-ai/go-dots.gif" class="super-large contain" title="super-large">
+<img src="/img/mozFest-ai/mozfest.png" class="super-large contain" title="super-large">
