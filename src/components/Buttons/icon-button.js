@@ -69,6 +69,7 @@ export default class IconButton extends Component{
                         display: block;
                         position: relative;
                         padding: 0.5em;
+                        width: 55px;
                         img { 
                             height: 70%; 
                             transition: .1s;

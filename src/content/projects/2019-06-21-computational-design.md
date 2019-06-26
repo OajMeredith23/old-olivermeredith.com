@@ -20,7 +20,7 @@ poster: /img/computational-design/perlin-dots-14.png
     <img src="/img/computational-design/perlin-dots-3.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-4.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-5.png" alt="Generative design created using Perlin Noise in P5.js">
-    <img src="/img/computational-design/perlin-dots-6.png" alt="Generative design created using Perlin Noise in P5.js">
+    <img src="/img/computational-design/perlin-dots-6.png" class="large"alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-7.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-8.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-9.png" alt="Generative design created using Perlin Noise in P5.js">
@@ -34,7 +34,7 @@ poster: /img/computational-design/perlin-dots-14.png
     <img src="/img/computational-design/perlin-dots-17.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-18.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-19.png" alt="Generative design created using Perlin Noise in P5.js">
-    <img src="/img/computational-design/perlin-dots-20.png" alt="Generative design created using Perlin Noise in P5.js">
+    <img src="/img/computational-design/perlin-dots-20.png" class="large" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-21.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-22.png" alt="Generative design created using Perlin Noise in P5.js">
     <img src="/img/computational-design/perlin-dots-23.png" alt="Generative design created using Perlin Noise in P5.js">

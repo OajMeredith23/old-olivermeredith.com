@@ -10,7 +10,7 @@ import Layout from "../components/Layout/layout"
 import WorkSection from "../components/WorkDisplays/Work-module"
 import ProjectSection from "../components/ProjectDisplays/Project-module"
 // import BlogSection from "../components/blog-section"
-import SectionBreak from "../components/section-break"
+import Header from "../components/Header"
 //Images
 import profile from '../assets/profile.jpg'
 import LazyImg from "../components/Wrappers/lazy-img";
@@ -119,64 +119,7 @@ export default () => {
             <WorkSection/>
 
             <ProjectSection/>
-          <SectionBreak id="contact" text="Contact"/>
 
-          <section css={
-            css`
-            @media(min-width: 768px){
-              display: grid;
-              grid-template-columns: repeat(12, 1fr);
-              grid-template-rows: 100px minmax(200px, 30vh) 100px auto;
-              margin-bottom: ${rhythm(8)}
-            }
-            `
-          }>
-            <div css={
-              css`
-                height: 300px;
-                display: none;
-                @media(min-width: 768px){
-                  height: auto;
-                  display: block;
-                  grid-column: 1 / span 7; 
-                  grid-row: 1 / span 2;
-                  background: ${color.primary};
-                  position: relative;
-                  transform-origin: right;
-                  transform: scaleX(2);
-                  z-index: 0;
-                }
-                `
-              }></div>
-            <div css={
-              css`
-              height: 300px;
-                @media(min-width: 768px){
-                  height: auto;
-                  grid-column: 1 / span 6;
-                  grid-row: 2 / span 2;
-                  margin-bottom: ${rhythm(0)};
-                }
-                margin-bottom: ${rhythm(2)};
-                z-index: 1;
-                background: white; 
-              `
-            }>
-              <LazyImg 
-                img={profile}
-                imgAlt="Photograph of Oliver Meredith"
-              />
-            </div>
-            <div css={
-              css`
-                grid-column: 9 / -1;
-                grid-row: 3;
-              `
-            }>
-              <h1>Say Hi</h1>
-              <h2><a href="mailto:mail@olivermeredith.com">mail@olivermeredith.com</a></h2>
-            </div>
-          </section>
         </Layout>
       )
 }

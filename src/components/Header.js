@@ -5,11 +5,16 @@ import { color } from "../utils/colors"
 
 export default props => {
     return(
-        <div id={props.id} css={
+        <div 
+        css={
             css`
-                margin: ${rhythm(8)} 0
+                margin-top: 6em;
+                margin-bottom: -2.23rem;
+                position: relative; 
+                z-index: 2;
             `
-        }>
+        }
+        >
             <h1 css={
                 css`
                     text-align: right;
@@ -20,5 +25,6 @@ export default props => {
                 `
             }>{props.text}</h1>
         </div>
+        
     )
 }

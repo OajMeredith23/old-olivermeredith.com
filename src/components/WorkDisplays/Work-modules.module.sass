@@ -1,4 +1,4 @@
- 
+
 .container
     margin: 4em 0
     @media(min-width: 900px)
@@ -7,6 +7,7 @@
         grid-template-rows: 60vh auto auto
         grid-gap: 2rem 0
         padding: 0
+        margin-top: 0
         margin-bottom: 8rem
         
 .poster
@@ -20,19 +21,27 @@
 
 .titleSkills 
     margin: 1em 0
+    overflow: hidden
     @media(min-width: 900px)
         display: contents
 .title
     @media(min-width: 900px)
         margin: 0
-        display: flex 
-        justify-content: flex-end 
-        flex-direction: column 
+        align-self: flex-end
         grid-column: span 2
         h2
+            font-size: 8em
             transition: .2s ease
             white-space: nowrap 
             margin: 0
+            margin-bottom: -1rem
+    opacity: 0 
+    transform: translateX(50px)
+    transition: 1s ease-out
+    &.inView
+        opacity: 1
+        transform: translateX(0)
+        transition: 1s ease-out
 
 .skills 
     font-family: 'Playfair Display'
@@ -55,6 +64,13 @@
     justify-content: flex-start
     align-items: center 
     grid-column: 4 / -1
+    // transform: translateY(40px)
+    // opacity: 0
+    // transition: 1.3s ease-out
     li 
         height: 50px
         margin-right: 1em
+    &.inView 
+        transform: translateX(0)
+        opacity: 1
+        transition: 1.3s ease-out

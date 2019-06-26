@@ -10,14 +10,14 @@ import Button from "../Buttons/Button"
 import IconButton from "../Buttons/icon-button"
 import LazyImg from "../Wrappers/lazy-img"
 import LazyVid from "../Wrappers/lazy-vid"
-import SectionBreak from "../section-break"
+import Header from "../Header"
 
 import Intersection from "../Wrappers/intersection"
 import styles from "./Project-module.module.sass"
 
 const Project = (props) => {
     return(
-        <article className={styles.item} key={props.key}>
+        <article className={styles.item} key={props.id}>
 
           <div className={styles.poster}>
             <Link
@@ -123,11 +123,12 @@ export default(props) => {
       if(data.allMarkdownRemark.totalCount >= 1 ){
         return(
           <>
-            <SectionBreak id="projects" text="Projects"/>
+            <Header id="projects" text="Projects"/>
             <section className={styles.container}>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     
                     <Project
+                        key={node.id}
                         id={node.id}
                         slug={node.fields.slug}
                         thumbnail={node.frontmatter.thumbnail}

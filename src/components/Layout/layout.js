@@ -7,6 +7,7 @@ import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import LazyImg from "../Wrappers/lazy-img"
 import IconButton from "../Buttons/icon-button"
+import Contact from "../Contact/Contact"
 
 import favicon from '../../assets/favicon.png'
 import styles from "./layout.module.sass"
@@ -271,6 +272,7 @@ export default (props) => {
 
             <main className={`${navOpen ? styles.hide : styles.content}`}>
                 {props.children}
+                <Contact/>
             </main>
             <footer className={styles.footer}>
                 <Link to="/"><p>Home</p></Link>

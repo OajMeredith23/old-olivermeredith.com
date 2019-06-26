@@ -6,7 +6,7 @@ import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
 import Layout from "../Layout/layout"
-import SectionBreak from "../section-break"
+import Header from "../Header"
 import Button from "../Buttons/Button"
 import IconButton from "../Buttons/icon-button"
 import LazyImg from "../Wrappers/lazy-img"
@@ -47,7 +47,7 @@ const Work = (props) => {
             </div>
 
             <div className={styles.titleSkills}>
-                <div className={styles.title}>
+                <div className={`${styles.title} ${props.onScreen ? styles.inView : ''}`}>
                     <Link to={props.slug}>
                         <h2>{props.title}</h2>
                     </Link>
@@ -67,7 +67,7 @@ const Work = (props) => {
             </div>
 
 
-            <ul className={styles.buttons}>
+            <ul className={`${styles.buttons} ${props.onScreen ? styles.inView : ''}`}>
                 <li>
                     <Link
                         to={props.slug}
@@ -152,11 +152,11 @@ export default (props) => {
 
     return (
         <>
-            <SectionBreak id="work" text="Work"/>
+            <Header id="work" text="Work"/>
             <section>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     <Intersection
-                        bottomRoot='-90%'
+                        bottomRoot='-400px'
                         key={node.id}
                     >
                         <Work

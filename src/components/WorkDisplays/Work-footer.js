@@ -8,7 +8,7 @@ import Button from "../Buttons/Button"
 import IconButton from "../Buttons/icon-button"
 import Intersection from "../Wrappers/intersection"
 import LazyImg from "../Wrappers/lazy-img"
-
+import Header from "../Header"
 import styles from "./Work-footer.module.sass"
 export default function WorkFooter(props){
 
@@ -49,8 +49,10 @@ export default function WorkFooter(props){
         `
       )
         return(
+            <>
+            <Header text="Work"/>
             <section className={styles.container}>
-                <h1>Work</h1>
+                
                 {data.allMarkdownRemark.edges.map(({ node }) => {
                     return props.currentPage != node.frontmatter.title && (
                         <article key={node.id} className={styles.module}>
@@ -116,5 +118,6 @@ export default function WorkFooter(props){
                     )
                 })}
             </section>
+            </>
         )
 }
