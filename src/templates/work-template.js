@@ -19,7 +19,7 @@ export default function WorkContainer(props) {
     const fadeDown = useSpring({opacity: 1, marginLeft: 0, from: {opacity: 0, marginLeft: -200}})
     const breakpoints = ['959px'];
 
-
+    console.log(props.frontmatter)
     return(
       <>
       <Lightbox>
@@ -73,9 +73,15 @@ export default function WorkContainer(props) {
     
           </div>
     
-          <section className="content">
+          <section 
+          className={`content 
+            ${props.frontmatter.layout === `grid` ? `content-grid` : ''}
+            ${props.frontmatter.layout === `stack` ? `content-stack` : ''}
+          `}
+          >
               {props.children}
           </section>
+
             {props.frontmatter.site != 'None' && 
               <div className={styles.finalLink}>
                 <a href={props.frontmatter.site} target="_blank" rel="noopener noreferrer">

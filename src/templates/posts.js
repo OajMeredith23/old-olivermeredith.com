@@ -49,6 +49,7 @@ export const query = graphql`
         title
         description
         type
+        layout
         thumbnail
         poster
         github 

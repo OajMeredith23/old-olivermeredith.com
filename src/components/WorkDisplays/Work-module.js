@@ -156,7 +156,7 @@ export default (props) => {
             <section>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     <Intersection
-                        bottomRoot='-400px'
+                        bottomRoot='-300px'
                         key={node.id}
                     >
                         <Work
