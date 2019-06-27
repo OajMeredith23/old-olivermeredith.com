@@ -19,7 +19,6 @@ export default function WorkContainer(props) {
     const fadeDown = useSpring({opacity: 1, marginLeft: 0, from: {opacity: 0, marginLeft: -200}})
     const breakpoints = ['959px'];
 
-    console.log(props.frontmatter)
     return(
       <>
       <Lightbox>

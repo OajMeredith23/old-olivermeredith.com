@@ -20,7 +20,7 @@ export default props => {
                     text-align: right;
                     font-size: ${rhythm(2)};
                     @media(min-width: 560px){
-                        font-size: ${rhythm(4)};
+                        font-size: 6em;
                     }
                 `
             }>{props.text}</h1>

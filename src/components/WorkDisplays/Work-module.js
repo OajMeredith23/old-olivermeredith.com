@@ -48,9 +48,7 @@ const Work = (props) => {
 
             <div className={styles.titleSkills}>
                 <div className={`${styles.title} ${props.onScreen ? styles.inView : ''}`}>
-                    <Link to={props.slug}>
-                        <h2>{props.title}</h2>
-                    </Link>
+                    <h2><sup>{props.index + 1}</sup>{props.title}</h2>
                 </div>
                 <ul className={styles.skills}>
                     {props.skills.map((item, i) =>
@@ -154,12 +152,13 @@ export default (props) => {
         <>
             <Header id="work" text="Work"/>
             <section>
-                {data.allMarkdownRemark.edges.map(({ node }) => (
+                {data.allMarkdownRemark.edges.map(({ node }, i) => (
                     <Intersection
                         bottomRoot='-300px'
                         key={node.id}
                     >
                         <Work
+                            index={i}
                             id={node.id}
                             slug={node.fields.slug}
                             thumbnail={node.frontmatter.thumbnail}

@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react"
+import React, { Component, useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { useStaticQuery, StaticQuery, Link, graphql } from "gatsby"
@@ -53,8 +53,10 @@ function NavPage(props) {
         `
     )
 
-
+        
     const [hoverImage, sethoverImage] = useState(null);
+        
+    console.log(data.allMarkdownRemark.edges)
 
     return (
         <div className={styles.navScreen}>
@@ -107,7 +109,7 @@ function NavPage(props) {
                                             </Link>
                                         </li>
                                     )
-                            }else { return }
+                            } else { return }
                                 // else { 
                                 //     return(
                                 //         <li>
