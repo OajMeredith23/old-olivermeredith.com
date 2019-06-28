@@ -1,7 +1,7 @@
 ---
 type: Project
 order: 2
-layout: Grid
+layout: Stack
 title: 'MozFest Ai Poster '
 date: 2019-06-25T11:53:54.917Z
 skill:

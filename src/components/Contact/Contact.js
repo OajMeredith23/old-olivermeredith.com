@@ -10,10 +10,10 @@ import profile from '../../assets/profile.jpg'
 import LazyImg from "../Wrappers/lazy-img"
 import styles from "./Contact.module.sass"
 
-export default function Contact(props){
+export default function Contact(props) {
 
-    const data = useStaticQuery(
-      graphql`
+  const data = useStaticQuery(
+    graphql`
         {
           site{
             siteMetadata{
@@ -25,30 +25,30 @@ export default function Contact(props){
         }
         }
       `
-    )
-    return(
-      <>
-        <Header text="Contact"/>
-        <section className={styles.container}>
-            <div className={styles.image}>
-              <LazyImg 
-                img={profile}
-                imgAlt="Photograph of Oliver Meredith"
-              />
-            </div>
-            <div className={styles.text}>
-              {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste accusantium dicta culpa quis possimus amet id maxime minus voluptates sed!</p> */}
-              <h2><a href="mailto:mail@olivermeredith.com">{data.site.siteMetadata.email}</a></h2>
-              <div className={styles.buttons}>
-                  <IconButton
-                      to="github"
-                      link={data.site.siteMetadata.github}
-                      alt="Github"
-                      />
-                      
-              </div>
-              </div>
-          </section>
-        </>
-    )
+  )
+  return (
+    <>
+      <Header text="Contact" />
+      <section className={styles.container}>
+        <div className={styles.image}>
+          <LazyImg
+            img={profile}
+            imgAlt="Photograph of Oliver Meredith"
+          />
+        </div>
+        <div className={styles.text}>
+          {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste accusantium dicta culpa quis possimus amet id maxime minus voluptates sed!</p> */}
+          <h2><a href="mailto:mail@olivermeredith.com">{data.site.siteMetadata.email}</a></h2>
+          <div className={styles.buttons}>
+            <IconButton
+              to="github"
+              link={data.site.siteMetadata.github}
+              alt="Github"
+            />
+
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

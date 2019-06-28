@@ -53,10 +53,8 @@ function NavPage(props) {
         `
     )
 
-        
+
     const [hoverImage, sethoverImage] = useState(null);
-        
-    console.log(data.allMarkdownRemark.edges)
 
     return (
         <div className={styles.navScreen}>
@@ -93,35 +91,36 @@ function NavPage(props) {
 
                     <ul className={styles.sublist}>
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
-                            if(node.frontmatter.type === "Work"){
-                                    return (
-                                        <li
-                                            key={node.id}
-                                            onClick={props.onClick}
+                            if (node.frontmatter.type === "Work") {
+                                return (
+                                    <li
+                                        key={node.id}
+                                        onClick={props.onClick}
+                                    >
+                                        <Link
+                                            to={node.fields.slug}
+                                            onClick={props.handleClick}
+                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
+                                        // onMouseLeave={() => sethoverImage('')}
                                         >
-                                            <Link
-                                                to={node.fields.slug}
-                                                onClick={props.handleClick}
-                                                onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
-                                                // onMouseLeave={() => sethoverImage('')}
-                                            >
-                                                <p>{node.frontmatter.title}</p>
-                                            </Link>
-                                        </li>
-                                    )
+                                            <p>{node.frontmatter.title}</p>
+                                        </Link>
+                                    </li>
+                                )
                             } else { return }
-                                // else { 
-                                //     return(
-                                //         <li>
-                                //             <Link
-                                //                 to="/#work"
-                                //             >
-                                //                 & {data.allMarkdownRemark.totalCount - numPosts } more
-                                //             </Link>
-                                //         </li>
-                                //     )
-                                // }
-                            } 
+                            // else { 
+                            //     return(
+                            //         <li>
+                            //             <Link
+                            //                 to="/#work"
+                            //             >
+                            //                 & {data.allMarkdownRemark.totalCount - numPosts } more
+                            //             </Link>
+                            //         </li>
+                            //     )
+                            // }
+                        }
+
                         )}
                     </ul>
                 </li>
@@ -137,35 +136,35 @@ function NavPage(props) {
                     <ul className={styles.sublist}>
                         {data.allMarkdownRemark.edges.map(({ node }, i) => {
                             let numPosts = 3; //Limit length of list
-                            if(node.frontmatter.type === "Project"){
-                                    return (
-                                        <li
-                                            key={node.id}
-                                            onClick={props.onClick}
+                            if (node.frontmatter.type === "Project") {
+                                return (
+                                    <li
+                                        key={node.id}
+                                        onClick={props.onClick}
+                                    >
+                                        <Link
+                                            to={node.fields.slug}
+                                            onClick={props.handleClick}
+                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
+                                        // onMouseLeave={() => sethoverImage('')}
                                         >
-                                            <Link
-                                                to={node.fields.slug}
-                                                onClick={props.handleClick}
-                                                onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
-                                                // onMouseLeave={() => sethoverImage('')}
-                                            >
-                                                <p>{node.frontmatter.title}</p>
-                                            </Link>
-                                        </li>
-                                    )
-                                } 
-                                // else { 
-                                //     return(
-                                //         <li>
-                                //             <Link
-                                //                 to="/#work"
-                                //             >
-                                //                 & {data.allMarkdownRemark.totalCount - numPosts } more
-                                //             </Link>
-                                //         </li>
-                                //     )
-                                // }
-                            } 
+                                            <p>{node.frontmatter.title}</p>
+                                        </Link>
+                                    </li>
+                                )
+                            }
+                            // else { 
+                            //     return(
+                            //         <li>
+                            //             <Link
+                            //                 to="/#work"
+                            //             >
+                            //                 & {data.allMarkdownRemark.totalCount - numPosts } more
+                            //             </Link>
+                            //         </li>
+                            //     )
+                            // }
+                        }
                         )}
                     </ul>
                 </li>
@@ -185,7 +184,7 @@ function NavPage(props) {
                         to="github"
                         link={data.site.siteMetadata.github}
                         alt="Github"
-                        // white={true}
+                    // white={true}
                     />
                 </li>
 
@@ -219,32 +218,32 @@ export default (props) => {
         <div className={styles.container}>
 
             <Helmet
-            title="Oliver Meredith"
-            meta={[
-                {
-                  name: "description",
-                  content: "Oliver Meredith — Front end developer that's curious about user experiences",
-                },
-                {
-                  name: "keywords",
-                  content: "frontend, developer",
-                },
-              ]}
-              link={[
-                { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
-              ]}
-              >
+                title="Oliver Meredith"
+                meta={[
+                    {
+                        name: "description",
+                        content: "Oliver Meredith — Front end developer that's curious about user experiences",
+                    },
+                    {
+                        name: "keywords",
+                        content: "frontend, developer",
+                    },
+                ]}
+                link={[
+                    { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
+                ]}
+            >
                 <meta charSet="utf-8" />
-                <meta name="description" content="Oliver Meredith — Front end developer that's curious about user experiences"/>
+                <meta name="description" content="Oliver Meredith — Front end developer that's curious about user experiences" />
             </Helmet>
 
 
-            <section 
-                id="nav" 
+            <section
+                id="nav"
                 className={`${styles.navContainer} ${navOpen ? styles.open : ''}`}
-                
+
             >
-                <NavPage onClick={toggleNav} navOpen={navOpen}/>
+                <NavPage onClick={toggleNav} navOpen={navOpen} />
             </section>
 
             <div id="navbar"
@@ -274,7 +273,7 @@ export default (props) => {
 
             <main className={`${navOpen ? styles.hide : styles.content}`}>
                 {props.children}
-                <Contact/>
+                <Contact />
             </main>
             <footer className={styles.footer}>
                 <Link to="/"><p>Home</p></Link>

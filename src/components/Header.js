@@ -4,16 +4,16 @@ import { rhythm } from "../utils/typography"
 import { color } from "../utils/colors"
 
 export default props => {
-    return(
-        <div 
-        css={
-            css`
+    return (
+        <div
+            css={
+                css`
                 margin-top: 6em;
                 margin-bottom: -2.23rem;
                 position: relative; 
                 z-index: 2;
             `
-        }
+            }
         >
             <h1 css={
                 css`
@@ -25,6 +25,6 @@ export default props => {
                 `
             }>{props.text}</h1>
         </div>
-        
+
     )
 }

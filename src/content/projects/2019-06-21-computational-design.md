@@ -15,11 +15,16 @@ description: Generative posters created using p5.js. Utilizing Perlin Noise to c
 thumbnail: /img/computational-design/perlin-dots-11.png
 poster: /img/computational-design/perlin-dots-14.png
 ---
-<img src="/img/computational-design/perlin-dots-1.png" alt="Generative design created using Perlin Noise in P5.js">
+
+<img src="/img/computational-design/perlin-dots-1.png" class="super-large" alt="Generative design created using Perlin Noise in P5.js">
 <img src="/img/computational-design/perlin-dots-2.png" alt="Generative design created using Perlin Noise in P5.js">
 <img src="/img/computational-design/perlin-dots-3.png" alt="Generative design created using Perlin Noise in P5.js">
 <img src="/img/computational-design/perlin-dots-4.png" alt="Generative design created using Perlin Noise in P5.js">
-<img src="/img/computational-design/perlin-dots-5.png" alt="Generative design created using Perlin Noise in P5.js">
+<img src="/img/computational-design/perlin-dots-5.png" class="large" alt="Generative design created using Perlin Noise in P5.js">
+<!-- <div class="text">
+  <h2>Hello-world</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, culpa facere facilis, ratione amet omnis expedita cum maxime molestiae ipsum, laboriosam laborum doloremque fugit explicabo aperiam illo deserunt. Atque, fugit!</p>
+</div> -->
 <img src="/img/computational-design/perlin-dots-6.png" class="large"alt="Generative design created using Perlin Noise in P5.js">
 <img src="/img/computational-design/perlin-dots-7.png" alt="Generative design created using Perlin Noise in P5.js">
 <img src="/img/computational-design/perlin-dots-8.png" alt="Generative design created using Perlin Noise in P5.js">

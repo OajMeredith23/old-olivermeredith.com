@@ -13,17 +13,41 @@
         position: relative
         font-size: 1rem
         padding: 0
+        padding-left: .5em
         margin: 0
-    svg 
-        position: absolute
+        transition: .2s ease-out
+
+
+    &::before
+        content: ''
+        position: absolute 
+        left: 0 
         top: 0
-        left: 0
+        height: 100% 
         width: 100% 
-        height: 100%
-        rect 
-            stroke-width: 10px 
-            stroke: #35E5A1 
-            fill: transparent 
-            transition: .3s ease-in-out
-            &:hover 
-                stroke-dasharray: 300
+        transform: scaleX(0.1)
+        transform-origin: left 
+        background-color: #35E5A1
+        transition: .2s ease-out
+    &:hover 
+        h3 
+            transition: .2s ease-out
+            transform: translateX(0.5em)
+        &:before 
+            transform: scaleX(1)
+            transition: .2s ease-out
+
+
+    // svg 
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     width: 100% 
+    //     height: 100%
+    //     rect 
+    //         stroke-width: 10px 
+    //         stroke: #35E5A1 
+    //         fill: transparent 
+    //         transition: .3s ease-in-out
+    //         &:hover 
+    //             stroke-dasharray: 300
