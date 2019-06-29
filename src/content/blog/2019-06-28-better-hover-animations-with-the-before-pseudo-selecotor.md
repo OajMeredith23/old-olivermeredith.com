@@ -1,15 +1,13 @@
 ---
 type: Blog
-title: 'Better hover animations with the :before pseudo selecotor'
+title: Better hover animations with pseudo selectors
 thumbnail: /img/screen-shot-2019-06-28-at-4.26.13-pm.png
 date: 2019-06-28T14:45:53.324Z
 description: >-
   How to build better hover interactions in pure CSS using the :before pseudo
   selector
 ---
-
-
-<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="oajmeredith23" data-slug-hash="xopLOp" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS hover animations with :before psuedo element">
+<p class="codepen" data-height="404" data-theme-id="light" data-default-tab="css,result" data-user="oajmeredith23" data-slug-hash="xopLOp" data-preview="true" style="height: 404px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS hover animations with :before psuedo element">
 
   <span>See the Pen <a href="https://codepen.io/oajmeredith23/pen/xopLOp/">
 
@@ -20,6 +18,16 @@ description: >-
 </p>
 
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Boilerplate HTML
+
+```
+  <div class="container">
+        <button class="button button-1" type="button">
+            <h3>View</h3>
+        </button>
+    </div>
+```
 
 ```
 .container 
