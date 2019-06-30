@@ -212,6 +212,8 @@ export default (props) => {
     const [navOpen, setNavOpen] = useState(false);
     const toggleNav = () => setNavOpen(!navOpen);
 
+    //Year for copyright in footer
+    let d = new Date().getFullYear().toString();
 
     return (
 
@@ -277,7 +279,7 @@ export default (props) => {
             </main>
             <footer className={styles.footer}>
                 <Link to="/"><p>Home</p></Link>
-                <p>copyright Oliver Meredith 2019</p>
+                <p>copyright &#169;{d} Oliver Meredith </p>
             </footer>
         </div>
     )
