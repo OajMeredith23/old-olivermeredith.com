@@ -1,14 +1,9 @@
 ---
-order: 3
-title: p5 Test
 type: Sketch
-# layout: Grid
-date: 2019-05-13T20:15:25.069Z
+order: 3
+title: Sketch - Lines
+date: 2019-07-02T11:15:00.000Z
 github: None
-behance: None
-description: >-
-  Web design and development for a small day care center, focused on creating a
-  dialogue between the business and their customers.
 poster: /img/sketch-lines.png
 ---
 
