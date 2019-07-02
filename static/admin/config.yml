@@ -65,3 +65,17 @@ collections:
       - { label: "Featured Image", hint: "Can be image or video - If video it must hardcoded", name: "thumbnail", widget: "image"}
       - { label: "Video Poster", hint: "Will be used as the cover image on the work page", name: "poster", widget: "image"}
       - { label: "Body", name: "body", widget: "markdown"}
+  - name: "p5-sketches"
+    label: "P5 Sketches"
+    folder: "src/content/sketches"
+    create: true
+    editor:
+     preview: false
+    fields:
+      - { label: "Type", name: "type", widget: "select", options: ["Work", "Blog", "Project", "Sketch"], default: "Sketch"}
+      - { label: "Order", name: "order", widget: "number", min: "0", max: "50"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "github - Link", hint: "link to github - set to 'None' if none available", name: "github", widget: "string", default: "None", required: true}
+      - { label: "Poster", name: "poster", widget: "image"}
+      - { label: "Body", name: "body", hint: "Just the iframe code from Code Pen", widget: "markdown"}

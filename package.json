@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
+    "@weknow/gatsby-remark-codepen": "^0.1.0",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-emotion": "^4.0.6",
@@ -37,6 +38,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.23.0",
+    "react-p5": "^1.0.3",
     "react-spring": "^8.0.20",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
