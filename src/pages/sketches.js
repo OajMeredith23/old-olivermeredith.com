@@ -50,8 +50,8 @@ export default ({ data }) => {
 
 export const query = graphql`
 {
-    allMarkdownRemark(
-      sort: {fields: [frontmatter___order], order: ASC}
+  allMarkdownRemark(
+      sort: {fields: [frontmatter___date], order: DESC}
       filter: {
       frontmatter:{
         type: {regex: "/Sketch/"}
