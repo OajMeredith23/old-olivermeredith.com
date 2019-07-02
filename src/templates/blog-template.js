@@ -14,8 +14,8 @@ export default (props) => {
     <section className={styles.container}>
 
       <header className={styles.header}>
-        <h1>{props.title}</h1>
-        <p>{props.description}</p>
+        <h1>{props.frontmatter.title}</h1>
+        <p>{props.frontmatter.description}</p>
       </header>
 
       {props.children}

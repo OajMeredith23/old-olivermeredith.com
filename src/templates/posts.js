@@ -5,40 +5,57 @@ import { Helmet } from 'react-helmet'
 
 import WorkTemplate from './work-template'
 import BlogTemplate from './blog-template'
+import P5Template from './p5-template'
 
 
+const Head = function (props) {
+  return (
+    <Helmet>
+      <title>Oliver Meredith | {props.frontmatter.title}</title>
+      <meta name="description" content={props.frontmatter.description}></meta>
+    </Helmet>
+  )
+}
 
 
 export default ({ data }) => {
-    const post = data.markdownRemark
-  return (
-    <Layout>
-      
-      <Helmet>
-          <title>Oliver Meredith | {post.frontmatter.title}</title>
-          <meta name="description" content={post.frontmatter.description}></meta>
-      </Helmet>
+  const post = data.markdownRemark
 
-      {post.frontmatter.type === 'Blog' ? 
-
+  if (post.frontmatter.type === 'Blog') {
+    return (
+      <Layout>
+        <Head frontmatter={post.frontmatter} />
         <BlogTemplate
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          type={post.frontmatter.type}
+          frontmatter={post.frontmatter}
         >
-          <div dangerouslySetInnerHTML={{__html: post.html}}/>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </BlogTemplate>
-
-    : 
-    
+      </Layout>
+    )
+  } else if (post.frontmatter.type === 'Work' || post.frontmatter.type === 'Project') {
+    return (
+      <Layout>
+        <Head frontmatter={post.frontmatter} />
         <WorkTemplate
           frontmatter={post.frontmatter}
         >
-          <div dangerouslySetInnerHTML={{__html: post.html}}/>
-      </WorkTemplate>  
-    }
-    </Layout>
-  )
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </WorkTemplate>
+      </Layout>
+    )
+  } else if (post.frontmatter.type === 'Sketch') {
+    return (
+      <Layout>
+        <Head frontmatter={post.frontmatter} />
+        <P5Template
+          frontmatter={post.frontmatter}
+        >
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </P5Template>
+      </Layout>
+
+    )
+  }
 }
 
 export const query = graphql`
@@ -52,10 +69,10 @@ export const query = graphql`
         layout
         thumbnail
         poster
-        github 
-        behance 
+        github
+        behance
         site
       }
     }
   }
-`
+  `
