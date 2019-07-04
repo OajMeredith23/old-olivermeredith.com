@@ -143,7 +143,7 @@ function NavPage(props) {
                                         onClick={props.onClick}
                                     >
                                         <Link
-                                            to={node.fields.slug}
+                                            to={node.frontmatter.title === 'Sketches' ? '/sketches' : node.fields.slug}
                                             onClick={props.handleClick}
                                             onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
                                         // onMouseLeave={() => sethoverImage('')}
