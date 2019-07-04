@@ -1,33 +1,39 @@
+
 .item
     margin: 2em 0
 .poster 
     height: 300px 
     margin-bottom: 1em
-@media(min-width: 600px)
-    .container 
-        display: flex 
+.buttons 
+    display: flex
+.text 
+    p 
+        max-width: 45ch
+    
 
-    .poster 
-        height: 300px 
+@media(min-width: 900px)
+    @supports(display: grid)
+        .container 
+                overflow: hidden
+                display: grid 
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 1em
+                grid-template-rows: 300px minmax(200px, auto) 50px 
+        @supports(display: contents)
+            .item 
+                margin: 0
+                display: contents
 
-    .item
-        display: block 
-        flex: 1
-        margin: 0
-        margin-right: 1em
-        h2 
-            margin: 1em 0 0.5em 0
-        p 
-            min-height: 100px
-            max-width: 50ch
-        &:last-child 
-            margin-right: 0
+            .poster 
+                margin: 0
+                grid-row: 1
 
-    .buttons
-        display: flex 
-        justify-content: flex-start
-        align-items: center 
-        grid-column: 4 / -1
-        li 
-            height: 50px
-            margin-right: 1em
+            .text 
+                grid-row: 2 
+                p 
+                    max-width: 35ch
+                
+            .buttons 
+                grid-row: 3
+
+    

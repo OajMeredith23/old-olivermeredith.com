@@ -8,7 +8,9 @@ export default props => {
         <div
             css={
                 css`
-                margin-top: 6em;
+                ${!props.noTopMargin &&
+                    `margin-top: 6em;`
+                    }
                 margin-bottom: -2.23rem;
                 position: relative; 
                 z-index: 2;
@@ -17,7 +19,9 @@ export default props => {
         >
             <h1 css={
                 css`
-                    text-align: right;
+                    ${!props.alignLeft &&
+                    'text-align: right;'
+                    }
                     font-size: ${rhythm(2)};
                     @media(min-width: 560px){
                         font-size: 6em;

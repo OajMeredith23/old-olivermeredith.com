@@ -177,15 +177,30 @@
             @supports(display: grid)
                 display: grid 
                 grid-template-columns: repeat(12, 1fr)
-                grid-gap: 1em 
-                div.text 
+                grid-gap: 1em
+                // pWithImage is added in the lightbox component, 
+                // markdown wraps images in P tags, this ensures it doesn't effect the styling 
+                .pWithImage
+                    display: contents
+
+                .text 
                     grid-column: 1 / 4
+                    //the first image next to text should sit alongside it
+                    ~ p > img:first-child
+                        margin: 0
+                        grid-column: 5 / -1
+
                 .text.span-width 
                     grid-column: 1 / -1 
                     display: grid 
                     grid-template-columns: repeat(12, 1fr)
                     > * 
                         grid-column: 1 / 7
-                p, img
-                    grid-column: 5 / -1
+                img 
+                    grid-column: 1 / -1
+                    max-height: 80vh 
+                    width: 100%
+                    object-fit: contain
+                    margin: 4em auto 
+                
 

@@ -15,6 +15,8 @@ import Header from "../components/Header"
 import profile from '../assets/profile.jpg'
 import LazyImg from "../components/Wrappers/lazy-img";
 
+import styles from "./index.module.sass"
+
 export default () => {
 
   const data = useStaticQuery(
@@ -34,41 +36,17 @@ export default () => {
 
   return (
     <Layout>
-      <section css={
-        css`
-              height: calc(100vh - ${rhythm(1.5)});
-              position: relative;
-              z-index: 1;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-            `
-      }>
+      <section className={styles.container}>
         <animated.div
           style={fadeUp}
-          css={
-            css`
-                  flex: 10;
-                  display: flex; 
-                  flex-direction: column;
-                  justify-content: center;
-                `
-          }>
-          <h1 css={
-            css`
-                @media(min-width: 960px){
-                  font-size: ${rhythm(4)}
-                }
-                `
-          }>
-            {data.site.siteMetadata.title}
-          </h1>
+          className={styles.titles}>
+          <Header text={data.site.siteMetadata.title} alignLeft noTopMargin/>
           <p>
             {data.site.siteMetadata.description}
           </p>
         </animated.div>
 
-        <animated.ul
+        {/* <animated.ul
           style={fadeUp}
           css={
             css`
@@ -105,14 +83,14 @@ export default () => {
                 <p>Personal project, made for fun,
                     the challenge or to be useful</p>
               </li> */}
-          <li>
+        {/* <li>
             <a href="#contact">
               <h3>Contact</h3>
               <p>Professional or academic work,
                       made to fulfil a brief</p>
             </a>
           </li>
-        </animated.ul>
+        </animated.ul> */}
       </section>
 
 

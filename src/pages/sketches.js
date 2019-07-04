@@ -22,6 +22,7 @@ const CodeBox = (props) => {
 export default ({ data }) => {
 
   const posts = data.allMarkdownRemark.edges
+  console.log("posts")
   const [codePen, setCodePen] = useState(null)
 
   const showCodePen = function (e) {
@@ -33,7 +34,7 @@ export default ({ data }) => {
   }
 
   return (
-    <Layout onClick={() => console.log("yes")}>
+    <Layout>
 
       <CodeBox code={codePen} handleClick={() => showCodePen} />
 

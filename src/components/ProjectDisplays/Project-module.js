@@ -40,8 +40,10 @@ const Project = (props) => {
         </Link>
       </div>
 
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
+      <div className={styles.text}>
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
+      </div>
 
       <ul className={styles.buttons}>
         <li>
@@ -65,7 +67,7 @@ const Project = (props) => {
             <IconButton
               to="github"
               link={props.github}
-              alt="View source code on Github"
+              alt="View on Github"
             />
           }
         </li>
@@ -74,7 +76,7 @@ const Project = (props) => {
             <IconButton
               to="behance"
               link={props.behance}
-              alt="View project on Behance"
+              alt="View on Behance"
             />
           }
         </li>
