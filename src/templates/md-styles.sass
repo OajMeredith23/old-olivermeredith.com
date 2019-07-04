@@ -186,7 +186,8 @@
                 .text 
                     grid-column: 1 / 4
                     //the first image next to text should sit alongside it
-                    ~ p > img:first-child
+                    
+                    + p > img:first-child
                         margin: 0
                         grid-column: 5 / -1
 
@@ -194,13 +195,20 @@
                     grid-column: 1 / -1 
                     display: grid 
                     grid-template-columns: repeat(12, 1fr)
+                    margin: 2em 0
                     > * 
-                        grid-column: 1 / 7
+                        grid-column: 1 / 7 
+                    + p > img:first-child
+                        grid-column: 1 / -1
+
+                    ~ .pWithImage 
+                        grid-column: 1 / -1
                 img 
                     grid-column: 1 / -1
                     max-height: 90vh 
                     width: 100%
                     object-fit: contain
-                    margin: 1em auto 
+                    margin: 0
+                    // margin: 1em auto 
                 
 
