@@ -3,17 +3,20 @@ type: Blog
 title: Better hover animations with pseudo selectors
 thumbnail: /img/screen-shot-2019-06-28-at-4.26.13-pm.png
 date: 2019-06-28T14:45:53.324Z
-description: >-
-  How to build better hover interactions in pure CSS using the :before pseudo
-  selector
+description: 'Learn to create more interesting hover animations, without the extra mark up'
 ---
 <iframe height="404" style="width: 100%;" scrolling="no" title="CSS hover animations with :before psuedo element" src="//codepen.io/oajmeredith23/embed/preview/xopLOp/?height=404&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/oajmeredith23/pen/xopLOp/'>CSS hover animations with :before psuedo element</a> by Oliver Meredith
   (<a href='https://codepen.io/oajmeredith23'>@oajmeredith23</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-Boilerplate HTML
+
+# Setting up
+
+Only the code inside the container is important here, the container centres our buttons in the viewport and adds some padding — just to look nicer. 
+Feel free to copy and paste. Although if you're just starting out with CSS I recommend typing it out, building muscle memory is great practice.
 
 ```html
+<!--- in production, container will be whatever the parent element of your button is --->
 <div class="container">
   <button class="button button-1" type="button">
     <h3>View</h3>
