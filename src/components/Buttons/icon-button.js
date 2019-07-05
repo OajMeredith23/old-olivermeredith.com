@@ -1,4 +1,4 @@
-import React, {useEffect, Component} from 'react'
+import React, { useEffect, Component } from 'react'
 import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
@@ -10,57 +10,57 @@ import site from "../../assets/link.svg"
 import siteWhite from "../../assets/link-white.svg"
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
-export default class IconButton extends Component{
-    
-    constructor(props){
+export default class IconButton extends Component {
+
+    constructor(props) {
         super(props)
         this.state = {
             icon: ''
         }
     }
 
-    componentDidMount(){
-        if(this.props.to === "github"){
+    componentDidMount() {
+        if (this.props.to === "github") {
 
-            if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
-                this.setState({icon: githubWhite}) 
-            } else if(this.props.white){
-                this.setState({icon: githubWhite}) 
+            if (window.innerWidth > 959 && this.props.whiteAtLargeScreen) {
+                this.setState({ icon: githubWhite })
+            } else if (this.props.white) {
+                this.setState({ icon: githubWhite })
             } else {
-                this.setState({icon: github}) 
+                this.setState({ icon: github })
             }
 
-        } else if (this.props.to === 'behance'){
+        } else if (this.props.to === 'behance') {
 
-            if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
-                this.setState({icon: behanceWhite}) 
-            } else if(this.props.white){
-                this.setState({icon: behanceWhite}) 
-            }
-            
-            else { 
-                this.setState({icon: behance}) 
+            if (window.innerWidth > 959 && this.props.whiteAtLargeScreen) {
+                this.setState({ icon: behanceWhite })
+            } else if (this.props.white) {
+                this.setState({ icon: behanceWhite })
             }
 
-        } else if (this.props.to === 'site' ){
+            else {
+                this.setState({ icon: behance })
+            }
 
-            if(window.innerWidth > 959 && this.props.whiteAtLargeScreen){
-                this.setState({icon: siteWhite}) 
-            } else if(this.props.white){
-                this.setState({icon: siteWhite}) 
-            }  else { 
-                this.setState({icon: site}) 
+        } else if (this.props.to === 'site') {
+
+            if (window.innerWidth > 959 && this.props.whiteAtLargeScreen) {
+                this.setState({ icon: siteWhite })
+            } else if (this.props.white) {
+                this.setState({ icon: siteWhite })
+            } else {
+                this.setState({ icon: site })
             }
 
         }
     }
-    
 
-    render(){
-        return(
-                
-                <OutboundLink 
-                href={this.props.link} 
+
+    render() {
+        return (
+
+            <OutboundLink
+                href={this.props.link}
                 target="_blank"
                 rel="noopener"
                 onMouseEnter={(e) => console.log(e)}
@@ -70,6 +70,9 @@ export default class IconButton extends Component{
                         position: relative;
                         padding: 0.5em;
                         width: 55px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         img { 
                             height: 70%; 
                             transition: .1s;
@@ -79,8 +82,8 @@ export default class IconButton extends Component{
                             }
                         }
                         @media(min-width: 767px){
-                            ${this.props.alt && 
-                                `&::after{
+                            ${this.props.alt &&
+                        `&::after{
                                     content: "${this.props.alt}";
                                     position: absolute;
                                     padding: 0.5em;
@@ -101,26 +104,26 @@ export default class IconButton extends Component{
                                     }
                                 }
                             }`
-                            }
+                        }
                         
                     `
                 }
-                >
-                    <img 
-                        css={
-                            css`
+            >
+                <img
+                    css={
+                        css`
                                 height: 35px;
                                 width: 35px;
                                 margin: 0;
                             `
-                        }
-                        src={this.state.icon} 
-                        alt={this.props.alt}
-                        target="_blank"
-                    />
-                    
-                </OutboundLink>
-                
+                    }
+                    src={this.state.icon}
+                    alt={this.props.alt}
+                    target="_blank"
+                />
+
+            </OutboundLink>
+
         )
     }
 }

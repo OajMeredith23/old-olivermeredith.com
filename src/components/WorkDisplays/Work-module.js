@@ -73,33 +73,33 @@ const Work = (props) => {
                         <Button text="View" />
                     </Link>
                 </li>
-                <li>
-                    {props.site != 'None' &&
+                {props.site != 'None' &&
+                    <li>
                         <IconButton
                             to="site"
                             link={props.site}
                             alt="Visit Site"
                         />
-                    }
-                </li>
-                <li>
-                    {props.github != 'None' &&
+                    </li>
+                }
+                {props.github != 'None' &&
+                    <li>
                         <IconButton
                             to="github"
                             link={props.github}
                             alt="View source code on Github"
                         />
-                    }
-                </li>
-                <li>
-                    {props.behance != 'None' &&
+                    </li>
+                }
+                {props.behance != 'None' &&
+                    <li>
                         <IconButton
                             to="behance"
                             link={props.behance}
                             alt="View project on Behance"
                         />
-                    }
-                </li>
+                    </li>
+                }
             </ul>
 
         </article>
@@ -150,7 +150,7 @@ export default (props) => {
 
     return (
         <>
-            <Header id="work" text="Work"/>
+            <Header id="work" text="Work" />
             <section>
                 {data.allMarkdownRemark.edges.map(({ node }, i) => (
                     <Intersection
