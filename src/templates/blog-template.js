@@ -18,7 +18,9 @@ export default (props) => {
         <p>{props.frontmatter.description}</p>
       </header>
 
-      {props.children}
+      <div className={styles.content}>
+        {props.children}
+      </div>
     </section>
   )
 }
