@@ -10,7 +10,7 @@ import Intersection from "../Wrappers/intersection"
 import LazyImg from "../Wrappers/lazy-img"
 import Header from "../Header"
 import styles from "./Work-footer.module.sass"
-export default function WorkFooter(props){
+export default function WorkFooter(props) {
 
     const data = useStaticQuery(
         graphql`
@@ -47,12 +47,12 @@ export default function WorkFooter(props){
           }
           
         `
-      )
-        return(
-            <>
-            <Header text="Work"/>
+    )
+    return (
+        <>
+            <Header text="Work" />
             <section className={styles.container}>
-                
+
                 {data.allMarkdownRemark.edges.map(({ node }) => {
                     return props.currentPage != node.frontmatter.title && (
                         <article key={node.id} className={styles.module}>
@@ -61,15 +61,15 @@ export default function WorkFooter(props){
                                 <Link
                                     to={node.fields.slug}
                                 >
-                                    <video 
+                                    <video
                                         className={styles.vid}
-                                        autoPlay 
-                                        loop 
-                                        muted 
-                                        playsInline 
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
                                         poster={props.poster}
-                                        >
-                                        <source src={node.frontmatter.thumbnail}/>
+                                    >
+                                        <source src={node.frontmatter.thumbnail} />
                                     </video>
                                 </Link>
                             </div>
@@ -78,46 +78,46 @@ export default function WorkFooter(props){
 
 
                             <div className={styles.buttons}>
-                                    <Link
-                                        to={node.fields.slug}
-                                    >
-                                        <Button 
-                                            text="View"
-                                        />
-                                    </Link>  
-                                    
-                                    
-                                        {node.frontmatter.site != 'None' && 
-                                            <IconButton
-                                                to="site"
-                                                link={node.frontmatter.site}
-                                                alt="Visit Site"
-                                            />
-                                        }
+                                <Link
+                                    to={node.fields.slug}
+                                >
+                                    <Button
+                                        text="View"
+                                    />
+                                </Link>
 
-                                        {node.frontmatter.github != 'None' && 
-                                            <IconButton
-                                                to="github"
-                                                link={props.github}
-                                                alt="View source code on Github"
-                                            />
-                                        }
 
-                                        {node.frontmatter.behance != 'None' && 
-                                            <IconButton
-                                                to="behance"
-                                                link={node.frontmatter.behance}
-                                                alt="View project on Behance"
-                                            />
-                                        }
-                                
+                                {node.frontmatter.site != 'None' &&
+                                    <IconButton
+                                        to="site"
+                                        link={node.frontmatter.site}
+                                        alt="Visit Site"
+                                    />
+                                }
 
-                                    
+                                {node.frontmatter.github != 'None' &&
+                                    <IconButton
+                                        to="github"
+                                        link={node.frontmatter.github}
+                                        alt="View source code on Github"
+                                    />
+                                }
+
+                                {node.frontmatter.behance != 'None' &&
+                                    <IconButton
+                                        to="behance"
+                                        link={node.frontmatter.behance}
+                                        alt="View project on Behance"
+                                    />
+                                }
+
+
+
                             </div>
                         </article>
                     )
                 })}
             </section>
-            </>
-        )
+        </>
+    )
 }
