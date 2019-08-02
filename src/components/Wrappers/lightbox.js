@@ -25,6 +25,7 @@ export default function Lightbox(props) {
                 p.classList.add('pWithImage')
             }
         })
+
         items.forEach((img, i) => {
             //If the image acts as a link (Like an Icon), don't lightbox it
             if (img.parentNode.tagName === 'A') {
@@ -33,7 +34,10 @@ export default function Lightbox(props) {
                 img.style.cursor = "zoom-in";
             }
 
+
             //Add the ability to lazy load (Uses CDN that is inside Helmet tag in JSX)
+            img.setAttribute('data-src', img.src)
+            img.setAttribute('src', '')
             img.classList.add('lazyload')
 
             img.addEventListener('click', () => {
