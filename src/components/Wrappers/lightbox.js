@@ -34,7 +34,7 @@ export default function Lightbox(props) {
             }
 
             //Add the ability to lazy load (Uses CDN that is inside Helmet tag in JSX)
-            img.classList.add('lazyload')
+            // img.classList.add('lazyload')
 
             img.addEventListener('click', () => {
                 let src = img.getAttribute('src')

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout/layout"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import LazyImg from "../components/Wrappers/lazy-img"
 import styles from "./sketches.module.sass"
 
@@ -41,7 +42,13 @@ export default ({ data }) => {
       <div className={styles.container}>
         {data.allMarkdownRemark.edges.map(post =>
           <article key={post.node.id} className={styles.sketch} onClick={() => showCodePen(post.node.html)}>
-            <LazyImg img={post.node.frontmatter.poster} imgAlt={post.node.frontmatter.title} />
+            <Img
+              style={{
+                height: '100%'
+              }}
+              fluid={post.node.frontmatter.poster.childImageSharp.fluid}
+              alt={post.node.frontmatter.title}
+            />
           </article>
         )}
       </div>
@@ -66,7 +73,14 @@ export const query = graphql`
             type
             title
             date(formatString:"DD MMMM, YYYY")
-            poster
+            poster{
+              childImageSharp {
+                fluid(maxWidth: 1075, quality: 72) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+              publicURL
+          }
             github 
           }
           html

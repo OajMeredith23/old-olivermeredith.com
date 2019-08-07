@@ -17,6 +17,8 @@ description: A poster, created in colloboration with Nathanael Sherwood for a Mo
 thumbnail: /img/mozFest-ai/mozfest.png
 poster: /img/mozFest-ai/mozfest-cover.png
 ---
-
 <img src="/img/mozFest-ai/go-dots.gif" class="super-large contain" title="super-large">
-<img src="/img/mozFest-ai/mozfest.png" class="super-large contain" title="super-large">
+
+![Wireframes for the app created in Adobe XD](/img/mozFest-ai/mozfest.png "Completed poster representing artificial intelligence")
+
+<!-- <img src="/img/mozFest-ai/mozfest.png" class="super-large contain" title="super-large"> -->

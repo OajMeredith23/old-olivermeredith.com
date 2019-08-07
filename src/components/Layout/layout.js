@@ -36,8 +36,12 @@ function NavPage(props) {
                                 skill
                                 description
                                 date(formatString:"DD MMMM, YYYY")
-                                thumbnail
-                                poster
+                                thumbnail{
+                                    publicURL
+                                }
+                                poster{
+                                    publicURL
+                                }
                                 github
                                 behance 
                                 site
@@ -100,7 +104,7 @@ function NavPage(props) {
                                         <Link
                                             to={node.fields.slug}
                                             onClick={props.handleClick}
-                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
+                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster.publicURL)}
                                         // onMouseLeave={() => sethoverImage('')}
                                         >
                                             <p>{node.frontmatter.title}</p>
@@ -145,8 +149,7 @@ function NavPage(props) {
                                         <Link
                                             to={node.frontmatter.title === 'Sketches' ? '/sketches' : node.fields.slug}
                                             onClick={props.handleClick}
-                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster)}
-                                        // onMouseLeave={() => sethoverImage('')}
+                                            onMouseEnter={() => sethoverImage(node.frontmatter.poster.publicURL)}
                                         >
                                             <p>{node.frontmatter.title}</p>
                                         </Link>

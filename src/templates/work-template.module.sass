@@ -1,6 +1,6 @@
 
 .landing 
-    min-height: calc(100vh - 6em)
+    max-height: calc(100vh - 4em)
     margin: 2em 0 2em 0
     @media(min-width: 768px)
         display: flex 
@@ -8,6 +8,7 @@
             display: grid
             grid-gap: 1em
             grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: calc(100vh - 4em)
 
 .landingText
     order: 2
@@ -23,13 +24,14 @@
 
 .landingButtons 
     display: flex 
+    padding: 0
     a 
-        margin: 0 0.5em 0 0 
+        padding: 0
+        margin: 0 0.5em 0 0
 
 .landingImage 
-    height: (calc(100vh - 6em))
     flex: 2 
-    @supports(display: grid)
+    @supports(display: grid) 
         grid-column: 1 / span 2
 
             
