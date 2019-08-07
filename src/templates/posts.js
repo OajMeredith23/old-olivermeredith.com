@@ -67,8 +67,22 @@ export const query = graphql`
         description
         type
         layout
-        thumbnail
-        poster
+        thumbnail{
+          childImageSharp {
+            fluid(maxWidth: 1075, quality: 72) {
+                ...GatsbyImageSharpFluid
+            }
+          }
+          publicURL
+      }
+        poster{
+          childImageSharp {
+            fluid(maxWidth: 1075, quality: 72) {
+                ...GatsbyImageSharpFluid
+            }
+          }
+          publicURL
+      }
         github
         behance
         site

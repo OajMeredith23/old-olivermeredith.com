@@ -32,7 +32,9 @@ export default function WorkFooter(props) {
                     skill
                     description
                     date(formatString:"DD MMMM, YYYY")
-                    thumbnail 
+                    thumbnail{
+                        publicURL
+                    }
                     github 
                     behance
                     site
@@ -69,7 +71,7 @@ export default function WorkFooter(props) {
                                         playsInline
                                         poster={props.poster}
                                     >
-                                        <source src={node.frontmatter.thumbnail} />
+                                        <source src={node.frontmatter.thumbnail.publicURL} />
                                     </video>
                                 </Link>
                             </div>

@@ -2,6 +2,7 @@
 
 import React from "react"
 import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
+import Img from 'gatsby-image'
 import { css } from "@emotion/core"
 import { rhythm } from "../../utils/typography"
 import { color } from "../../utils/colors"
@@ -16,6 +17,9 @@ import Intersection from "../Wrappers/intersection"
 import styles from "./Project-module.module.sass"
 
 const Project = (props) => {
+  let image = props.thumbnail.relativePath;
+  console.log(image)
+
   return (
     <article className={styles.item} key={props.id}>
 
@@ -24,15 +28,17 @@ const Project = (props) => {
           to={props.title === 'Sketches' ? '/sketches' : props.slug}
         >
           {
-            props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
+            props.thumbnail.publicURL.substring(props.thumbnail.publicURL.length - 4, props.thumbnail.publicURL.length) === '.mov' ? (
               <LazyVid
-                vid={props.thumbnail}
+                vid={props.thumbnail.publicURL}
                 poster={props.poster}
               />
             )
               : (
-                <LazyImg
-                  img={props.thumbnail}
+                <Img
+                  style={{ height: '100%' }}
+                  fluid={props.thumbnail.childImageSharp.fluid}
+                  alt={props.title}
                 />
               )
 
@@ -105,8 +111,17 @@ export default (props) => {
                     title
                     skill
                     description
-                    thumbnail 
-                    poster
+                    thumbnail{
+                      childImageSharp {
+                        fluid(maxWidth: 1075, quality: 72) {
+                            ...GatsbyImageSharpFluid_tracedSVG
+                        }
+                    }
+                      publicURL
+                    }
+                    poster{
+                      publicURL
+                  }
                     github 
                     behance
                     site

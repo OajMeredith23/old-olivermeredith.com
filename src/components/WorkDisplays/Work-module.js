@@ -3,8 +3,6 @@
 import React from "react"
 import { useStaticQuery, StaticQuery, graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
-import { rhythm } from "../../utils/typography"
-import { color } from "../../utils/colors"
 import Layout from "../Layout/layout"
 import Header from "../Header"
 import Button from "../Buttons/Button"
@@ -14,12 +12,11 @@ import LazyVid from "../Wrappers/lazy-vid"
 import Intersection from "../Wrappers/intersection"
 import WorkFooter from "./Work-footer"
 import styles from "./Work-modules.module.sass"
-console.log({ styles })
 
 
 const Work = (props) => {
 
-
+    console.log(props.thumbnail.publicURL.substring(props.thumbnail.publicURL.length - 4, props.thumbnail.publicURL.length))
     return (
 
         <article className={styles.container}>
@@ -30,15 +27,15 @@ const Work = (props) => {
                 >
 
                     {
-                        props.thumbnail.substring(props.thumbnail.length - 4, props.thumbnail.length) === '.mov' ? (
+                        props.thumbnail.publicURL.substring(props.thumbnail.publicURL.length - 4, props.thumbnail.publicURL.length) === '.mov' ? (
                             <LazyVid
-                                vid={props.thumbnail}
-                                poster={props.poster}
+                                vid={props.thumbnail.publicURL}
+                                poster={props.poster.publicURL}
                             />
                         )
                             : (
                                 <LazyImg
-                                    img={props.thumbnail}
+                                    img={props.thumbnail.publicURL}
                                 />
                             )
 
@@ -129,8 +126,12 @@ export default (props) => {
                     skill
                     description
                     date(formatString:"DD MMMM, YYYY")
-                    thumbnail 
-                    poster
+                    thumbnail {
+                        publicURL
+                    }
+                    poster {
+                        publicURL
+                    }
                     github 
                     behance
                     site

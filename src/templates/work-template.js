@@ -1,11 +1,7 @@
 import React, { useEffect } from "react"
-// import Layout from "../components/Layout/layout"
-// import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { useSpring, animated } from 'react-spring'
-// import { rhythm } from "../utils/typography"
-import { color } from "../utils/colors"
-import LazyImg from "../components/Wrappers/lazy-img";
+import Img from 'gatsby-image'
 import Lightbox from "../components/Wrappers/lightbox";
 import IconButton from "../components/Buttons/icon-button"
 import Button from "../components/Buttons/Button"
@@ -17,7 +13,6 @@ import styles from "./work-template.module.sass"
 export default function WorkContainer(props) {
 
   const fadeDown = useSpring({ opacity: 1, marginLeft: 0, from: { opacity: 0, marginLeft: -200 } })
-  const breakpoints = ['959px'];
 
   return (
     <>
@@ -36,7 +31,6 @@ export default function WorkContainer(props) {
                     to="site"
                     link={props.frontmatter.site}
                     alt="Visit Site"
-                  // whiteAtLargeScreen={true}
                   />
                 }
 
@@ -45,7 +39,6 @@ export default function WorkContainer(props) {
                     to="github"
                     link={props.frontmatter.github}
                     alt="View source code on Github"
-                  // whiteAtLargeScreen={true}
                   />
                 }
 
@@ -54,7 +47,6 @@ export default function WorkContainer(props) {
                     to="behance"
                     link={props.frontmatter.behance}
                     alt="View project on Behance"
-                  // whiteAtLargeScreen={true}
                   />
                 }
 
@@ -62,13 +54,19 @@ export default function WorkContainer(props) {
               </div>
             </div>
 
-            <animated.div
+            <div
               className={styles.landingImage}
-              style={fadeDown}>
-              <LazyImg
-                img={props.frontmatter.poster}
+              style={fadeDown}
+            >
+              <Img
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+                fluid={props.frontmatter.poster.childImageSharp.fluid}
+                alt={props.title}
               />
-            </animated.div>
+            </div>
 
           </div>
 
