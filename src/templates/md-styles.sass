@@ -122,9 +122,7 @@
             margin: 0
         img 
             width: 100%
-// .text 
-//     p 
-//         font-size: 16px
+
 .content-grid, .content-grid > .container
 
     div:not(.text)
@@ -179,7 +177,7 @@
             @supports(display: grid)
                 display: grid 
                 grid-template-columns: repeat(12, 1fr)
-                grid-gap: 3em 1em
+                grid-gap: 1em
                 // pWithImage is added in the lightbox component, 
                 // markdown wraps images in P tags, this ensures it doesn't effect the styling 
                 .pWithImage
@@ -205,12 +203,11 @@
 
                     ~ .pWithImage 
                         grid-column: 1 / -1
-                img, video 
+                img 
                     grid-column: 1 / -1
                     max-height: 90vh 
                     width: 100%
                     object-fit: contain
-                    // margin: 2em 0 
-                
+                    margin: 0
                 
 
