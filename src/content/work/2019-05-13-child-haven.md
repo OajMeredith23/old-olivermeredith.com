@@ -1,8 +1,8 @@
 ---
-type: Work
 order: 3
-layout: Stack
 title: Child Haven
+type: Work
+layout: Stack
 date: 2019-05-13T20:15:25.069Z
 skill:
   - HTML - CSS - JS
@@ -17,23 +17,24 @@ behance: None
 description: >-
   Web design and development for a small day care center, focused on creating a
   dialogue between the business and their customers.
-thumbnail: /img/childhaven-cover.jpg
+thumbnail: /img/childhaven/menu.mov
 poster: /img/childhaven/childhaven-mockup.jpg
 ---
 
-<div class="work-section brief">
-      <h1>Brief</h1>
-      <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because</p>
-</div>
 
-<div class="work-section">
-    <div class="work-text-container">
-      <div class="work-text">
-        <h1>Research</h1>
-        <p>            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, ut temporibus repellendus porro veniam libero alias corrupti corporis excepturi sed.
-        </p>
-      </div>
-    </div>
+![Screenshot of the user interface](/img/childhaven/childhaven-cover.jpg "Screenshot of the user interface")
+
+![Screenshot of the user interface](/img/childhaven/phone.jpg "Screenshot of the user interface")
+
+<div class="work-image-video">
+  <video autoplay loop muted playsinline src="/img/childhaven/booking.mov"></video>
+  <video autoplay loop muted playsinline src="/img/childhaven/kidscafe.mov"></video>      
+  <video autoplay loop muted playsinline src="/img/childhaven/homepage.mov"></video> 
+  <video autoplay loop muted playsinline src="/img/childhaven/menu.mov"></video>  
+</div> 
+
+
+<!-- <div class="work-section">
     <div class="work-images">
       <div class="work-image-fullwidth">
         <img src="/img/childhaven/childhaven-cover.jpg" alt="">
@@ -52,4 +53,4 @@ poster: /img/childhaven/childhaven-mockup.jpg
         <video autoplay loop muted playsinline src="/img/childhaven/menu.mov"></video>  
       </div>
     </div>
-</div>
+</div> -->
