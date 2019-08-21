@@ -1,7 +1,8 @@
 ---
-order: 3
-title: Child Haven
 type: Work
+order: 3
+layout: Stack
+title: Child Haven
 date: 2019-05-13T20:15:25.069Z
 skill:
   - HTML - CSS - JS
@@ -16,7 +17,7 @@ behance: None
 description: >-
   Web design and development for a small day care center, focused on creating a
   dialogue between the business and their customers.
-thumbnail: /img/childhaven/menu.mov
+thumbnail: /img/childhaven-cover.jpg
 poster: /img/childhaven/childhaven-mockup.jpg
 ---
 
