@@ -26,7 +26,7 @@ poster: /img/childhaven/childhaven-mockup.jpg
 
 ![Screenshot of the user interface](/img/childhaven/phone.jpg "Screenshot of the user interface")
 
-<div class="work-image-video">
+<div class="video">
   <video autoplay loop muted playsinline src="/img/childhaven/booking.mov"></video>
   <video autoplay loop muted playsinline src="/img/childhaven/kidscafe.mov"></video>      
   <video autoplay loop muted playsinline src="/img/childhaven/homepage.mov"></video> 

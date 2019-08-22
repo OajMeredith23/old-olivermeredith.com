@@ -18,7 +18,7 @@ export default function P5Template(props) {
     return (
         <section className={styles.container}>
             {props.children}
-            {props.frontmatter.source}
+            {/* {props.frontmatter.source} */}
         </section>
     )
 }

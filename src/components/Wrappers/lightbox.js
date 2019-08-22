@@ -21,7 +21,8 @@ export default function Lightbox(props) {
             pWithImage = document.querySelectorAll('p');
 
         pWithImage.forEach(p => {
-            if (p.firstChild.tagName === 'IMG') {
+            console.log(p.firstChild)
+            if (p.firstChild.tagName === 'IMG' || p.firstChild.tagName === 'VIDEO') {
                 p.classList.add('pWithImage')
             }
         })

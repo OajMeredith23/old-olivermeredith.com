@@ -1,92 +1,92 @@
 //Work page styles
-.content 
-    max-width: 759px
-    display: block
-    margin: 0 auto
-.brief 
-    display: none
+// .content 
+//     max-width: 759px
+//     display: block
+//     margin: 0 auto
+// .brief 
+//     display: none
 
-@supports(display: grid)
-    .content 
-        width: 100%
-        max-width: 10000px 
-        grid-column: 1 / -1
+// @supports(display: grid)
+//     .content 
+//         width: 100%
+//         max-width: 10000px 
+//         grid-column: 1 / -1
         
-    .brief 
-        background-size: cover  
-        background-repeat: no-repeat
-        min-height: 70vh 
-        display: flex 
-        justify-content: center
-        flex-direction: column
-        display: none !important
+//     .brief 
+//         background-size: cover  
+//         background-repeat: no-repeat
+//         min-height: 70vh 
+//         display: flex 
+//         justify-content: center
+//         flex-direction: column
+//         display: none !important
 
-    .brief, .work-text-container  
-        width: 100%
-        @media(min-width: 760px)
-            width: calc(100% + 20px)
-            margin: 0 -10px 
-            padding-left: 10px
-        p 
-            max-width: 500px
+//     .brief, .work-text-container  
+//         width: 100%
+//         @media(min-width: 760px)
+//             width: calc(100% + 20px)
+//             margin: 0 -10px 
+//             padding-left: 10px
+//         p 
+//             max-width: 500px
 
-    .content
-        @media(min-width: 959px)
-            grid-column: 1 / -1 
+//     .content
+//         @media(min-width: 959px)
+//             grid-column: 1 / -1 
 
-    .work-section 
-        margin-bottom: 1em
-        @media(min-width: 959px)
-            display: flex 
+//     .work-section 
+//         margin-bottom: 1em
+//         @media(min-width: 959px)
+//             display: flex 
         
 
 
-    .work-text-container
-        flex: 1
-        padding-top: 2em
-        padding-bottom: 2em
-        margin-right: 2rem
-        margin-bottom: 1em
-        display: none
+//     .work-text-container
+//         flex: 1
+//         padding-top: 2em
+//         padding-bottom: 2em
+//         margin-right: 2rem
+//         margin-bottom: 1em
+//         display: none
         
-    .work-text
-        @media(min-width: 959px)
-            position: sticky 
-            top: 4em
-            max-width: 300px
+//     .work-text
+//         @media(min-width: 959px)
+//             position: sticky 
+//             top: 4em
+//             max-width: 300px
 
-    .work-images 
-        flex: 4
-        padding: 0
-        @media(min-width: 600px)
-            display: grid 
-            grid-gap: 1rem
-            grid-template-columns: repeat(8, 1fr)
-        img 
-            margin: 0
-            // border-radius: 10px
-        p 
-            margin: 0
-            position: relative
-            top: -1em
-            font-size: 12px
-            opacity: .5
-            letter-spacing: .03em
-            padding-left: 1em
-    .work-image-video 
-        // margin: 1em 0
-        grid-column: 1 / -1
-        width: 100%
-        video 
-            // border-radius: 10px
-            width: 100% 
-            height: 100% 
-            object-fit: cover
+//     .work-images 
+//         flex: 4
+//         padding: 0
+//         @media(min-width: 600px)
+//             display: grid 
+//             grid-gap: 1rem
+//             grid-template-columns: repeat(8, 1fr)
+//         img 
+//             margin: 0
+//             // border-radius: 10px
+//         p 
+//             margin: 0
+//             position: relative
+//             top: -1em
+//             font-size: 12px
+//             opacity: .5
+//             letter-spacing: .03em
+//             padding-left: 1em
+//     .work-image-video 
+//         // margin: 1em 0
+//         grid-column: 1 / -1
+//         width: 100%
+//         video 
+//             // border-radius: 10px
+//             width: 100% 
+//             height: 100% 
+//             object-fit: cover
 
-    .work-image-stack 
-        grid-column: span 4
-        img
-            margin-bottom: 1em
+//     .work-image-stack 
+//         grid-column: span 4
+//         img
+//             margin-bottom: 1em
         
     
     // .work-image-grid 
@@ -123,90 +123,122 @@
 // .text 
 //     p 
 //         font-size: 16px
-.content-grid, .content-grid > .container
+// .content-grid, .content-grid > .container
 
-    div:not(.text)
-        display: contents
-    @media(min-width: 780px)
-        display: grid  
-        grid-gap: 1em
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
-        grid-auto-rows: 320px
-        grid-auto-flow: dense
-        img 
-            margin: 0
-            width: 100% 
-            height: 100%
-            object-fit: cover
-            &.contain 
-                object-fit: contain
-        .text 
-            grid-column:  1 / -1 
-            display: grid 
-            grid-template-columns: 1fr 2fr
-            p 
-                grid-column: 2 / -1
-                max-width: 60ch
-            h2 
-                grid-column: 1
-            h2, p 
-                align-self: center
+//     div:not(.text)
+//         display: contents
+//     @media(min-width: 780px)
+//         display: grid  
+//         grid-gap: 1em
+//         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+//         grid-auto-rows: 320px
+//         grid-auto-flow: dense
+//         img 
+//             margin: 0
+//             width: 100% 
+//             height: 100%
+//             object-fit: cover
+//             &.contain 
+//                 object-fit: contain
+//         .text 
+//             grid-column:  1 / -1 
+//             display: grid 
+//             grid-template-columns: 1fr 2fr
+//             p 
+//                 grid-column: 2 / -1
+//                 max-width: 60ch
+//             h2 
+//                 grid-column: 1
+//             h2, p 
+//                 align-self: center
 
-        img[title="large"]
-            grid-column: span 2 
-            grid-row: span 2
-        img[title="super-large"]
-            grid-column: span 3
-            grid-row: span 2
-        .large, .super-large
-            grid-column: span 2 
-            grid-row: span 2
-        @media(min-width: 960px)
-            .super-large 
-                grid-column: span 3
-                grid-row: span 2
-        img:last-child:nth-child(3n)
-            grid-column: span 2 
-        img:last-child:nth-child(3n - 1)
-            grid-column: span 3
+//         img[title="large"]
+//             grid-column: span 2 
+//             grid-row: span 2
+//         img[title="super-large"]
+//             grid-column: span 3
+//             grid-row: span 2
+//         .large, .super-large
+//             grid-column: span 2 
+//             grid-row: span 2
+//         @media(min-width: 960px)
+//             .super-large 
+//                 grid-column: span 3
+//                 grid-row: span 2
+//         img:last-child:nth-child(3n)
+//             grid-column: span 2 
+//         img:last-child:nth-child(3n - 1)
+//             grid-column: span 3
 
 .content-stack, .content-stack > .container
-    div:not(.text)
-        display: contents
-        @media(min-width: 680px)
-            @supports(display: grid)
-                display: grid 
-                grid-template-columns: repeat(12, 1fr)
-                grid-gap: 3em 1em
-                // pWithImage is added in the lightbox component, 
-                // markdown wraps images in P tags, this ensures it doesn't effect the styling 
-                .pWithImage
-                    display: contents
+    p:not(.pWithImage)
+        max-width: 75ch
+       
+    h2 
+        margin: 4em 0 1em 0
 
-                .text 
-                    grid-column: 1 / 4
-                    //the first image next to text should sit alongside it
+    video, img
+        width: 100%
+        margin-top: 1em
+    .pWithImage
+        margin-top: 2em
+        margin-bottom: 0
+        padding: 0 
+        img 
+            max-height: 100vh
+            width: auto
+            display: block
+            margin: 0 auto
+            
+    p:not(.pWithImage) + .pWithImage
+        margin-top: 4em
+    .video 
+        width: 100% 
+        margin-top: 0 
+        video 
+            margin-top: 2em
+
+
+    
+
+
+// .content-stack, .content-stack > .container
+//     div:not(.text)
+//         display: contents
+//         @media(min-width: 680px)
+//             @supports(display: grid)
+//                 display: grid 
+//                 grid-template-columns: repeat(12, 1fr)
+//                 grid-gap: 3em 1em
+//                 // pWithImage is added in the lightbox component, 
+//                 // markdown wraps images in P tags, this ensures it doesn't effect the styling 
+//                 .pWithImage
+//                     display: contents
+
+//                 .text 
+//                     grid-column: 1 / 4
+//                     //the first image next to text should sit alongside it
                     
-                    + p > img:first-child
-                        margin: 0
-                        grid-column: 5 / -1
+//                     + p > img:first-child
+//                         margin: 0
+//                         grid-column: 5 / -1
 
-                .text.span-width 
-                    grid-column: 1 / -1 
-                    display: grid 
-                    grid-template-columns: repeat(12, 1fr)
-                    margin: 2em 0
-                    > * 
-                        grid-column: 1 / 7 
-                    + p > img:first-child
-                        grid-column: 1 / -1
+//                 .text.span-width 
+//                     grid-column: 1 / -1 
+//                     display: grid 
+//                     grid-template-columns: repeat(12, 1fr)
+//                     margin: 2em 0
+//                     > * 
+//                         grid-column: 1 / 7 
+//                     + p > img:first-child
+//                         grid-column: 1 / -1
 
-                    ~ .pWithImage 
-                        grid-column: 1 / -1
-                img, video 
-                    grid-column: 1 / -1
-                    max-height: 90vh 
-                    width: 100%
-                    object-fit: contain
-                    // margin: 2em 0 
+//                     ~ .pWithImage 
+//                         grid-column: 1 / -1
+//                 img, video 
+//                     grid-column: 1 / -1
+//                     max-height: 90vh 
+//                     width: 100%
+//                     object-fit: contain
+//                     // margin: 2em 0 
                 
