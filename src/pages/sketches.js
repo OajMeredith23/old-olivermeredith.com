@@ -14,6 +14,7 @@ const CodeBox = (props) => {
       <div className={styles.close} onClick={props.handleClick(null)}>
         <span></span><span></span>
       </div>
+      <div className={styles.spinner}></div>
       <div key={code} dangerouslySetInnerHTML={{ __html: code }} />
     </article >
   )
