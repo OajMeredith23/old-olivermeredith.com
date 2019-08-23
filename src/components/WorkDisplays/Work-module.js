@@ -27,7 +27,7 @@ const Work = (props) => {
                 >
 
                     {
-                        props.thumbnail.publicURL.substring(props.thumbnail.publicURL.length - 4, props.thumbnail.publicURL.length) === '.mp4' ? (
+                        props.thumbnail.publicURL.substring(props.thumbnail.publicURL.length - 4, props.thumbnail.publicURL.length) === '.mov' ? (
                             <LazyVid
                                 vid={props.thumbnail.publicURL}
                                 poster={props.poster.publicURL}
