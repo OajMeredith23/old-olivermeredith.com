@@ -54,7 +54,7 @@ const Project = (props) => {
       <ul className={styles.buttons}>
         <li>
           <Link
-            to={props.slug}
+            to={props.title === 'Sketches' ? '/sketches' : props.slug}
           >
             <Button text="View" />
           </Link>
