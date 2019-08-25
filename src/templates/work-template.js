@@ -6,7 +6,7 @@ import Lightbox from "../components/Wrappers/lightbox";
 import IconButton from "../components/Buttons/icon-button"
 import Button from "../components/Buttons/Button"
 import WorkFooter from "../components/WorkDisplays/Work-footer"
-
+import Header from '../components/Header'
 import mdStyles from "./md-styles.sass"
 import styles from "./work-template.module.sass"
 
@@ -18,10 +18,14 @@ export default function WorkContainer(props) {
     <>
       <Lightbox>
         <section className={styles.container}>
+
           <div className={styles.landing}>
 
             <div className={styles.landingText}>
-              <h1>{props.frontmatter.title}</h1>
+              <Header
+                text={props.frontmatter.title}
+                alignLeft
+              />
               <p>{props.frontmatter.description}</p>
 
               <div className={styles.landingButtons}>

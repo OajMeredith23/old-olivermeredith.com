@@ -4,7 +4,8 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import LazyImg from "../components/Wrappers/lazy-img"
 import styles from "./sketches.module.sass"
-
+import Header from '../components/Header'
+import IconButton from '../components/Buttons/icon-button'
 const CodeBox = (props) => {
   let { code } = props;
 
@@ -39,7 +40,21 @@ export default ({ data }) => {
     <Layout>
 
       <CodeBox code={codePen} handleClick={() => showCodePen} />
+      <div className={styles.landing}>
+        <Header
+          text="Sketches"
+          alignLeft
+        />
+        <p>
+          Sketches is my digital playground, an ongoing project of digital drawings created using Javascript.
+        </p>
 
+        <IconButton
+          to="github"
+          link={"https://github.com/OajMeredith23/Sketches"}
+          alt="View source code on Github"
+        />
+      </div>
       <div className={styles.container}>
         {data.allMarkdownRemark.edges.map(post =>
           <article key={post.node.id} className={styles.sketch} onClick={() => showCodePen(post.node.html)}>

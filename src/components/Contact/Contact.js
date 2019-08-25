@@ -37,7 +37,12 @@ export default function Contact(props) {
           />
         </div>
         <div className={styles.text}>
-          {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste accusantium dicta culpa quis possimus amet id maxime minus voluptates sed!</p> */}
+          <p>
+            I love to make stuff on computers.
+            <br />
+            If you've got stuff you want made, get in touch.
+          </p>
+          <div className={styles.divider}></div>
           <h2><a href="mailto:mail@olivermeredith.com">{data.site.siteMetadata.email}</a></h2>
           <div className={styles.buttons}>
             <IconButton

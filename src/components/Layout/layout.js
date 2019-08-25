@@ -260,7 +260,7 @@ export default (props) => {
                     onClick={navOpen ? toggleNav : null}
                 >
                     <h3>
-                        Oliver Meredith
+                        O
                     </h3>
                 </Link>
 

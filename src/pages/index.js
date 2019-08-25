@@ -40,7 +40,7 @@ export default () => {
         <animated.div
           style={fadeUp}
           className={styles.titles}>
-          <Header text={data.site.siteMetadata.title} alignLeft noTopMargin/>
+          <Header text={data.site.siteMetadata.title} alignLeft noTopMargin />
           <p>
             {data.site.siteMetadata.description}
           </p>
