@@ -25,7 +25,7 @@ poster: /img/childhaven/childhaven-mockup.jpg
 Child Haven came to me wanting to improve their online presence. 
 They wanted their own site to act not only as a platform for people to book their services, but also to convince users to become customers. 
 
-The site needed to reflect their brand, which had already been created, as well as cater directly to their target audience, parents. 
+The site needed to reflect their brand, which had already been created, as well as catering directly to their target audience, parents. 
 
 ![Screenshot of the user interface](/img/childhaven/childhaven-cover.jpg "Screenshot of the user interface")
 
