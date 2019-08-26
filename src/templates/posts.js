@@ -67,6 +67,7 @@ export const query = graphql`
         description
         type
         layout
+        skill
         thumbnail{
           childImageSharp {
             fluid(maxWidth: 1075, quality: 72) {

@@ -11,6 +11,7 @@ import mdStyles from "./md-styles.sass"
 import styles from "./work-template.module.sass"
 
 export default function WorkContainer(props) {
+  console.log({ props })
 
   const fadeDown = useSpring({ opacity: 1, marginLeft: 0, from: { opacity: 0, marginLeft: -200 } })
 
@@ -21,42 +22,55 @@ export default function WorkContainer(props) {
 
           <div className={styles.landing}>
 
+            <Header
+              text={props.frontmatter.title}
+              alignLeft
+            />
             <div className={styles.landingText}>
-              <Header
-                text={props.frontmatter.title}
-                alignLeft
-              />
+
+              <ul className={styles.skillList}>
+                {
+                  props.frontmatter.skill.map(s => {
+                    return (
+                      <li>{s}</li>
+                    )
+                  })
+                }
+              </ul>
+              <div className={styles.divider}></div>
               <p>{props.frontmatter.description}</p>
 
-              <div className={styles.landingButtons}>
-
-                {props.frontmatter.site != 'None' &&
-                  <IconButton
-                    to="site"
-                    link={props.frontmatter.site}
-                    alt="Visit Site"
-                  />
-                }
-
-                {props.frontmatter.github != 'None' &&
-                  <IconButton
-                    to="github"
-                    link={props.frontmatter.github}
-                    alt="View source code on Github"
-                  />
-                }
-
-                {props.frontmatter.behance != 'None' &&
-                  <IconButton
-                    to="behance"
-                    link={props.frontmatter.behance}
-                    alt="View project on Behance"
-                  />
-                }
-
-
-              </div>
             </div>
+
+            <div className={styles.landingButtons}>
+
+              {props.frontmatter.site != 'None' &&
+                <IconButton
+                  to="site"
+                  link={props.frontmatter.site}
+                  alt="Visit Site"
+                />
+              }
+
+              {props.frontmatter.github != 'None' &&
+                <IconButton
+                  to="github"
+                  link={props.frontmatter.github}
+                  alt="View source code on Github"
+                />
+              }
+
+              {props.frontmatter.behance != 'None' &&
+                <IconButton
+                  to="behance"
+                  link={props.frontmatter.behance}
+                  alt="View project on Behance"
+                />
+              }
+
+
+            </div>
+
 
             <div
               className={styles.landingImage}
