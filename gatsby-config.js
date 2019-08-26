@@ -3,9 +3,11 @@ module.exports = {
     title: `Oliver Meredith`,
     description: 'A front-end developer that’s curious about user experiences. ',
     github: `https://github.com/OajMeredith23`,
-    email: `mail@olivermeredith.com`
+    email: `mail@olivermeredith.com`,
+    siteUrl: `https://www.olivermeredith.com`
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
