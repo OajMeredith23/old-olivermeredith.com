@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Oliver Meredith`,
-    description: 'A front-end developer that’s curious about user experiences. ',
+    description: 'Front-end Developer — User Experience Designer',
     github: `https://github.com/OajMeredith23`,
     email: `mail@olivermeredith.com`,
     siteUrl: `https://www.olivermeredith.com`
