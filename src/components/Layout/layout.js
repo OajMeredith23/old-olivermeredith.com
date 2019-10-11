@@ -227,7 +227,7 @@ export default (props) => {
                 meta={[
                     {
                         name: "description",
-                        content: "Oliver Meredith — Front end developer that's curious about user experiences",
+                        content: "Front-end Developer — User Experience Designer",
                     },
                     {
                         name: "keywords",
