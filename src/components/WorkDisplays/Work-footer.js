@@ -56,11 +56,28 @@ export default function WorkFooter(props) {
             <section className={styles.container}>
 
                 {data.allMarkdownRemark.edges.map(({ node }) => {
+                    console.log(node)
                     return props.currentPage != node.frontmatter.title && (
+
                         <article key={node.id} className={styles.module}>
 
                             <div className={styles.videoContainer}>
-                                <Link
+                                {node.frontmatter.thumbnail.publicURL.substring(node.frontmatter.thumbnail.publicURL.length - 4, node.frontmatter.thumbnail.publicURL.length) === '.mov' ? (
+
+                                    <video
+                                        className={styles.vid}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        poster={props.poster}
+                                    >
+                                        <source src={node.frontmatter.thumbnail.publicURL} />
+                                    </video>
+                                ) :
+                                    <img class={styles.img} src={node.frontmatter.thumbnail.publicURL} alt="" />
+                                }
+                                {/* <Link
                                     to={node.fields.slug}
                                 >
                                     <video
@@ -73,7 +90,7 @@ export default function WorkFooter(props) {
                                     >
                                         <source src={node.frontmatter.thumbnail.publicURL} />
                                     </video>
-                                </Link>
+                                </Link> */}
                             </div>
 
                             <h2>{node.frontmatter.title}</h2>
