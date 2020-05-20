@@ -43,7 +43,7 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - {label: "Featured Image", hint: "Can be image or video - If video it must hardcoded", name: "thumbnail", widget: "image"}
       - {label: "Video Poster", hint: "Will be used as the cover image on the work page", name: "poster", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
   - name: "projects"
     label: "Project"
     folder: "src/content/projects"
