@@ -14,4 +14,4 @@ description: An app that uses your facial expressions to create a a unique story
 thumbnail: /img/screen-shot-2020-05-20-at-8.43.43-am.jpg
 poster: /img/screen-shot-2020-05-20-at-8.43.43-am.jpg
 ---
-\-
+ .
