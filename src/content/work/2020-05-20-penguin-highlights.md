@@ -22,3 +22,11 @@ poster: /img/d-ad-presentation.001.jpg
 ![User Personas](/img/d-ad-presentation.003.jpg "User Personas 2")
 
 ![App introduction and landing screen](/img/d-ad-presentation.004.jpg "App landing screen")
+
+![Illustrating the highlighting process](/img/d-ad-presentation.005.jpg "Highlighting process")
+
+![Showing how to view others highlights](/img/d-ad-presentation.006.jpg "Showing how to view others highlights")
+
+![How to view others highlights](/img/d-ad-presentation.007.jpg "How to view others highlights")
+
+![How to use the how app with a physical book using augmented reality](/img/d-ad-presentation.008.jpg "augmented reality")
